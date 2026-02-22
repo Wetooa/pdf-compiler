@@ -8,8 +8,8 @@ from typing import List, Optional
 from fastapi import APIRouter, BackgroundTasks, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 
-from config import Config
-from utils import ensure_directory
+from src.config import Config
+from src.utils import ensure_directory
 
 from ..processor import run_batch_processing
 

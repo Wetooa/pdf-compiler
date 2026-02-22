@@ -6,11 +6,11 @@ import logging
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 
-from config import Config
-from pdf_processor import PDFProcessor
-from summarizer import Summarizer
-from output_generator import OutputGenerator
-from utils import (
+from .config import Config
+from .pdf_processor import PDFProcessor
+from .summarizer import Summarizer
+from .output_generator import OutputGenerator
+from .utils import (
     setup_logging,
     get_pdf_files,
     create_sliding_windows,

@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 3. Set up your Gemini API key:
 ```bash
-cp env.template .env
+cp .env.example .env
 # Edit .env and add your GEMINI_API_KEY
 ```
 
@@ -73,13 +73,13 @@ The tool supports two modes:
 
 Process a single PDF:
 ```bash
-python main.py path/to/your/document.pdf
+python -m src.main path/to/your/document.pdf
 ```
 
 Process multiple PDFs or a directory of PDFs (single output):
 ```bash
-python main.py pdf1.pdf pdf2.pdf pdf3.pdf
-python main.py /path/to/pdfs/
+python -m src.main pdf1.pdf pdf2.pdf pdf3.pdf
+python -m src.main /path/to/pdfs/
 ```
 
 ### Folder mode (directories only)
@@ -88,11 +88,11 @@ Put PDFs in named folders and get one output folder per input folder with the sa
 
 ```bash
 # One folder
-python main.py input/topcit
+python -m src.main input/topcit
 # -> output/topcit/summaries/, output/topcit/compiled.pdf, etc.
 
 # Multiple folders
-python main.py input/topcit input/semester2-math
+python -m src.main input/topcit input/semester2-math
 # -> output/topcit/ and output/semester2-math/
 ```
 
@@ -101,7 +101,7 @@ python main.py input/topcit input/semester2-math
 Process all subfolders of an input root that contain PDFs:
 
 ```bash
-python main.py input/ --discover
+python -m src.main input/ --discover
 # Discovers input/topcit, input/semester2-math, ... and processes each to output/topcit/, output/semester2-math/, ...
 ```
 
@@ -115,8 +115,8 @@ python main.py input/ --discover
 
 Example:
 ```bash
-python main.py input/topcit -o ./output --dpi 400
-python main.py input/ --discover
+python -m src.main input/topcit -o ./output --dpi 400
+python -m src.main input/ --discover
 ```
 
 ## Output Structure

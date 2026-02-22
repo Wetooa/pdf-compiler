@@ -12,8 +12,8 @@ except ImportError:
         "Please install it: pip install google-generativeai"
     )
 
-from config import Config
-from utils import sanitize_filename, ensure_directory
+from .config import Config
+from .utils import sanitize_filename, ensure_directory
 from pathlib import Path
 from datetime import datetime
 

@@ -21,7 +21,7 @@ except ImportError:
         "Please install it: pip install weasyprint"
     )
 
-from utils import sanitize_filename, ensure_directory
+from .utils import sanitize_filename, ensure_directory
 
 logger = logging.getLogger(__name__)
 

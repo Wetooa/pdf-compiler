@@ -23,8 +23,8 @@ try:
 except ImportError:
     raise ImportError("Please install pytesseract and Pillow: pip install pytesseract Pillow")
 
-from config import Config
-from utils import sanitize_filename, ensure_directory
+from .config import Config
+from .utils import sanitize_filename, ensure_directory
 
 logger = logging.getLogger(__name__)
 

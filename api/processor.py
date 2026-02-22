@@ -4,12 +4,12 @@ import logging
 from pathlib import Path
 from typing import List, Optional
 
-from config import Config
-from main import process_pdf_list
-from pdf_processor import PDFProcessor
-from summarizer import Summarizer
-from output_generator import OutputGenerator
-from utils import ensure_directory
+from src.config import Config
+from src.main import process_pdf_list
+from src.pdf_processor import PDFProcessor
+from src.summarizer import Summarizer
+from src.output_generator import OutputGenerator
+from src.utils import ensure_directory
 
 logger = logging.getLogger(__name__)
 
