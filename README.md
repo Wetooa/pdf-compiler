@@ -1,6 +1,6 @@
-# TOPCIT PDF Learning Guide Generator
+# PDF Compiler
 
-A Python CLI tool that processes large PDFs, extracts text using OCR, and generates simplified learning guides using Google's Gemini API. Creates concise, easy-to-read study materials that you can use instead of reading the lengthy original text.
+A tool that processes large PDFs, extracts text using OCR, and generates simplified learning guides using Google's Gemini API. Creates concise, easy-to-read study materials that you can use instead of reading the lengthy original text. Includes a CLI and a web frontend.
 
 ## Features
 
@@ -24,8 +24,10 @@ A Python CLI tool that processes large PDFs, extracts text using OCR, and genera
 
 1. Clone or download this repository
 
-2. Install Python dependencies:
+2. (Recommended) Create a virtual environment and install Python dependencies:
 ```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -40,7 +42,27 @@ Or export it as an environment variable:
 export GEMINI_API_KEY=your_api_key_here
 ```
 
-## Usage
+## Web Frontend
+
+A Svelte + Tailwind + shadcn-svelte web interface lets you upload PDFs, process batches, and download compiled learning guides. Batch history is stored in localStorage (no authentication required).
+
+**Run the web app:**
+
+1. Start the API (from project root):
+```bash
+uvicorn api.main:app --reload --port 8000
+```
+
+2. Start the frontend:
+```bash
+cd frontend && npm run dev
+```
+
+3. Open http://localhost:5173
+
+**Environment:** The frontend expects the API at `http://localhost:8000` by default. Set `VITE_API_URL` in `frontend/.env` if your API runs elsewhere.
+
+## CLI Usage
 
 The tool supports two modes:
 

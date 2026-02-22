@@ -9,6 +9,9 @@
 # Input directories
 input/
 
+# API uploads
+uploads/
+
 # Python
 __pycache__/
 *.py[cod]
