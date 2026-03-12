@@ -1,0 +1,16 @@
+Operating Systems
+Time Sharing Operating Systems
+•What is Time Sharing ?
+•a logical extension of 
+Multiprogramming
+•The CPU executes multiple 
+processes by switching among 
+them, but the switches occur so 
+frequently that the users can 
+interact  with each program 
+while it is running
+•Allows multiple usersOperating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTING

@@ -1,0 +1,14 @@
+A06:2025 
+ –
+ 
+Insecure Design
+•Security weaknesses caused bypoor design orarchitecture
+•Happens when security isnotconsidered early inthedevelopment processWhat it is:
+Common Issues:
+•Missing threat modeling
+•Weak ormissing business logic controls
+•Poor privilege management
+Why it matters:
+•Design flaws arehard tofixlater
+•Even secure code canfailiftheoverall design isinsecure
+•Often leads tosystem -wide vulnerabilities, notjustisolated bugs

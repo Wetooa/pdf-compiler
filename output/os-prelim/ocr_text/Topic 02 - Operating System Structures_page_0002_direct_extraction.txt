@@ -1,0 +1,11 @@
+Intended Learning Outcomes
+•ILO1. Identify the different system components.
+•ILO2. Enumerate the responsibilities of the operating system 
+in connection with the different system components.
+•ILO3. Describe the various services provided by the operating 
+system.
+•ILO4. Manipulate the different Linux commands using shell 
+scripting.
+•ILO5. Explain what happens during system boot.
+•ILO6. Explain the concept of a process, its states, and 
+characteristics.

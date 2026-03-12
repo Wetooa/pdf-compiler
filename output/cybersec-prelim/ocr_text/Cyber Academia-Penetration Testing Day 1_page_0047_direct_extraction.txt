@@ -1,0 +1,8 @@
+SQLMap
+Sample commands that you can use in SQLmap  for penetration testing:
+•Basic usage: This command will test the URL for SQL injection vulnerabilities
+•`sqlmap  –u “url" --dbs -p username `
+o-u : URL that we will be testing. 
+o--dbs : will display a list of database available on the server if a parameter is 
+vulnerable
+o-p : Specify which parameter to test

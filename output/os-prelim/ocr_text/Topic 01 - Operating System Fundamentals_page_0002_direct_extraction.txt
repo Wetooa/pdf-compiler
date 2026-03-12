@@ -1,0 +1,10 @@
+Intended Learning Outcomes
+•ILO1. Give the meaning of  operating system and its 
+importance. 
+•ILO2. Identify basic concepts of Operating System 
+•ILO3. Compare the types of Operating System  
+•ILO4. Discuss basic operations of the  ComputerSystem  
+•ILO5. Differentiate all kinds of Computer-System 
+Structures 
+•ILO6. Classify the basic hardware components and its 
+protection 

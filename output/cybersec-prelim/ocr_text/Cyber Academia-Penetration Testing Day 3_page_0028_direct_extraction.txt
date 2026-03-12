@@ -1,0 +1,37 @@
+Active Testing : Testing for Weak Cryptography
+Testing for Weak Transport 
+Layer Security
+•Validate the service 
+configuration. 
+•Review the digital 
+certificate’s cryptographic 
+strength and validity. 
+•Ensure that the TLS 
+security is not bypassable  
+and is properly 
+implemented across the 
+application.
+Testing for Padding Oracle
+•Identify encrypted 
+messages that rely on 
+padding. 
+•Attempt to break the 
+padding of the encrypted 
+messages and analyze the 
+returned error messages 
+for further analysis.
+Testing for Sensitive 
+Information Sent via 
+Unencrypted Channels
+•Identify sensitive 
+information transmitted 
+through the various 
+channels. 
+•Assess the privacy and 
+security of the channels 
+used.
+Testing for Weak Encryption
+•Provide a guideline for the 
+identification weak 
+encryption or hashing uses 
+and implementations.

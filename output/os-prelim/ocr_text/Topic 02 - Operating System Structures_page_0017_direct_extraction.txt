@@ -1,0 +1,5 @@
+Working with CLI/CI
+This is how our command line interface will look like.
+There are also some special directory ~ and /
+~ - a user’s home directory ( /home/<username>/ )
+/ - root directory

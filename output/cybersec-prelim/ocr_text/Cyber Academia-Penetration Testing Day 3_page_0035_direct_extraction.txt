@@ -1,0 +1,7 @@
+Exploitation phase comes after the vulnerabilities have been identified.
+•In this phase, the pen tester attempts to access the target system and 
+exploit the identified vulnerabilities.
+•Testers use specific tools to simulate a real -world attack.
+•The tester identifies the main entry point into the target to identify high 
+value assets.
+Exploitation

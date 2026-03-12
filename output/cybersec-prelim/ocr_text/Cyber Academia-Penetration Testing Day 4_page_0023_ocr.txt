@@ -1,0 +1,21 @@
+REPORTING: Background
+
+Executive Summary
+
+I ew "siw s was contracted by BeSETaE W to conduct a penetration test in order to
+determine its exposure to a targeted attack. All activities were conducted in a manner that simulated a
+malicious actor engaged in a targeted attack against ey = ‘= "ws with the goals of:
+
+o ldentifying if a remote attacker could penetrate s g ww - defenses
+o Determining the impact of a security breach on:
+o Confidentiality of the company’s private data
+
+o Internal infrastructure and availability of msg# =y - = y information systems
+
+Efforts were placed on the identification and exploitation of security weaknesses that could allow a
+remote attacker to gain unauthorized access to organizational data. The attacks were conducted with
+the level of access that a general Internet user would have. The assessment was conducted in
+accordance with the recommendations outlined in ™% == ¢ with all tests and actions being
+
+conducted under controlled conditions.
+

@@ -1,0 +1,34 @@
+Active Testing
+Information
+GatheringConfiguration and
+Deployment
+Management Testing
+Testing for Weak
+CryptographyBusiness Logic
+Testing
+Client-side Testing
+Information 
+Gathering
+Configuration and 
+Deployment 
+Management Testing
+Identity 
+Management Testing
+Authentication 
+Testing
+Authorization 
+Testing
+Session 
+Management Testing
+Input Validation 
+Testing
+Testing for Weak 
+Cryptography
+Business Logic 
+Testing
+Client
+ -
+side Testing
+Testing for Error 
+Handling
+API Testing

@@ -1,0 +1,2 @@
+Vulnerability Scanning: Output
+Vulnerability Scanner sample results

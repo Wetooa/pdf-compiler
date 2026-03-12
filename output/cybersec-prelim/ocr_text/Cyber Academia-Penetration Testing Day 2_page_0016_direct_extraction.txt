@@ -1,0 +1,14 @@
+SCOPE: What to Consider When 
+Defining Scope
+The types of systems to be tested in terms of 
+whether they are on premise or cloud
+Existing defenses and security controls, including 
+gaps, vulnerabilities, attack responses, and 
+current security postures
+System, network, and device configurations
+System, network, and device tolerance levels 
+during an attack
+Depth and breadth of attack (i.e., sophistication 
+level) in order to compromise systems
+The entire risk landscape and overall environment 
+in which a threat actor may gain access 

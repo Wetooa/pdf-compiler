@@ -1,0 +1,19 @@
+# Backend build context (root)
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+frontend/
+output/
+uploads/
+*.md
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.coverage
+htmlcov/
+.cursor
+*.plan.md

@@ -1,0 +1,13 @@
+A01:2025 
+ –
+ 
+Broken Access Control
+•Happens when users canaccess data oractions they shouldn't
+•Caused bymissing orweak authorization checks
+What it is:
+Why it's #1
+•Still themost common andmost impactful web apprisk
+•Often leads todate exposure, privilege, escalation, orfullaccount takeover
+Examples:
+•Accessing another user's data bychanging anID
+•Performing admin actions asanormal user

@@ -1,0 +1,5 @@
+Overview of Penetration Testing Standards
+Provide guidelines and methodologies for ethical testing
+Ensure testing is consistent, safe, and repeatable
+Help define scope, process, and reporting
+Used to align security testing with industry best practices

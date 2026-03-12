@@ -1,0 +1,3 @@
+Information Gathering
+Pentest phase where publicly -available information or 
+internal information about the target is collected.

@@ -1,0 +1,5 @@
+How does a Vulnerability Scanner work?
+A passive scan performs non -intrusive checks, simply looking 
+at targets to determine if they are vulnerable.
+An active scan is a simulated attack on the target to assess 
+vulnerabilities as they would appear to an outsider.

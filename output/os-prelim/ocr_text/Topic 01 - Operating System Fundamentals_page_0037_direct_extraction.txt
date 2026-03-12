@@ -1,0 +1,12 @@
+Computer System Architecture
+Multiprocessor Systems
+•Aka Parallel Systems  or Multicore 
+Systems
+•Has two or more general-purpose CPU.
+•Changes memory access model from 
+uniform memory access (UMA)  to 
+non-uniform memory access (NUMA)
+•Three main advantages:
+•Increased throughput
+•Economy of scale
+•Increased reliability

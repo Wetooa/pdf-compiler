@@ -1,0 +1,365 @@
+LEARNING GUIDE: Pages 1-20
+Generated: 2026-03-12 20:00:06
+PDF: Topic 02 - Operating System Structures
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text, designed for study purposes.
+
+---
+
+## Operating System Structures & Shell Scripting
+
+**Course:** CS348
+**Topic:** Operating System Structures & Shell Scripting
+
+---
+
+### Intended Learning Outcomes (ILOs)
+
+Upon completing this topic, you should be able to:
+1.  Identify different system components.
+2.  List the OS responsibilities for system components.
+3.  Describe OS services.
+4.  Manipulate Linux commands using shell scripting.
+5.  Explain the system boot process.
+6.  Explain process concepts, states, and characteristics.
+
+---
+
+### 1. User and Operating System Interface
+
+Almost all Operating Systems (OS) have a User Interface (UI).
+
+#### 1.1 Types of User Interfaces:
+*   **Command Line Interface (CLI)**: Also known as a command interpreter (CI). Users type commands directly.
+*   **Graphical User Interface (GUI)**: User-friendly interface with visual elements (icons, windows) and dedicated I/O devices (mouse, keyboard).
+*   **Batch**: Commands are placed in a file, and then the file is executed.
+
+#### 1.2 Command Line Interface (CLI) / Command Interpreter (CI) Details:
+*   **Shells**: On systems with multiple CIs, they are called Shells (e.g., Bash, CSH).
+*   **Shell Scripts**: A sequence of command-line steps saved in a file, which can be run like a program.
+*   **Common CLI commands** are for file manipulation (e.g., Create, Delete, List, Print, Copy, Execute).
+
+#### 1.3 CLI Command Execution Approaches:
+1.  **Interpreter Implements Commands**: The code for the command (e.g., `cd` for `change directory` in Windows) is built directly into the interpreter.
+2.  **Program Implements Commands**: The command (e.g., `rm` for `remove` in UNIX) is a separate program file. The interpreter executes this program.
+
+---
+
+### 2. System Calls
+
+A **System Call** is how programs request services from the operating system.
+
+#### 2.1 Key Components:
+*   **Application Programming Interface (API)**: A set of functions available to application programmers.
+    *   Examples: Windows API, POSIX API (for UNIX, Linux, MacOSX), Java API.
+*   **System Call Interface**: A layer that links API function calls to the necessary OS system calls. It intercepts API calls and invokes corresponding system calls (often via a table).
+
+#### 2.2 System Call Flow (User Mode to Kernel Mode):
+1.  A program in **User Mode** calls an API function (e.g., `open()`).
+2.  The System Call Interface intercepts this call.
+3.  The CPU switches to **Kernel Mode** (a privileged mode where the OS runs).
+4.  The OS executes the system call's implementation (e.g., `open()` system call).
+5.  The CPU switches back to User Mode, and the result is returned to the program.
+
+#### 2.3 Methods for Passing Parameters to the OS during System Calls:
+*   **Via Registers**: Parameters are stored in CPU registers. Limited by the number of available registers.
+*   **Via Address (Memory Block)**: Parameters are stored in a memory block, and the memory address of this block is passed via a register.
+*   **Via Stack**: Parameters are pushed onto the program's process stack, and the OS pops them off.
+
+#### 2.4 Types of System Calls:
+1.  **Process Control**: Manage processes (create, terminate, synchronize).
+    *   Examples: `fork()` (create a new process), `exit()` (terminate current process).
+2.  **File Manipulation**: Handle file operations (create, read, write, delete).
+    *   Examples: `open()`, `read()`, `write()`.
+3.  **Device Manipulation**: Manage hardware device interactions (printers, disks).
+    *   Examples: `ioctl()` (device control), `read()`, `write()`.
+4.  **Information Maintenance**: Retrieve and modify system data (time, process details, configuration).
+    *   Examples: `getpid()` (get process ID), `settimeofday()` (set system time).
+5.  **Communication**: Enable inter-process communication (IPC) via message passing or shared memory.
+    *   Examples: `pipe()`, `socket()`.
+6.  **Protection**: Control resource access and enforce security policies.
+    *   Examples: `chmod()` (change file permissions), `setuid()` (set user ID).
+
+---
+
+### 3. Linux Shell Commands & Scripts
+
+*   **Requirement**: A Linux system (e.g., via Virtual Machine) is needed for practical work.
+*   **Virtual Machine (VM)**: A virtual computer system that runs on top of a physical machine.
+
+#### 3.1 Hypervisor (Virtual Machine Monitor / VMM):
+*   A program that creates and runs virtual machines.
+*   **Type I Hypervisor (Bare-metal)**: Runs directly on hardware, acting like a lightweight OS (e.g., VMware ESXi).
+*   **Type II Hypervisor (Hosted)**: Runs as an application on top of an existing host OS (e.g., VirtualBox, VMware Workstation). It borrows resources from the host.
+
+#### 3.2 The Shell:
+*   **Definition**: The outermost layer of the OS, a special user program that provides an interface for users to access OS services.
+*   **Shell Scripts**: Files containing commands that the shell executes, used for automation.
+*   **Common Linux Shells**:
+    *   **BASH** (Bourne Again SHell) - Most common default.
+    *   **CSH** (C SHell)
+    *   **KSH** (Korn SHell)
+
+---
+
+### 4. Working with CLI/CI (Linux)
+
+#### 4.1 Command Prompt Indicators:
+*   `$`: Indicates the current user is a **normal user**.
+*   `#`: Indicates the current user is a **root user** (superuser).
+
+#### 4.2 User and Hostname Indicator:
+*   `username@hostname`: Shows the current user and the machine's name.
+
+#### 4.3 Special Directories:
+*   `~`: Represents the **user's home directory** (e.g., `/home/<username>/`).
+*   `/`: Represents the **root directory** (the top-level directory of the file system).
+
+#### 4.4 Normal User vs. Root User:
+
+| Normal User                                     | Root User (Superuser)                               |
+| :---------------------------------------------- | :-------------------------------------------------- |
+| Access and modify files in their own home (`/home/username/`). | **Unrestricted access** to all system resources.    |
+| Run software that doesn't require system-wide changes. | Ability to modify **critical system files**.        |
+| Change only their own password.                 | Can change any password, including other users'.    |
+| Create, modify, delete files *only* within their home directory. | Can create, modify, delete files anywhere on the system. |
+| Can use `sudo` (if allowed) to run specific commands with admin rights. | Inherently has admin rights.                        |
+
+#### 4.5 Checking Current User:
+*   `whoami`: Prints the current user's username.
+    ```bash
+    mario@host~$ whoami
+    mario
+    root@host~# whoami
+    root
+    ```
+*   `id -u`: Prints the current user's User ID (UID).
+    *   **Root user's UID is always `0`**.
+    ```bash
+    mario@host~$ id -u
+    1000
+    root@host~# id -u
+    0
+    ```
+
+#### 4.6 Identifying and Changing Your Shell:
+*   `which $SHELL`: Shows the path to your current default shell. (Useful for scripting).
+    ```bash
+    $ which $SHELL
+    /bin/bash
+    ```
+*   `chsh`: Change your login shell. You will be prompted to enter the path to the new shell.
+*   `chsh -s /bin/bash`: Directly specifies `/bin/bash` as your new shell.
+    *   *(Note: Changes usually take effect after logging out and logging back in.)*
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 1 ---
+Operating System 
+Structures & Shell 
+Scripting
+Operating System Topic 02
+CS348
+
+--- Page 2 ---
+Intended Learning Outcomes
+•ILO1. Identify the different system components.
+•ILO2. Enumerate the responsibilities of the operating system 
+in connection with the different system components.
+•ILO3. Describe the various services provided by the operating 
+system.
+•ILO4. Manipulate the different Linux commands using shell 
+scripting.
+•ILO5. Explain what happens during system boot.
+•ILO6. Explain the concept of a process, its states, and 
+characteristics.
+
+--- Page 3 ---
+prograrm
+
+execunon
+
+operations systems
+
+user and other system pr
+
+e1h] batch | command line
+
+fim] file
+communication
+
+SEVICES
+aparatng sysiam
+
+
+
+--- Page 4 ---
+User and OS Interface
+•Almost all OS have a user interface (UI), which can be any of 
+the ff:
+•Command Line Interface (CLI)  – AKA command interpreter (CI) . 
+Uses command that are directly inputted.
+•Graphical User Interface (GUI)  – user friendly interface with 
+dedicated I/O devices to make selections and input data
+•Batch – commands are entered into files, then files are run.  
+
+--- Page 5 ---
+User and OS Interface: CLI / CI
+Uses command that are directly inputted .
+•On systems with multiple Command Interpreters to choose 
+from, the interpreters are known as  Shells.
+•Shell Scripts  – set of command line steps that can be run like 
+a program.
+•Many of the commands is for file manipulation:
+•Create, Delete, List, Print, Copy, Execute, 
+etc.
+
+--- Page 6 ---
+User and OS Interface: CLI / CI
+Has two approach:
+Interpreter implements 
+CommandsProgram implements 
+Commands
+cd myFolder
+windows command promptrm file.txt
+UNIX
+The code for cd (change working 
+directory) is stored in the 
+interpreter .The code for rm (remove) is stored 
+on a separate file, rm. Interpreter 
+executes rm with parameter 
+file.txt
+
+--- Page 7 ---
+System Calls
+A mechanism used by programs to request services from the 
+operating system (OS).
+•Application Programming Interface (API)  - specifies a set of 
+functions that are available to an application programmer .
+•Windows API
+•POSIX API (UNIX, Linux, MacOSX)
+•Java API (Java Virtual Machine)
+•System Call Interface – serves as link to the system calls that 
+are made available by the operating systems. Intercepts 
+function calls in the API and invokes the necessary system calls 
+(stored on a table).
+
+--- Page 8 ---
+user
+mode
+
+kernel
+mode
+
+open ()
+
+system call interface
+
+open ()
+
+Implementation
+of open ()
+system call
+
+return
+
+
+
+--- Page 9 ---
+System Calls: Passing Parameters to 
+OS?
+•Passing via Register  - Parameters 
+are stored in registers. However , 
+there may be more parameters 
+than registers.t
+•Passing via Address  - Parameters 
+are stored in a block of memory 
+and the address is passed via 
+Register .
+•Passing via Stack  - Parameters 
+are pushed in the Process Stack 
+by the program and popped off 
+by the operating system
+
+
+--- Page 10 ---
+1.Process  Control – Manages process creation, termination, and 
+synchronization (e.g., fork(), exit()).
+2.File Manipulation  – Handles file operations such as creation, reading, 
+writing, and deletion (e.g., open(), read(), write()).
+3.Device Manipulation  – Manages interactions with hardware devices like 
+printers and disks (e.g., ioctl(), read(), write()).
+4.Information  Maintenance  – Retrieves and modifies system data such as 
+time, process details, and system configuration (e.g., getpid(), 
+settimeofday()).
+5.Communication  – Enables inter-process communication (IPC) through 
+message passing or shared memory (e.g., pipe(), socket()).
+6.Protection  – Controls access to resources and enforces security policies 
+(e.g., chmod(), setuid()).Types of System Calls
+
+--- Page 11 ---
+Linux Shell Commands 
+& Scripts
+
+--- Page 12 ---
+We will be requiring a Linux 
+system from this point 
+onwards.
+Let’s use a Virtual Machine, since we might break some stuff!
+
+--- Page 13 ---
+Hypervisor
+•Also known as a virtual machine monitor or VMM.
+•Program that creates and runs virtual machine
+Can be of two types
+Host Windows Operating 
+SystemHypervisor
+CPU RAM DISK
+NETWORK I/OCPU RAM DISKHypervisorOther 
+Apps
+NETWORK I/OLINUX MacWindow
+sType II Type I
+I act like a 
+lightweight OSI need to 
+borrow 
+resources from 
+HOST!!LINUX Mac
+
+--- Page 14 ---
+Shell
+•The outermost layer 
+(Interfaces for the outside 
+to use) of the OS
+•A special user program 
+that provides an interface 
+for the user to use 
+operating system services.
+•Shell Scripts  – a way to 
+input commands via file.
+•For Linux Systems:
+•BASH (Bourne Again SHell)
+•CSH (C SHell) on the seashore…
+•KSG (Korn SHell)Shell
+OS
+Hardwarechange 
+directory…
+
+--- Page 15 ---
+Working with CLI/CI
+This is how our command line interface will look like.
+On prompts, there is always a preceding $ or a # symbol.
+$ - indicates the current user is a normal user
+# - indicates the current user is a root user (superuser)
+
+--- Page 16 ---
+Working with CLI/CI
+This is how our command line interface will look like.
+Ther...

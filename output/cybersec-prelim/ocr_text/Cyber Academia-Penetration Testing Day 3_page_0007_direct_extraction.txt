@@ -1,0 +1,4 @@
+How does a Vulnerability Scanner work?
+Application Spidering and Crawling
+Discovery of Default and common content
+Probing for common vulnerabilities

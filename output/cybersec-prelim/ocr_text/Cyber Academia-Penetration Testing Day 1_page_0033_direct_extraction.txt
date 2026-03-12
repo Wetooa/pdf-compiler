@@ -1,0 +1,15 @@
+POST ASSESSMENT ACTIVITIES
+ACTIVITIES
+ DESCRIPTION
+Reporting •Penetration testing reports should be clear, 
+concise, and informative, detailing the 
+methodology, identified vulnerabilities, and 
+remediation steps. Reports should include an 
+executive summary for sharing across different 
+organizational levels.
+Retest •After remediation efforts are implemented, it's 
+crucial to retest the system or application to 
+ensure that the vulnerabilities have been 
+successfully fixed. A retester can confirm that the 
+security posture has improved and that the fixes 
+are effective.

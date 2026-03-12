@@ -1,0 +1,5 @@
+Computer System Storage Structures
+When a program is run, it is copied over to…
+HDD
+Main Memory (RAM)
+HERE

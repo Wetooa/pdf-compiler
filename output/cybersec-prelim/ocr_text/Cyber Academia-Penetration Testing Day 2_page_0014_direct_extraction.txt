@@ -1,0 +1,4 @@
+SCOPE DEFINITION
+Importance of a Clearly Defined Pen -testing Scope
+What to Consider When Defining Scope?
+Scope and the Rules of Engagement

@@ -1,0 +1,9 @@
+Burp Suite: Configuration
+Saving Project Settings:
+•The previously covered settings 
+can be saved in a separate 
+project file which can be loaded 
+into any current Burp Suite 
+project to assist testers in quickly 
+setting up Burp with pre -
+configured settings.

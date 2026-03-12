@@ -1,0 +1,6 @@
+Post
+-
+Exploitation
+Post -exploitation refers to the phase of a cyber attack that 
+occurs after an attacker has successfully gained access to a 
+system or network. 

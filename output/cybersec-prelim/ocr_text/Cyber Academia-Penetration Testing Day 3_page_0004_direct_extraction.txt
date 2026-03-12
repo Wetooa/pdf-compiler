@@ -1,0 +1,13 @@
+PHASES OF A PENTEST ENGAGEMENT
+Reporting
+Pre
+-
+engagement
+Interactions
+Information
+Gathering
+Vulnerability
+Analysis
+Exploitation
+ Post
+Exploitation

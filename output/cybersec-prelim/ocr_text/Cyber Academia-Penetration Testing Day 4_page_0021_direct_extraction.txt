@@ -1,0 +1,5 @@
+REPORTING: 
+Data to include in a Pentest Report
+Pentest Overview
+Pentest Technical Report
+Test cases, Severity Ratings, Testing Evidence (Appendices)

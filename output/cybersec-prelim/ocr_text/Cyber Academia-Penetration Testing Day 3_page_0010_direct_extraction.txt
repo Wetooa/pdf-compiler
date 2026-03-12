@@ -1,0 +1,2 @@
+Vulnerability Scanning: Output
+Common vulnerabilities detected by scanning:

@@ -1,0 +1,4 @@
+We will be requiring a Linux 
+system from this point 
+onwards.
+Let’s use a Virtual Machine, since we might break some stuff!

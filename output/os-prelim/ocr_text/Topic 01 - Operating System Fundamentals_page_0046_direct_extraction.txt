@@ -1,0 +1,7 @@
+Operating System
+•Interrupt
+•Signals an occurrence of an event from either hardware  or 
+software . 
+•Requires immediate attention.
+•Temporarily pauses CPU task to handle the event, which will then 
+resume the interrupted task after .

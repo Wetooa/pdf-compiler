@@ -1,0 +1,22 @@
+Types of Operating System
+Batch Operating Systems
+•Processes similar jobs in groups or batches without user interaction during 
+execution.
+Operating SystemMain Memory
+MAXSeconday MemoryJob PoolBatch
+Job 1
+Job 2
+Job 3
+Job 4
+Job 5
+Job 6COMPUTER
+LOADE
+DJob 1
+Job 2
+Job 3
+Job 4
+Job 5
+Job 6Process 1
+Process 2
+Process 3
+Process 4RUN

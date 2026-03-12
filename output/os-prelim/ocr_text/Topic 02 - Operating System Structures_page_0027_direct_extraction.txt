@@ -1,0 +1,9 @@
+File Permissions & Ownership
+These commands allow you modify file permissions and ownerships
+•$ chmod 755 script.sh –  Modify file permission. Has the ff 
+options:
+•+w – adds execute command
+•-w – removes write permission
+•755 – Can also give 3 numbers ranging from 0 to 7. Each digit is binary 
+representation of RWX permission of Owner , Group, and Others
+•$ chwon user:group file.txt –  Change the file owner or group.

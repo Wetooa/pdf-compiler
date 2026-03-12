@@ -1,0 +1,7 @@
+Social Engineering Penetration Testing
+Testing how attackers can  trick people , not systems, 
+into giving access or sensitive info.What it is:
+Common social engineering attacks:
+DIGITAL: Phishing, Smishing, Vishing
+PHYISICAL: Tailgating, Eavesdropping, Dumpster Diving
+PSYCHOLOGICAL: Impersonation, Pretexting, Name Dropping

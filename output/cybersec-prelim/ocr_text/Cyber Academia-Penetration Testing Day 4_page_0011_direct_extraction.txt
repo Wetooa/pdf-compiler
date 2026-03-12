@@ -1,0 +1,10 @@
+Techniques
+Command and Control (C2) Channels
+Privilege Escalation
+Lateral Movement
+Data Exfiltration
+BackdooringPassword Cracking
+Covering Tracks
+File System Manipulation
+Network Traffic Manipulation
+Anti-Forensics

@@ -1,0 +1,217 @@
+LEARNING GUIDE: Pages 19-27
+Generated: 2026-03-12 19:55:38
+PDF: Cyber Academia-Penetration Testing Day 2
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+## Learning Guide: Information Gathering
+
+This guide simplifies the process of **Information Gathering**, a crucial phase in penetration testing.
+
+---
+
+### 1. Information Gathering - Overview
+
+**What it is:**
+*   The initial phase of a penetration test (pentest) where information about the target is collected.
+*   Information can be publicly available or internally sourced.
+
+**Why it's important (Purpose):**
+*   **Identify potential attack vectors:** Discover ways to exploit the target.
+*   **Assess security posture:** Understand the target's current security strengths and weaknesses.
+*   **Collect valuable intelligence:** Gather actionable data to plan further testing.
+
+---
+
+### 2. Open-Source Intelligence (OSINT)
+
+**What it is:**
+*   A specific method of intelligence collection.
+*   Involves finding, selecting, and acquiring information **solely from publicly available sources**.
+*   This collected information is then analyzed to produce **actionable intelligence**.
+
+---
+
+### 3. Key Information Gathered (Typical Output)
+
+During information gathering, testers aim to collect details such as:
+
+*   **Services running on target servers:** What applications or functions are active.
+*   **Technology stack used:** Programming languages, frameworks, web servers, databases (e.g., Apache, Nginx, PHP, .NET).
+*   **Important functionalities / Use cases:** Key features or purposes of the target system/application.
+*   **Protection mechanisms in place:** Firewalls, WAFs (Web Application Firewalls), intrusion detection systems, etc.
+
+---
+
+### 4. Practical Examples & Tools
+
+Information gathering often uses specialized tools to collect and display data. Here are examples of common outputs:
+
+*   **Shodan.io (Search Engine for Internet-Connected Devices)**
+    *   **Purpose:** Discover devices, services, and open ports connected to the internet.
+    *   **Output Example:**
+        *   **SSL Certificate details:** Common Name (e.g., `example.pl`), Organization, Issuer, supported SSL/TLS versions (e.g., `TLSv1`). This indicates web server configuration and ownership.
+        *   **Open Ports:** Lists services running on specific ports (e.g., `HTTPS (8443)`, `HTTP (8080)`).
+        *   **Geographical location:** Where the server is hosted.
+    *   **What it reveals:** Running services, server technologies, potential entry points, and organizational details.
+
+*   **Nmap (Network Mapper)**
+    *   **Purpose:** A powerful open-source tool for network discovery and security auditing. It's primarily used for port scanning.
+    *   **Output Example:**
+        *   **Host status:** `Host is up`.
+        *   **Open ports:** Lists ports found to be `open` along with their associated `SERVICE` (e.g., `80/tcp open http`, `443/tcp open https`, `22/tcp open ssh`).
+        *   **Filtered ports:** Ports where Nmap couldn't determine the state due to a firewall.
+    *   **What it reveals:** Which services are actively listening on a server, indicating potential attack surfaces.
+
+*   **Burp Suite (Web Application Security Testing Tool)**
+    *   **Purpose:** Used to intercept, inspect, and modify web traffic between a browser and a web server.
+    *   **Output Example (HTTP History):**
+        *   Shows a list of all HTTP requests and responses made by the browser.
+        *   **Request details:** For example, a `GET /robots.txt HTTP/1.1` request.
+        *   **`robots.txt`:** A file that website owners use to instruct web robots (like search engine crawlers) which pages or files on their site *not* to crawl. Attackers often check this file as it can inadvertently reveal sensitive directories or files that the website owner intended to hide.
+    *   **What it reveals:** Details about the web application's structure, hidden directories, specific files, and how it communicates.
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 19 ---
+Information Gathering
+Pentest phase where publicly -available information or 
+internal information about the target is collected.
+
+--- Page 20 ---
+Information Gathering
+Helps in identifying potential attack vectors
+Helps the tester assess the security posture of the target
+Helps collect valuable intelligence about the target
+
+--- Page 21 ---
+Open
+ -
+Source Intelligence 
+ (OSINT)
+
+--- Page 22 ---
+Open
+ -
+Source Intelligence (OSINT)
+A form of intelligence collection management that involves 
+finding, selecting, and acquiring information from publicly 
+available sources and analyzing it to produce actionable 
+intelligence.
+
+--- Page 23 ---
+OUTPUT
+
+--- Page 24 ---
+OUTPUT
+Services running in the server hosting the target
+Technology stack used by the target
+Important functionalities / use cases of the target
+Protection mechanisms in place
+
+--- Page 25 ---
+DUTPUT
+
+@& https://www.shodan.io/
+
+%% Exploits % Maps & Download Results &l Create Report
+
+Mic ess
+
+& SSL Certificate
+GTS .
+- 15.12 1 Issued By:
+Poland - Common Name: bi pl
+Details - Organization: St - Pz
+0.0.
+Issued To
+- " - Common Name: w le.pl
+China ? - Organization
+United States 1
+Russian Federation 1 Supported SSL Versions
+Pakistan 1 SSLv2, SSLv3, TLSv1
+b Mi 'ess
+HTTPS (8443) 13 & SSL Certificate
+HTTP (8080) 3 e _.___ ._1bec Issued By
+444 3 - Common Name; ! 1
+HTTP (81) 1 S— Y Primary Intermediate Server CA
+
+Details
+- Organization; S
+
+
+
+--- Page 26 ---
+Startin g
+Nmap scan report for I (XX XX XX . XX)
+Host is up (0.15s latency).
+Not shown: 89 filtered ports
+PORT STATE SERVICE
+“'tcp open {1
+open ¢
+open
+Opeﬂ
+open
+open
+open
+open
+open
+open
+open
+
+Nmap 7.90 ( https://nmap.org ) at year-mo-day hh:mm EDT
+
+&
+'O
+d
+
+Nmap done:
+
+
+
+--- Page 27 ---
+OUTPUT
+
+N A
+
+[ Dashboard | Target | Proxy | intruder | Repeater | Sequencer | Decoder | Comparer | Extender | Project
+[sowmp [scope [wovesetotons |
+Filter: Hiding not found items; hiding CSS, image and general binary content; hiding 4xx responses; hiding e
+
+» 0 hups: |' contents
+> [ https://y
+D hups: -  hups:/ /y
+ey =
+%4 :: https:/ /¢
+[ csp ::::m
+@/ A
+
+; D¢ php https:/ /g
+
+» @ ¢ er.html https://y
+
+0 ¢ ahml Wflll ;
+
+D ) m ‘v‘ P 'lllﬂvv-vr----,-v -
+
+» @ ( php
+| Request [ Response _
+Headers | Hex
+
+1 GET /robots.txt HTTP/1.1
+2Host: . " " .net
+
+] Upgrade~Insecure~-Requests: 1
+w I maun Adam hacad vee 4 Accept: */*
+
+CRELEERELEE) |
+
+,_A
+3
+
+
+

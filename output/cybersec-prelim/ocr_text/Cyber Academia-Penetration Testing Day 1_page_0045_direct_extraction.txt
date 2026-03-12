@@ -1,0 +1,18 @@
+SQLMap
+SQLMap  is an open -source 
+penetration testing tool.
+It automates the process of detecting 
+and exploiting SQL injection flaws in 
+a database.
+It can detect and exploit SQL 
+injection vulnerabilities, enumerate 
+databases, tables, and columns, and 
+access the operating system
+It can also detect and crack password 
+hashes.
+It is highly customizable and has a 
+variety of configuration options and 
+settings.
+SQLMap  requires knowledge of SQL 
+injection vulnerabilities and SQL 
+databases to be used effectively.

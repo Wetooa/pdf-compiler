@@ -1,0 +1,6 @@
+PRE
+-
+ENGAGEMENT: Scoping Phases
+Set a Scoping meeting
+Send Scoping Questionnaire
+Generate a Pentest Information Sheet

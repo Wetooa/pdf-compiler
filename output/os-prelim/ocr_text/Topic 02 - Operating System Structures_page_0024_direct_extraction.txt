@@ -1,0 +1,12 @@
+File and Directory Management
+These commands help manage files and directories efficiently.
+•$ cd dir – Moves working directory to dir.
+•You can also refer the special symbols ~ and / here to go to home or root
+•$ mkdir my_folder –  Creates a new directory my_folder .
+•-p – Creates parent folder if it does not exist
+•$ rmdir my_folder –    Deletes the empty directory my_folder .
+•$ rm dir – Deletes file or directory. Has common options:
+•-r – Remove directories and their contents recursively.
+•-f – Force delete without confirmation.
+•-i – Ask before each file deletion.
+•-v – Verbose, show deleted files.

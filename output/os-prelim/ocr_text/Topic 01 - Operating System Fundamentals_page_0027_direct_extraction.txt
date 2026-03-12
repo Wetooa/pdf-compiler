@@ -1,0 +1,7 @@
+Computer System I/O Structure
+•I/O Structure
+•A computer system mainly consists of CPUs and Device Controllers
+•Device Controllers  – Hardware . Responsible for moving data between the 
+peripheral devices to its local buffer storage.
+•Device Drivers – Software.  Part of the Operating System. Provides a 
+uniform interface for the device. 

@@ -1,0 +1,7 @@
+Common Penetration Testing Tools
+
+X
+
+testssl/testssl.sh
+Testing TLS/SSL encryption anywhere on any port * g O W |t n e S S
+

@@ -1,0 +1,20 @@
+Burp Suite: Configuration
+Burp Suite Extensions:
+•PortSwigger  provides access to their API to enable 
+anyone to further extend its capabilities by building 
+their own extensions which can be added to your 
+Burp deployment.
+•These extensions can be found within BurpSuite  and 
+installed directly from the User Interface but can 
+alternatively be downloaded from PortSwigger’s  
+official site and imported manually into your Burp 
+installation.
+•There exists a wide range of extensions that serve 
+to assist testers in automating and simplifying their 
+tests to save on time and effort in identifying 
+vulnerabilities or points of interest on an application 
+throughout their test.
+•It should be noted that these are built and rated by 
+the community. As such, further validation and 
+testing may be required for some of these 
+extensions.

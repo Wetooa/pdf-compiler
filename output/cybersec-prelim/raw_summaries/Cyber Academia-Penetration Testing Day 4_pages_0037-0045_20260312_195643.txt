@@ -1,0 +1,140 @@
+LEARNING GUIDE: Pages 37-45
+Generated: 2026-03-12 19:56:43
+PDF: Cyber Academia-Penetration Testing Day 4
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide for CVSS Base Metrics:
+
+---
+
+## CVSS Base Metrics Learning Guide
+
+This guide covers the fundamental CVSS (Common Vulnerability Scoring System) Base Metrics, which help assess the inherent characteristics of a vulnerability that are constant over time and across user environments.
+
+---
+
+### **1. Attack Complexity (AC)**
+*   Describes conditions *beyond the attacker's control* that must exist to exploit the vulnerability.
+*   *Example:* A complex exploit might require specific system configurations or race conditions.
+
+### **2. Privileges Required (PR)**
+*   Defines the level of *privileges* an attacker must possess *before* successfully exploiting the vulnerability.
+*   *Examples:* None (no privileges), Low (basic user account), High (administrative access).
+
+### **3. User Interaction (UI)**
+*   Captures whether a *human user* (other than the attacker) must *participate* in the successful compromise of the vulnerable component.
+*   *Example:* Phishing requires user interaction (clicking a link), while a network service exploit might not.
+
+### **4. Scope (S)**
+*   Indicates if a vulnerability in one component *impacts resources outside its security scope*.
+*   *Unchanged Scope:* The vulnerability only affects resources within the same security authority.
+*   *Changed Scope:* The vulnerability allows an attacker to impact resources protected by a different security authority (e.g., escaping a sandbox).
+
+### **5. Confidentiality (C)**
+*   Measures the impact on the *confidentiality of information* managed by the affected component due to a successful exploit.
+*   **Confidentiality:** Limiting information access and disclosure to authorized users only.
+*   *Example:* Unauthorized viewing of sensitive data.
+
+### **6. Integrity (I)**
+*   Measures the impact on the *integrity of information* due to a successful exploit.
+*   **Integrity:** Ensuring the trustworthiness, accuracy, and truthfulness of information.
+*   *Example:* Unauthorized modification or deletion of data.
+
+### **7. Availability (A)**
+*   Measures the impact on the *availability of the impacted component itself* resulting from a successful exploit.
+*   **Availability:** Ensuring the component (e.g., a service like web, database, email) is operational and accessible to authorized users.
+*   *Note:* Unlike Confidentiality/Integrity (which focus on data), Availability focuses on the *operational status* of the component or service.
+*   *Example:* A denial-of-service attack preventing legitimate users from accessing a web server.
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 37 ---
+CVSS Base Metrics 
+ –
+ 
+Attack Complexity
+Attack Complexity(AC ): This metric describes the conditions 
+beyond the attacker’s control that must exist in order to 
+exploit the vulnerability.
+
+
+--- Page 38 ---
+CVSS Base Metrics 
+ –
+ 
+Attack Complexity
+Privileges Required : This metric describes the level of 
+privileges an attacker must possess before successfully 
+exploiting the vulnerability
+
+
+--- Page 39 ---
+CVSS Base Metrics 
+ –
+ 
+User Interaction
+User Interaction : This metric captures the requirement for a 
+human user, other than the attacker, to participate in the 
+successful compromise of the vulnerable component.
+
+
+--- Page 40 ---
+CVSS Base Metrics 
+ –
+ 
+Scope
+Scope : The Scope metric captures whether a 
+vulnerability in one vulnerable component impacts 
+resources in components beyond its security scope.
+
+
+--- Page 41 ---
+CVSS Base Metrics 
+ –
+ 
+Confidentiality
+Confidentiality : This metric measures the impact to the 
+confidentiality of the information resources managed by a 
+software component due to a successfully exploited vulnerability. 
+Confidentiality refers to limiting information access and disclosure 
+to only authorized users, as well as preventing access by, or 
+disclosure to, unauthorized ones.
+
+
+--- Page 42 ---
+CVSS Base Metrics 
+ –
+ 
+Integrity
+Integrity : This metric measures the impact to integrity of a 
+successfully exploited vulnerability. Integrity refers to the 
+trustworthiness and veracity of information
+
+
+--- Page 43 ---
+CVSS Base Metrics 
+ –
+ 
+Availability
+Availability : This metric measures the impact to the availability of the 
+impacted component resulting from a successfully exploited 
+vulnerability. While the Confidentiality and Integrity impact metrics apply 
+to the loss of confidentiality or integrity of data (e.g., information, files) 
+used by the impacted component, this metric refers to the loss of 
+availability of the impacted component itself, such as a networked 
+service (e.g., web, database, email)
+
+
+--- Page 44 ---
+Demo of Reporting
+
+--- Page 45 ---
+Thank you!!
+Next: 
+Cyber Academia LAB
+

@@ -1,0 +1,384 @@
+LEARNING GUIDE: Pages 37-40
+Generated: 2026-03-12 20:00:58
+PDF: Topic 02 - Operating System Structures
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text:
+
+---
+
+## Shell Scripting Essentials: A Learning Guide
+
+This guide covers fundamental concepts and components of shell scripting.
+
+### 1. What is a Shell Script?
+
+*   A shell script is a **text file** containing a series of commands.
+*   These commands are **executed sequentially** by a **shell interpreter** (e.g., Bash).
+
+### 2. Basic Script Structure
+
+*   **Shebang:** The very first line in a script, `#!/bin/bash`, tells the system which interpreter to use (in this case, Bash).
+*   **Comments:** Lines starting with `#` are ignored by the interpreter. They are used for explanations.
+    ```bash
+    #!/bin/bash
+    # This is a comment explaining the script's purpose
+    ```
+*   **Basic Output:** The `echo` command prints text to the terminal.
+    ```bash
+    echo "Hello, World!"
+    echo "Listing files:"
+    ls -l
+    ```
+
+### 3. Variables
+
+*   **Definition:** Variables store data.
+*   **Assignment:** Assign a value using `name="value"` (no spaces around `=`).
+*   **Usage (Expansion):** Access the variable's value by prefixing its name with `$`.
+    ```bash
+    name="Jefferson"
+    echo "Hello, $name!" # Output: Hello, Jefferson!
+    ```
+
+### 4. Input and Output
+
+*   **Output (echo):** As seen above, `echo` displays information.
+*   **Input (read):** The `read` command waits for user input from the keyboard and stores it in a specified variable.
+    ```bash
+    echo "Enter your name:"
+    read user_name
+    echo "Hello, $user_name!"
+    ```
+
+### 5. Control Statements (Conditional Logic & Loops)
+
+Control statements allow scripts to make decisions and repeat actions.
+
+#### A. Comparison Operations
+
+Used in conditional statements to compare values.
+
+*   **Numbers:**
+    *   `-eq`: equal to
+    *   `-ne`: not equal to
+    *   `-gt`: greater than
+    *   `-lt`: less than
+    *   `-ge`: greater than or equal to
+    *   `-le`: less than or equal to
+*   **Strings:**
+    *   `=`: equal to
+    *   `!=`: not equal to
+
+#### B. `if`/`else` (Conditional Execution)
+
+Executes different blocks of code based on a condition.
+*   Conditions are typically enclosed in `[ ]` or `[[ ]]`.
+*   `then` starts the block for a true condition.
+*   `else` starts the block for a false condition.
+*   `fi` ends the `if` statement.
+
+```bash
+if [ "$name" == "Jefferson" ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+```
+
+#### C. `for` Loop (Iteration)
+
+Repeats a block of code for each item in a list or a range.
+*   `do` starts the loop body.
+*   `done` ends the loop.
+
+```bash
+for i in {1..5}; do # Loop from 1 to 5
+  echo "Iteration $i"
+done
+```
+
+#### D. `while` Loop (Conditional Iteration)
+
+Repeats a block of code as long as a condition remains true.
+*   `do` starts the loop body.
+*   `done` ends the loop.
+*   **Arithmetic Expansion (`$(( ))`):** Used for mathematical calculations within the script.
+    ```bash
+    count=1
+    while [ "$count" -le 5 ]; do
+      echo "Count: $count"
+      count=$((count + 1)) # Increment count
+    done
+    ```
+
+### 6. Functions
+
+*   **Purpose:** Organize reusable blocks of code, making scripts modular and easier to manage.
+*   **Definition:** Define a function with `function_name() { ... }`.
+*   **Arguments:**
+    *   `$1`, `$2`, etc., represent the arguments passed to the function when it's called. `$1` is the first argument, `$2` the second, and so on.
+*   **Syntax:** The opening brace `{`, function body, and closing brace `}` are typically on separate lines.
+
+```bash
+greet() {
+  echo "Hello, $1!" # $1 refers to the first argument passed
+}
+
+greet "Jefferson" # Calls the function, passing "Jefferson" as $1
+```
+
+### 7. Exit Status
+
+*   **Purpose:** Every command or script returns an "exit status" (an integer) upon completion. This indicates whether the command succeeded or failed.
+*   **Value:**
+    *   `0`: Indicates success.
+    *   Non-zero (e.g., `1`, `2`): Indicates an error or failure.
+*   **Access:** The special variable `$?` holds the exit status of the *last executed command*.
+
+```bash
+mkdir test_dir        # Try to create a directory
+echo "Exit status: $?" # Prints 0 if successful, non-zero if it failed (e.g., dir already exists)
+```
+
+### 8. Expansion Operators (`$`)
+
+The `$` symbol is used for various types of "expansion" where a symbol or expression is replaced by its value.
+
+*   `$name`: **Variable Expansion** – Returns the value of the variable `name`.
+*   `$()`: **Command Expansion** – Executes the command inside the parentheses and substitutes its output.
+    *   Example: `echo "Current date: $(date)"`
+*   `$(())`: **Arithmetic Expansion** – Performs arithmetic calculations.
+    *   Example: `result=$((5 + 5))`
+*   `$$`: **PID of Current Shell** – Returns the Process ID of the shell running the script.
+*   `$?`: **Exit Status** – Returns the exit status of the last executed command.
+*   `$1`, `$2`, ...: **Positional Arguments** – Within a script or function, these refer to the arguments passed to it (e.g., `script.sh arg1 arg2` would have `$1="arg1"` and `$2="arg2"`).
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 37 ---
+Shell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+6.Control Statements  
+–    Well duuhh ~~
+Comparison Operations
+•Numbers:
+•-eq  equal
+•-ne  not equal
+•-gt  greater than
+•-lt  less than
+•-ge  greater or equal
+•-le  less or equal
+thescript.sh#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successful
+
+--- Page 38 ---
+Shell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+6.Control Statements  
+–    Well duuhh ~~
+Comparison Operations
+•Strings:
+•=    equal
+•!=   not equal
+thescript.sh#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successful
+
+--- Page 39 ---
+#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count" -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successfulShell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+7.Functions  –     help 
+organize reusable code 
+blocks.
+•$1 represents the first 
+argument passed to the 
+function.
+•Also expects the opening 
+bracket, body, and closing to 
+be on different lines
+thescript.sh
+
+--- Page 40 ---
+#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successfulShell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+9.Expansion Operator 
+($) –     Returns the 
+actual value of a variable. 
+Can be used as:
+•$() -  Command Expansion
+•$((5+5)) -  Arithmetic Expansion
+•$name – Variable Expansion
+•$$ - Get the PID of current shell
+•$? – Exit status of last command
+•$1, $2, … - Positional Arguments
+thescript.sh
+

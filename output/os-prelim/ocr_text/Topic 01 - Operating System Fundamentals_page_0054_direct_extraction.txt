@@ -1,0 +1,15 @@
+Operating Systems
+Operating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTINGI/O 
+RequestBatch Operating System is NOT 
+interactiveBatch Operating Systems
+•Processes similar jobs in groups or batches without user interaction during execution.
+•Introduced Multiprogramming
+•Utilization of CPU by organizing jobs (code and data) so that the CPU is always 
+busy
+•multiple processes are kept in memory at the same time
+•Key defining feature:
+           Utilization

@@ -1,0 +1,11 @@
+This type of test audits for security weaknesses in 
+client -side applications. 
+Client
+ -
+Side Penetration Testing
+What it is:
+Client -side applications examples: 
+•Putty
+•Email Clients
+•Web Browsers
+•Third -party plugins and librariesCommon Targets:

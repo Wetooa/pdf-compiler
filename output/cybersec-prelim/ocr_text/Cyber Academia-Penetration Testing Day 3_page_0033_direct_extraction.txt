@@ -1,0 +1,15 @@
+Active Testing
+TESTING FOR ERROR HANDLING
+Testing  for Improper  Error  Handling :
+•Identify  existing  error  output
+•Analyze  the different  output  
+returned
+API TESTING
+Testing  GraphQL :
+•Assess  that a secure  and 
+production -ready  configuration  is 
+deployed . 
+•Validate  all input  fields  against  
+generic  attacks .
+•Ensure  that proper  access  controls  
+are applied .

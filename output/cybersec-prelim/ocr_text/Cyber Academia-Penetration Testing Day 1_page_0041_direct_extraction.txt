@@ -1,0 +1,6 @@
+TestSSL
+➢A command -line tool used for testing SSL/TLS security of web servers
+➢Used to identify vulnerabilities in SSL/TLS configurations, including weak 
+ciphers, certificate issues, and protocol vulnerabilities.
+➢Used to ensure that web servers comply with industry standards and regulations, 
+such as PCI DSS, HIPAA, and GDPR What it is:

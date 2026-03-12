@@ -1,0 +1,13 @@
+Burp Suite: Configuration
+Connection Settings:
+•When testing a Web Application which 
+requires Platform Authentication, Burp 
+can be configured to automatically 
+perform Basic, NTLMv1 and NTLMv2 
+Authentication for requests.
+•Additionally, testers are allowed the 
+option to set an upstream proxy server. 
+This can be useful when they require 
+traffic to be sent through to another 
+proxy such as in the case when 
+handling Kerberos authentication.

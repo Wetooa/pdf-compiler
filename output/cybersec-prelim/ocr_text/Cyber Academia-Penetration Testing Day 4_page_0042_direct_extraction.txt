@@ -1,0 +1,7 @@
+CVSS Base Metrics 
+ –
+ 
+Integrity
+Integrity : This metric measures the impact to integrity of a 
+successfully exploited vulnerability. Integrity refers to the 
+trustworthiness and veracity of information

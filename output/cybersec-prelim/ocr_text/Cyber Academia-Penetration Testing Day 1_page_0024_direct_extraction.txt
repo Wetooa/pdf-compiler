@@ -1,0 +1,14 @@
+A05:2025 
+ –
+ 
+Injection
+•Happens when untrusted user input issent directly toaninterpreter
+•Theapplication ends upexecuting attacked -controlled commandsWhat it is:
+Common Injection Types:
+•SQL Injection
+•Cross -Site Scripting (XSS)
+•Command Injection
+Why it's still in the Top 5:
+•Injection isvery common andwidely tested
+•Often easy toexploit ifinput validation ismissing
+•Canlead todata theft, account takeover, orfullsystem compromise

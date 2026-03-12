@@ -1,0 +1,38 @@
+Active Testing : Session Management Testing
+Testing for Session 
+Management Schema
+•Gather session tokens, for 
+the same user and for 
+different users where 
+possible. 
+•Analyze and ensure that 
+enough randomness exists 
+to stop session forging 
+attacks. 
+•Modify cookies that are not 
+signed and contain 
+information that can be 
+manipulated.
+Testing for Cookie Attributes
+•Ensure that the proper 
+security configuration is set 
+for cookies.
+Testing for Session Fixation
+•Analyze the authentication 
+mechanism and its flow. 
+•Force cookies and assess 
+the impact.
+Testing for Exposed Session 
+Variables
+•Ensure  that proper  
+encryption  is implemented . 
+•Review  the caching  
+configuration . 
+•Assess  the channel  and 
+methods’  security .
+Testing for Cross Site Request 
+Forgery
+•Determine  whether  it is 
+possible  to initiate  requests  
+on a user’s  behalf  that are 
+not initiated  by the user.

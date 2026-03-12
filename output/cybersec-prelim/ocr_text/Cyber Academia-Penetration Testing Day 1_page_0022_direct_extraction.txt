@@ -1,0 +1,13 @@
+A03:2025 
+ –
+ 
+Software Supply Chain Failures
+•Risks introduced through third -party libraries, dependencies, build tools, orCI/CD pipelines
+•Youtrust thecode, butthecode wascompromisedWhat it is:
+Why it's #3
+•Apps rely onexternal dependencies
+•One compromised component canaffect thousands ofapplications
+•Fewer incidents, butvery high impact when ithappens
+Examples:
+•Compromised open -source libraries
+•Malicious updates inbuild pipelines

@@ -1,0 +1,37 @@
+Active Testing : Client
+ -
+Side Testing
+Testing for Clickjacking
+•Understand security 
+measures in place
+•Assess how strict the 
+security measures are and 
+if they are bypassable
+Testing Web Sockets
+•Identify the usage of Web 
+Sockets
+•Assess its implementation 
+by using the same tests on 
+normal HTTP channels
+Test Web Messaging
+•Assess the security of the 
+message’s origin
+•Validate that it’s using safe 
+methods and validating its 
+input
+Test Browser Storage
+•Determine whether the 
+website is storing sensitive 
+data in client -side storage
+•The code handling of the 
+storage objects should be 
+examined for possibilities 
+of injection attacks, such as 
+utilizing invalidated input 
+or vulnerable libraries
+Test Cloud Storage
+•Locate sensitive data 
+across the system
+•Assess the leakage of 
+sensitive data through 
+various techniques

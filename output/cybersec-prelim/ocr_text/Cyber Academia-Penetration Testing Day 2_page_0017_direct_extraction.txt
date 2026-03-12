@@ -1,0 +1,22 @@
+SCOPE and the Rules of Engagement
+Define the rules of engagement in a written agreement that 
+is signed by both parties.
+Outline the testing methods and techniques that will be used 
+during the engagement.
+Specify the scope of the engagement, including any 
+limitations or exclusions.
+Identify any testing restrictions, such as prohibited actions or 
+targets.
+Define the level of access that the testing team will have to 
+systems and data.
+Define the communication and escalation procedures in case 
+of any issues or incidents.
+Define the confidentiality and data protection requirements 
+for the engagement.
+Identify the roles and responsibilities of both parties, 
+including the testing team and the organization being tested.
+The type and scope of testing
+Client contact details
+Sensitive data handling
+Client IT team notifications
+Status meeting and reports

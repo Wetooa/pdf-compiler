@@ -1,0 +1,9 @@
+•Browsers
+•Websites
+•Web Applications
+•Plugins
+Web Application Penetration Testing
+What it is:
+This type of test audits for security problems associated with the insecure 
+design, development, or coding of a web app
+What it focuses on:

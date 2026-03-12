@@ -1,0 +1,16 @@
+NMAP
+Nmap (Network Mapper) is a popular open -source tool used for network exploration and 
+security auditing.
+KEY FEATURES:
+•Port scanning : Nmap can scan a network to identify open ports and the services running 
+on them.
+•Host discovery : Nmap can identify active hosts on a network by sending packets and 
+analyzing the responses.
+•Service detection : Nmap can identify the software and version numbers of services 
+running on a network.
+•OS detection : Nmap can identify the operating system running on a host.
+•Scriptable interaction : Nmap can be used with scripts to automate tasks and extend its 
+capabilities.
+INSTALLATION:
+Nmap is installed in the default Kali Linux but is also available in 
+https://nmap.org/download.html

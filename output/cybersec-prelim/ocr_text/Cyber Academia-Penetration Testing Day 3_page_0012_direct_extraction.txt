@@ -1,0 +1,10 @@
+OWASP Testing Methodology
+The OWASP Web Application Security Testing method is based 
+on the black box approach. The tester knows nothing or has very 
+little information about the application to be tested.
+The testing model consists of:
+Tester  – Who performs the testing activities 
+Tools and Methodology – The core of this 
+Testing Guide Project
+Application  – The black box to test
+TESTING MODEL

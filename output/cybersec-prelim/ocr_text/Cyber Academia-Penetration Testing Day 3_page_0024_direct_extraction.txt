@@ -1,0 +1,21 @@
+Active Testing : Session Management Testing
+Testing for Logout 
+Functionality
+•Assess the logout UI. 
+•Analyze the session 
+timeout and if the session 
+is properly killed after 
+logout.
+Testing Session Timeout
+•Validate that a hard session 
+timeout exists.
+Testing for Session Hijacking
+•Identify  vulnerable  session  
+cookies . Hijack  vulnerable  
+cookies  and assess  the risk 
+level .
+Testing for Session Puzzling
+•Identify all session 
+variables. 
+•Break the logical flow of 
+session generation.

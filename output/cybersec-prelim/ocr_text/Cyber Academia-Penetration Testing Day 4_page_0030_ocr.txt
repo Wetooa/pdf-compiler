@@ -1,0 +1,19 @@
+REPORTING: Pentest Technical Report
+
+Impact
+
+A victim user could be tricked into using an attacker's provided installation URL. The fact that the domain
+
+and the resource are actually hosted on g @e* 2= 8 may reinforce the perception that the
+installation script is legitimate.
+
+Complexity
+An attacker would need to trick the victim into installing tele using a malicious link.
+
+Remediation
+
+Sanitize version numbers and server roles before using user-supplied values within bash script
+templates.
+
+Resources
+

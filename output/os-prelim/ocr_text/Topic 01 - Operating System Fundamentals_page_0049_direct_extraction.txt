@@ -1,0 +1,16 @@
+Types of Operating System
+Batch Operating Systems
+•Processes similar jobs in groups or batches without user interaction during execution.
+•Introduced Multiprogramming
+•Utilization of CPU by organizing jobs (code and data) so that the CPU is always 
+busy
+•multiple processes are kept in memory at the same time
+•Key defining feature:
+           Utilization
+Operating SystemMain Memory
+MAXProcess 1
+Process 2
+Process 3
+Process 4EXECUTINGI/O 
+RequestSwitches to another job to 
+avoid CPU idle

@@ -1,0 +1,8 @@
+PRE
+-
+ENGAGEMENT: Sample Scoping Questions 
+for Web Pentest
+How many web applications are being assessed?
+How many static pages are being assessed (approximate)?
+How many dynamic pages are being assessed (approximate)?
+How many user roles does the application have?

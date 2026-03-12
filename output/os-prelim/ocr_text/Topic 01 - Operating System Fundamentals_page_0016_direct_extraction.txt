@@ -1,0 +1,5 @@
+Computer System Storage Structures
+•Higher == Faster
+•Faster == More expensive per bit
+•Volatile   - anything above SSD
+•Nonvolatile  – SSD and below

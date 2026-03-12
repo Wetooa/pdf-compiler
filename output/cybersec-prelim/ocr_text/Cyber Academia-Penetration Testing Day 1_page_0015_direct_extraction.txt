@@ -1,0 +1,11 @@
+STANDARDS
+ 0
+2
+•
+Overview of Penetration Testing Standards
+•
+OWASP Top 10
+•
+Technical Assessment Techniques
+•
+Post Assessment Activities

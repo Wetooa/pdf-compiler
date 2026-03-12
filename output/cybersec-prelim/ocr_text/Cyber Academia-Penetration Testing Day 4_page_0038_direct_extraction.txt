@@ -1,0 +1,7 @@
+CVSS Base Metrics 
+ –
+ 
+Attack Complexity
+Privileges Required : This metric describes the level of 
+privileges an attacker must possess before successfully 
+exploiting the vulnerability

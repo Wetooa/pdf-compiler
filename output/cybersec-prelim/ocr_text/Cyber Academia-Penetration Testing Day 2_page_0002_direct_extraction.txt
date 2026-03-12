@@ -1,0 +1,27 @@
+INTRODUCTION TO PENETRATION TESTING 
+CURRICULUM
+•Overview of Penetration 
+Testing
+•Purpose and Importance
+•Types of Penetration Testing
+•Legal and Ethical 
+Considerations I. Introduction II. Standards
+•Overview of Penetration Testing 
+Tools
+•Common Penetration Testing 
+Tools
+•Installation and Configuration of 
+ToolsIII. Tools
+•Overview
+•Pre-engagement 
+Interaction
+•Information Gathering
+•Vulnerability Analysis
+•Exploitation
+•Post -Exploitation
+•ReportingIV. Penetration Testing Phases•Overview of Penetration 
+Testing Standards
+•OWASP Top 10
+•Technical Assessment 
+Techniques
+•Post Assessment Activities

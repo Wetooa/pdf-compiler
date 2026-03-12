@@ -1,0 +1,456 @@
+LEARNING GUIDE: Pages 19-38
+Generated: 2026-03-12 20:00:43
+PDF: Topic 02 - Operating System Structures
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text:
+
+---
+
+# Linux Command Line Learning Guide
+
+## 1. User & Shell Information
+
+### Checking Current User
+-   **`whoami`**: Displays the current user's username.
+    *   *Example:* `mario`
+-   **`id -u`**: Displays the current user's User ID (UID).
+    *   *Note:* The root user's ID is always `0`.
+    *   *Example:* `1000` (for a regular user), `0` (for root)
+
+### Identifying & Changing Shell
+-   **`which $SHELL`**: Shows the full path of your current shell (e.g., `/bin/bash`).
+-   **Changing Your Default Shell:**
+    *   **`chsh`**: Prompts you to change your login shell.
+    *   **`chsh -s /bin/bash`**: Directly sets your default shell to Bash.
+
+## 2. File and Directory Management
+
+### Navigating & Listing
+-   **`pwd`** (Print Working Directory): Displays the absolute path of your current directory.
+-   **`ls`** (List): Displays files and directories in the current location.
+    *   **Common Options:**
+        *   **`-l`**: Long format, showing detailed information (permissions, owner, size, date).
+        *   **`-a`**: Show all files, including hidden ones (which start with a `.`).
+        *   **`-h`**: Human-readable file sizes (e.g., `11K`, `2M`).
+        *   **`-R`**: Recursive, lists contents of subdirectories.
+    *   **Combine Options:** `ls -lah` (long, all, human-readable).
+
+### Understanding `ls -l` Output
+*Example Output:* `-rwxrw-r-- 3 testuser usergroup 11K Feb 14 19:30 file.txt`
+1.  **File Type & Permissions (`-rwxrw-r--`)**:
+    *   First character: `-` for a regular file, `d` for a directory.
+    *   Next nine characters: Permissions for **owner** (first three), **group** (middle three), and **others** (last three).
+        *   `r`: read permission
+        *   `w`: write permission
+        *   `x`: execute permission
+        *   `-`: no permission
+2.  **Hard Links (`3`)**: Number of direct links to the file/directory.
+3.  **Owner (`testuser`)**: The user who owns the file/directory.
+4.  **Group (`usergroup`)**: The group that owns the file/directory.
+5.  **File Size (`11K`)**: Size of the file (human-readable if `-h` is used).
+6.  **Date Modified (`Feb 14 19:30`)**: Last modification date and time.
+7.  **File Name (`file.txt`)**: The name of the file or directory.
+
+### Creating & Deleting
+-   **`cd <directory>`** (Change Directory): Moves your current working directory.
+    *   **`cd ~`**: Go to your home directory.
+    *   **`cd /`**: Go to the root directory.
+    *   **`cd ..`**: Go up one level to the parent directory.
+-   **`mkdir <my_folder>`** (Make Directory): Creates a new directory.
+    *   **`-p`**: Creates parent directories as needed (e.g., `mkdir -p a/b/c` will create `a`, then `b` inside `a`, then `c` inside `b`).
+-   **`rmdir <my_folder>`** (Remove Directory): Deletes an **empty** directory.
+-   **`rm <file_or_dir>`** (Remove): Deletes files or directories.
+    *   **Common Options:**
+        *   **`-r`** (Recursive): Required to delete directories and their contents.
+        *   **`-f`** (Force): Deletes without confirmation. **Use with caution!**
+        *   **`-i`** (Interactive): Prompts for confirmation before each deletion.
+        *   **`-v`** (Verbose): Shows details of deleted files.
+
+### Copying & Moving
+-   **`cp <source> <destination>`** (Copy): Copies files or directories.
+    *   **Common Options:**
+        *   **`-r`** (Recursive): Required to copy directories and their contents.
+        *   **`-i`** (Interactive): Prompts before overwriting an existing file.
+        *   **`-u`** (Update): Copies only if the source is newer than the destination, or if the destination file doesn't exist.
+        *   **`-v`** (Verbose): Shows progress of copying.
+-   **`mv <source> <destination>`** (Move / Rename): Moves files/directories or renames them.
+    *   **Common Options:**
+        *   **`-i`** (Interactive): Prompts before overwriting.
+        *   **`-u`** (Update): Moves only if the source is newer than the destination, or if the destination file doesn't exist.
+        *   **`-v`** (Verbose): Shows progress.
+
+## 3. File Viewing and Editing
+
+### Viewing File Contents
+-   **`cat <file.txt>`** (Concatenate and Print): Displays the entire contents of a file to the screen.
+-   **`less <file.txt>`**: Displays file contents page by page, allowing scrolling.
+    *   **Navigation:**
+        *   `SPACEBAR`: Scroll down one page.
+        *   `b`: Scroll up one page.
+        *   `/keyword`: Search for a specific keyword.
+        *   `q`: Quit `less`.
+
+### Editing Files
+-   **`nano <file.txt>`**: Opens the file in the Nano text editor.
+    *   **Shortcuts:**
+        *   `CTRL-X`: Exit (prompts to save if changes were made).
+        *   `CTRL-O`: Save changes.
+        *   `CTRL-W`: Search for text.
+
+## 4. File Permissions & Ownership
+
+### Modifying File Permissions (`chmod`)
+-   **`chmod <permissions> <file>`**: Changes the read, write, and execute permissions of a file or directory.
+    *   **Symbolic Mode:**
+        *   `chmod +w script.sh`: Adds write permission.
+        *   `chmod -w script.sh`: Removes write permission.
+        *   `u/g/o/a`: User (owner), Group, Others, All.
+        *   `+/-/=`: Add, Remove, Set permissions.
+        *   `r/w/x`: Read, Write, Execute.
+        *   *Example:* `chmod u+x script.sh` (add execute for owner).
+    *   **Octal (Numeric) Mode:** Uses three digits (0-7), representing permissions for **Owner**, **Group**, and **Others**.
+        *   **Values:**
+            *   `4` = Read (`r`)
+            *   `2` = Write (`w`)
+            *   `1` = Execute (`x`)
+            *   **Combinations:** `7` = `rwx` (4+2+1), `6` = `rw-` (4+2), `5` = `r-x` (4+1), `4` = `r--` (4).
+        *   *Example:* `chmod 755 script.sh`
+            *   `7` (owner): `rwx`
+            *   `5` (group): `r-x`
+            *   `5` (others): `r-x`
+
+### Changing File Ownership (`chown`)
+-   **`chown <user>:<group> <file.txt>`**: Changes the owner and/or group of a file or directory.
+    *   *Example:* `chown newuser:newgroup file.txt`
+    *   *Example:* `chown newuser file.txt` (changes owner only)
+    *   *Example:* `chown :newgroup file.txt` (changes group only)
+
+## 5. Process Management
+
+### Monitoring Processes
+-   **`ps aux`**: Lists all active processes for all users, showing detailed information.
+    *   **`a`**: Show processes for all users.
+    *   **`u`**: Show detailed user-oriented format.
+    *   **`x`**: Show processes not attached to a terminal.
+-   **`top`**: Displays a real-time, dynamic view of running processes and system resource usage (CPU, memory).
+    *   **Navigation within `top`:**
+        *   `q`: Quit `top`.
+        *   `k`: Kill a process (prompts for PID).
+        *   `M`: Sort processes by memory usage.
+
+### Terminating Processes (`kill`)
+-   **`kill <PID>`**: Sends a signal to terminate a process specified by its Process ID (PID).
+    *   **Common Signals:**
+        *   **`-9`** (SIGKILL): Forces immediate termination; cannot be caught or ignored by the process. Use as a last resort.
+        *   **`-15`** (SIGTERM): Graceful termination request; allows the process to clean up before exiting. This is the default and preferred method.
+
+## 6. Shell Scripting Fundamentals
+
+A **Shell Script** is a text file containing a series of commands executed sequentially by a shell interpreter.
+
+### Essential Components of a Shell Script
+
+1.  **Shebang (`#!`)**:
+    *   The very first line of a script.
+    *   Specifies the interpreter to use for running the script (e.g., `#!/bin/bash`).
+    *   *Importance:* Ensures the script executes with the intended shell.
+
+2.  **Comments (`#`)**:
+    *   Lines starting with `#` (except the shebang) are ignored by the shell.
+    *   Used to add explanations, notes, or temporarily disable code.
+    *   *Example:* `# This is a comment explaining the next command.`
+
+3.  **Commands**:
+    *   Standard Unix/Linux commands (e.g., `echo`, `ls`, `mkdir`).
+    *   Executed in order from top to bottom.
+    *   *Example:* `echo "Hello, World!"`
+
+4.  **Variables**:
+    *   Used to store data.
+    *   **Assignment**: `variable_name="value"`
+        *   **Important:** No spaces around the `=` sign during assignment.
+        *   *Example:* `name="Jefferson"` (Correct) vs. `name = "Jefferson"` (Incorrect)
+    *   **Accessing Value**: Use a `$` before the variable name (e.g., `echo "Hello, $name!"`).
+
+5.  **Input and Output**:
+    *   **Output**:
+        *   `echo <text>`: Prints text or variable values to the standard output.
+    *   **Input**:
+        *   `read <variable_name>`: Reads a line of input from the user and stores it in the specified variable.
+        *   *Example:*
+            ```bash
+            echo "Enter your name:"
+            read user_name
+            echo "Hello, $user_name!"
+            ```
+
+6.  **Control Statements**:
+    *   **Purpose**: Control the flow of execution based on conditions or for repeating tasks.
+    *   **Syntax & Spacing**: Keywords like `if`, `then`, `else`, `fi`, `for`, `do`, `done`, `while` typically require new lines. A semicolon `;` can be used to separate commands on a single line.
+    *   **Condition Checking**:
+        *   Can use the `test` command or square brackets `[ ]`.
+        *   *Important:* Spaces are critical inside `[ ]` (e.g., `[ "$name" == "Jefferson" ]`).
+        *   **Examples**: `test "$name" == "Jefferson"` or `[ "$name" == "Jefferson" ]`
+
+    *   **Comparison Operations (Numbers)**: Used within `[ ]` or `test`.
+        *   `-eq`: Equal to
+        *   `-ne`: Not equal to
+        *   `-gt`: Greater than
+        *   `-lt`: Less than
+        *   `-ge`: Greater than or equal to
+        *   `-le`: Less than or equal to
+
+    *   **Comparison Operations (Strings)**: Used within `[ ]` or `test`.
+        *   `=`: Equal to
+        *   `!=`: Not equal to
+
+    *   **If-Else Statement**:
+        ```bash
+        if [ "$name" == "Jefferson" ]; then
+            echo "Welcome, $name!"
+        else
+            echo "Access Denied!"
+        fi
+        ```
+
+    *   **For Loop**: Iterates over a list of items.
+        ```bash
+        for i in {1..5}; do
+            echo "Iteration $i"
+        done
+        ```
+
+    *   **While Loop**: Executes commands as long as a condition is true.
+        ```bash
+        count=1
+        while [ "$count" -le 5 ]
+        do
+            echo "Count: $count"
+            count=$((count + 1)) # Increment count
+        done
+        ```
+
+7.  **Functions**:
+    *   Blocks of code that can be called by name.
+    *   **Definition**:
+        ```bash
+        greet() {
+            echo "Hello, $1!"
+        }
+        ```
+    *   **Calling**: `greet "Jefferson"`
+    *   **Arguments**: `$1`, `$2`, etc., refer to the arguments passed to the function.
+
+8.  **Exit Status (`$?`)**:
+    *   `echo $?`: Prints the exit status of the *most recently executed command*.
+    *   `0`: Indicates successful execution.
+    *   Non-zero value (e.g., `1`, `2`): Indicates an error or failure.
+    *   *Example:*
+        ```bash
+        mkdir test_dir # This command creates a directory
+        echo "Exit status: $?" # Prints 0 if mkdir was successful
+        ```
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 19 ---
+Checking Current User
+Checking username:
+mario@host~$  
+whoami
+mario
+root@host~#  whoami
+root
+You can use the whoami  
+command to print the 
+current user’s usernameChecking username:
+mario@host~$  id -u
+1000
+root@host~#   id -u
+0
+You can also check the id via 
+ud –u. 
+Root ID is always 0
+
+--- Page 20 ---
+Identifying SHELL
+$ which $SHELL
+Shows the path of the current shell ( Will be used later on scripting ).
+Let’s use bash! If your device is not using bash, simply switch 
+via:
+$ chsh 
+or , to specify the path directly:
+$ chsh -s /bin/bash
+
+--- Page 21 ---
+File and Directory Management
+These commands help manage files and directories 
+efficiently.
+•$ pwd - Displays the current directory path.
+•$ ls - Displays files and directories. Has the following 
+options:
+•-l – Long format showing details (permissions, owner , size)
+•-a – Show all files, including those hidden (starts with .)
+•-h – Human readable format. 
+•-R – Recursive, lists contents of subdirectories.
+•You can use multiple options, e.g.: -lah
+-rwxrw-r-- 3 testuser usergroup 11K Feb 14 19:30 file.txtLong Format:
+
+--- Page 22 ---
+File and Directory Management
+Understanding the 
+-rwxrw-r--  3 testuser  usergroup  11K Feb 14 19:30  file.txtLong Format:
+File Type
+d is directory
+- is fileRead, Write, Execute 
+Permissions 
+(owner , group, others)
+- means noHard Links
+Number of direct 
+links inside, including 
+self  (.) and parent (..)
+
+--- Page 23 ---
+File and Directory Management
+Understanding the 
+-rwxrw-r--  3 testuser  usergroup  11K Feb 14 19:30  file.txtOwner of the file/directory
+Rights: rwx
+Group that owns the file/directory
+Rights: rw-File SizeLong Format:
+Date Modified
+
+--- Page 24 ---
+File and Directory Management
+These commands help manage files and directories efficiently.
+•$ cd dir – Moves working directory to dir.
+•You can also refer the special symbols ~ and / here to go to home or root
+•$ mkdir my_folder –  Creates a new directory my_folder .
+•-p – Creates parent folder if it does not exist
+•$ rmdir my_folder –    Deletes the empty directory my_folder .
+•$ rm dir – Deletes file or directory. Has common options:
+•-r – Remove directories and their contents recursively.
+•-f – Force delete without confirmation.
+•-i – Ask before each file deletion.
+•-v – Verbose, show deleted files.
+
+--- Page 25 ---
+File and Directory Management
+These commands help manage files and directories efficiently.
+•$ cp dir1 dir2 –  Copies files/directories dir1 to dir2.
+•-r – Copy recursively
+•-i – Prompt before overwriting
+•-u – Copy only if destination is folder
+•-v – Show Progress
+•$ mv dir1 dir2 –    Move or rename dir1 to dir2 .
+•-i – Ask before overwriting
+•-u – Move only if destination is folder
+•-v – Show progress
+
+--- Page 26 ---
+File Viewing and Editing
+These commands allow you to view and edit file contents.
+•$ cat file.txt –  Display file contents.
+•$ less file.txt –  Display file contents. Has scrolling mechanism.
+•Navigation:
+•SPACE – Scroll down
+•b – Scroll up
+•/keyword – Search for keyword
+•q – Quit. 
+•$ nano file.txt – Opens a file in the Nano editor .
+•Shortcuts:
+•CTRL-X – Exit.
+•CTRL-O – Save Changes
+•CTRL-W – Search
+
+--- Page 27 ---
+File Permissions & Ownership
+These commands allow you modify file permissions and ownerships
+•$ chmod 755 script.sh –  Modify file permission. Has the ff 
+options:
+•+w – adds execute command
+•-w – removes write permission
+•755 – Can also give 3 numbers ranging from 0 to 7. Each digit is binary 
+representation of RWX permission of Owner , Group, and Others
+•$ chwon user:group file.txt –  Change the file owner or group.
+
+--- Page 28 ---
+Process Management
+These commands allow you monitor and terminate processes
+•$ ps aux – Lists active processes.
+•a – Show all users' processes
+•u – Show detailed user info
+•x – Show processes without a terminal
+•$ top – Shows real-time system stats.
+•Navigation:
+•q – Quit.
+•k – Kill a process .
+•M – Sort by memory.
+•$ kill 1234 – Stops a process by PID.
+•-9 – Force kill.
+•-15 – Graceful kill.
+
+--- Page 29 ---
+Shell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+1.Shebang (#!) – 
+Specifies the interpreter
+•Ideally the first line of a 
+shell script
+•Without this, the script 
+may not execute 
+properly
+thescript.sh
+#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successful
+
+--- Page 30 ---
+#!/bin/bash
+# COMMENTS
+# Thi...

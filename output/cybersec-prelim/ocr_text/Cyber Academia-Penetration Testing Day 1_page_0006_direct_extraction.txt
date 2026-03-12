@@ -1,0 +1,9 @@
+IDENTIFY RISKS
+•Find weak points before attackers do.
+MEET REGULATIONS & COMPLIANCE
+•Avoid fines and failed audits (ex. PCI -DSS)
+IMPROVE DETECTION & RESPONSE
+•Teams learn how real attacks actually happen.
+BUILD CUSTOMER TRUST
+•Fewer breaches = stronger reputation
+Why Is It Important?

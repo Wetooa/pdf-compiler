@@ -1,0 +1,38 @@
+Active Testing : Configuration and Deployment 
+Management Testing
+Test Network Infrastructure 
+Configuration
+•Review  the applications’  
+configurations  set across  the 
+network  and validate  that they  
+are not vulnerable . 
+•Validate  that used  frameworks  
+and systems  are secure  and not 
+susceptible  to known  
+vulnerabilities  due to 
+unmaintained  software  or 
+default  settings  and credentials .
+Test Application Platform 
+Configuration
+•Ensure  that defaults  and known  
+files have  been  removed . 
+•Validate  that no debugging  
+code  or extensions  are left in 
+the production  environments . 
+•Review  the logging  mechanisms  
+set in place  for the application .
+Review Old Backup and 
+Unreferenced Files for 
+Sensitive Information
+•Find and analyse  unreferenced  
+files that might  contain  
+sensitive  information .
+Test File Extensions Handling 
+for Sensitive Information
+•Dirbust  sensitive  file extensions,  
+or extensions  that might  
+contain  raw data  (e.g. scripts,  
+raw data,  credentials,  etc.). 
+•Validate  that no system  
+framework  bypasses  exist  on 
+the rules  set.

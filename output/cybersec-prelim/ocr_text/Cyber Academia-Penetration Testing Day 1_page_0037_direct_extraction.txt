@@ -1,0 +1,11 @@
+OWASP ZAP
+OWASP ZAP (Zed Attack Proxy) is an open -source web application 
+security testing tool.
+Key Functions of OWASP ZAP 
+•Passively scanning web request
+•Using dictionary list to search for files and folders on web 
+servers
+•Using crawlers to identify a site’s structure and retrieve all links 
+and URLs
+•Intercepting, displaying, modifying, and forwarding web 
+request between browsers and web applications 

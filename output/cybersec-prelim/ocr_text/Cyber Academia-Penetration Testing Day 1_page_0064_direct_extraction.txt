@@ -1,0 +1,15 @@
+Burp Suite: Configuration
+Mutual Authentication Settings:
+•Testers may encounter test scenarios 
+wherein they must perform testing on 
+Web API Endpoints which generally 
+handle TLS/SSL authentication 
+differently
+•Burp can be configured to handle the 
+authentication requirements in order 
+to access these API endpoints if they 
+require Mutual Authentication
+•This can be configured by adding any 
+provided Client TLS certificates that 
+burp will automatically include in 
+requests to API endpoints

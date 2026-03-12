@@ -1,0 +1,14 @@
+A02:2025 
+ –
+ 
+Security Misconfiguration
+•Happens when systems areconfigured incorrectly orleftinsecure bydefault
+•Often caused bydefault settings, exposed services, ormissing hardeningWhat it is:
+Why it moved up to #2:
+•Misconfigurations aremore common inmodern apps
+•Cloud containers, andCI/CD increase configuration complexity
+•Small mistakes canexpose entire systems orsensitive data
+Examples:
+•Open admin consoles
+•Public cloud storage
+•Default credentials

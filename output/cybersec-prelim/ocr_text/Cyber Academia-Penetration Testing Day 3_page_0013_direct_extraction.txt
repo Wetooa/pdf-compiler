@@ -1,0 +1,25 @@
+OWASP Testing Methodology
+Testing can be categorized as passive or active:
+PASSIVE
+A tester  tries  to understand  the application’s  logic  and 
+explores  the application  as a user. 
+Tools  can be used  for information  gathering . 
+At the end of this phase,  the tester  should  generally  
+understand  all the access  points  and functionality  of 
+the system
+ACTIVE
+During  active  testing,  a tester  begins  to use the methodologies  described  in the 
+follow  sections .
+The set of active  tests  have  been  split into 12 categories :
+❑Information Gathering
+❑Configuration and Deployment Management Testing
+❑Identity Management Testing
+❑Authentication Testing
+❑Authorization Testing
+❑Session Management Testing
+❑Input Validation Testing
+❑Error Handling
+❑Cryptography
+❑Business Logic Testing
+❑Client -side Testing
+❑API Testing

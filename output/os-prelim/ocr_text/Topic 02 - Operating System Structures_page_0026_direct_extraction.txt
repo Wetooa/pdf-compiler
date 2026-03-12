@@ -1,0 +1,14 @@
+File Viewing and Editing
+These commands allow you to view and edit file contents.
+•$ cat file.txt –  Display file contents.
+•$ less file.txt –  Display file contents. Has scrolling mechanism.
+•Navigation:
+•SPACE – Scroll down
+•b – Scroll up
+•/keyword – Search for keyword
+•q – Quit. 
+•$ nano file.txt – Opens a file in the Nano editor .
+•Shortcuts:
+•CTRL-X – Exit.
+•CTRL-O – Save Changes
+•CTRL-W – Search

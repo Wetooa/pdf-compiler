@@ -1,0 +1,52 @@
+Active Testing: Business Logic Testing
+Testing for the Circumvention 
+of Workflows
+•Review the project 
+documentation for methods 
+to skip or go through steps in 
+the application process in a 
+different order from the 
+intended business logic flow. 
+•Develop a misuse case and 
+try to circumvent every logic 
+flow identified.
+Test Defenses Against 
+Application Misuse
+•Generate notes from all tests 
+conducted against the 
+system. 
+•Review which tests had a 
+different functionality based 
+on aggressive input.
+•Understand the defenses in 
+place and verify if they are 
+enough to protect the system 
+against bypassing 
+techniques.
+Test Upload of 
+Unexpected File Types
+•Review the project 
+documentation for file types 
+that are rejected by the 
+system. 
+•Verify that the unwelcomed 
+file types are rejected and 
+handled safely. 
+• Verify that file batch uploads 
+are secure and do not allow 
+any bypass against the set 
+security measures.
+ Test Upload of 
+Malicious Files
+•Identify  the file upload  
+functionality . Review  the project  
+documentation  to identify  what  
+file types  are considered  
+acceptable,  and what  types  
+would  be considered  dangerous  
+or malicious . Obtain  or create  a 
+set of malicious  files for testing . 
+Try to upload  the malicious  files 
+to the application  and 
+determine  whether  it is 
+accepted  and processed .

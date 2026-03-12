@@ -1,0 +1,18 @@
+Computer System Booting up 
+Sequence
+•Bootstrap Program
+•the initial program that is stored within the computer hardware’s 
+firmware  (ROM or EEPROM).
+•initializes basic hardware needed to start up the OS. 
+•Kernel (Part of OS)
+•core part of the OS that bridge between software application and 
+hardware.
+•Initializes system resources (CPU scheduler , memory manager , device 
+drivers)
+•System Daemons (Part of OS)
+•Programs that are running in the background in all time. 
+•Runs in user space  and provides specific services (networking, logging, 
+etc.) without user interaction.
+•Usually 
+After all of this are initialized/set up, the Operating System is now 
+fully booted and waits for an event to occur .

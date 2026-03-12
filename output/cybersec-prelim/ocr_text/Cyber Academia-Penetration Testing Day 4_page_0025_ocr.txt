@@ -1,0 +1,19 @@
+REPORTING: Pentest Findings Overview
+
+Vulnerability Class Severity Status
+Install Scripts Command Injection Injection Flaws Medium Closed
+Insecure Default Connection During Package  Cryptography -
+Upload and Upgrade Missing Low Open
+Authentication
+Tele Logout Does not Invalidate SSH User and Session
+Keys and Session Token Management - Low Open
+Missing
+Missing SlgnatureB\:jer:':jfl'l:satlon |rh\ppllcat|on Insecure Design High Open
+Application Bundles Insecure Decompress Injection Flaws High Closed
+. Information
+Password Reset Token Leakage Via Referer Exposure Low Closed
+Authentication
+Password Reset Does Not Expire Current and Session
+Sessions Management - Low Open
+Missing
+

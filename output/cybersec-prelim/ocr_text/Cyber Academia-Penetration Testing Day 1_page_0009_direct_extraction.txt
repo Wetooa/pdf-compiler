@@ -1,0 +1,13 @@
+•Firewall Configuration
+•Firewall Bypass Testing
+•Stateful Inspection Analysis
+•Intrusion Prevention System Deception
+•DNS-Level Attacks
+Network Penetration Testing
+What it is:
+Type of penetration test that audits a network environment for security 
+vulnerabilities
+Types:
+External – Attacks from outside the organization ( internet -facing )
+Internal – Attacks from inside the network (employees or compromised device)
+What is tested:

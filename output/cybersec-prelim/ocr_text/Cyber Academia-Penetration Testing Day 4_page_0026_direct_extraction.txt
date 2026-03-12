@@ -1,0 +1,9 @@
+REPORTING: Pentest Technical Report
+The Pentest Technical Report section is where you will find the 
+vulnerabilities and found by the tester in the target application. It 
+includes the following:
+Vulnerability Name
+Vulnerability Description
+Exploitability and Impact
+Steps to Reproduce
+Recommendation

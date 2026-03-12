@@ -1,0 +1,36 @@
+Active Testing : Configuration and Deployment 
+Management Testing
+Enumerate Infrastructure and 
+Application Admin Interfaces
+•Identify  hidden  
+administrator  interfaces  
+and faunctionality .
+Test HTTP Strict Transport 
+Security
+•Review  the HSTS  header  
+and its validity .
+Test File Permission
+•Review  and Identify  any 
+rogue  file permissions
+Test Cloud Storage
+•Assess  that the access  
+control  configuration  for 
+the storage  services  is 
+properly  in place
+ Test HTTP Methods
+•Enumerate  supported  HTTP  
+methods . 
+•Test for access  control  
+bypass . 
+•Test XSS vulnerabilities . 
+•Test HTTP  method  overriding  
+techniques .
+Test RIA Cross Domain Policy
+•Review  and validate  the 
+policy  files.
+Test for Subdomain Takeover
+•Enumerate  all possible  
+domains  (previous  and 
+current)
+•Identify  forgotten  or 
+misconfigured  domains

@@ -1,0 +1,22 @@
+REPORTING: Pentest Technical
+
+Reproduction Steps
+
+This issue can be verified with a simple unauthenticated HTTP request:
+
+$Scurll s r w ok e nstall/1.01-
+
+- mos
+
+aaan24% ~ - 3%29
+
+Where the URL encoded path contains ${touch grav). Such command will be included in the resulting
+script. Piping the script to bash leads to system command execution on the victim's workstation.
+
+The second issue can be verified using the following unauthenticated request:
+
+$CUI’[httpS://FIIJLI - = - i . - L
+%24% %29
+
+Where the URL encoded path contains S(sleep 10).
+

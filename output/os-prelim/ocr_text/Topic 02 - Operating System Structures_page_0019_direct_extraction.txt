@@ -1,0 +1,17 @@
+Checking Current User
+Checking username:
+mario@host~$  
+whoami
+mario
+root@host~#  whoami
+root
+You can use the whoami  
+command to print the 
+current user’s usernameChecking username:
+mario@host~$  id -u
+1000
+root@host~#   id -u
+0
+You can also check the id via 
+ud –u. 
+Root ID is always 0

@@ -1,0 +1,7 @@
+REPORTING: Pentest Overview
+The Pentest Overview is where you will find the information 
+about the structure of the report. In here you will find the 
+following details.
+Background
+Tester and Application Details
+Pentest Findings Overview

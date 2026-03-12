@@ -1,0 +1,42 @@
+Active Testing: Information Gathering
+Conduct Search Engine 
+Discovery Reconnaissance for 
+Information Leakage
+•Identify what sensitive design and 
+configuration information of the 
+application, system, or 
+organization is exposed directly 
+(on the organization’s website) or 
+indirectly (via third -party 
+services).
+Fingerprint Web Server
+•Determine the version and type 
+of a running web server to enable 
+further discovery of any known 
+vulnerabilities.
+Review Webserver Metafiles 
+for Information Leakage
+•Identify hidden or obfuscated 
+paths and functionality through 
+the analysis of metadata files.
+• 
+•Extract and map other 
+information that could lead to 
+better understanding of the 
+systems at hand.
+Enumerate Applications on 
+Webserver
+•Enumerate the applications 
+within scope that exist on a web 
+server.
+Review Webpage Content for 
+Information Leakage
+•Review webpage comments and 
+metadata to find any information 
+leakage. 
+•Gather JavaScript files and 
+review the JS code to better 
+understand the application and to 
+find any information leakage. 
+•Identify if source map files or 
+other front -end debug files exist.

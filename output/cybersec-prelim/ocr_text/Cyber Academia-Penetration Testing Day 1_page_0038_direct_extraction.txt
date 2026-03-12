@@ -1,0 +1,15 @@
+OWASP ZAP: Installation
+ZAP has installer  for Windows  , Linux,  and 
+MAC  OS/X . There  are also Docker  images  
+available  on the download  site listed  
+below .  
+https ://www .zaproxy .org/download/
+Install  ZAP on the system  you intended  to 
+perform  pen testing  on
+Download  the appropriate  installer  from  the 
+download  page
+NOTE  that ZAP requires  Java  8+ in order  to 
+run.
+Before  proceeding,  ensure  you have  
+permission  from  web application  owner  to 
+perform  a penetration  test.

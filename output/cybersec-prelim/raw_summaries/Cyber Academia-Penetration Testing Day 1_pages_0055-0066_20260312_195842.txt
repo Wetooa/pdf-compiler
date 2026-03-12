@@ -1,0 +1,515 @@
+LEARNING GUIDE: Pages 55-66
+Generated: 2026-03-12 19:58:42
+PDF: Cyber Academia-Penetration Testing Day 1
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here's a simplified, easy-to-read learning guide for Burp Suite, extracted from the provided text:
+
+---
+
+## Burp Suite Learning Guide
+
+Burp Suite is a powerful tool primarily used as a proxy between your web browser and a target web server/API endpoint. This allows you to view, intercept, and modify all requests and responses for security testing.
+
+---
+
+### 1. Burp Suite Installation
+
+Burp Suite offers two main versions:
+
+*   **Burp Suite Professional:**
+    *   Full suite of tools: Web Vulnerability scanning, Burp extensions, Intruder, Repeater, Decoder, Sequencer, Comparer.
+    *   Ideal for comprehensive testing.
+*   **Burp Suite Community:**
+    *   Basic toolkit for manual testing: Repeater, Decoder, Sequencer, Comparer modules.
+    *   Lacks advanced features like vulnerability scanning.
+
+**Installation Steps (for both versions):**
+1.  Download the executable from the official PortSwigger website: `https://portswigger.net/burp/communitydownload`
+2.  Run the installer and follow the instructions.
+
+---
+
+### 2. Burp Suite Configuration Essentials
+
+Burp Suite needs to be configured specifically for each testing engagement due to variations in environments, APIs, technologies, and network setups. There is no "one-size-fits-all" configuration.
+
+**Common Testing Scenarios & Configurations:**
+
+*   **Web Application Test:** Can be set up with or without Platform Authentication.
+*   **Web Services/API Testing:** Can be configured with or without Mutual Authentication (Client Certificates).
+*   **Thick Client Application Testing:** Configured for proxying and intercepting HTTP traffic.
+
+---
+
+### 3. Key Configuration Features
+
+#### 3.1. Burp Projects
+
+*   When starting Burp Professional, create a new project to continuously save your work. This allows you to resume testing at any time.
+
+#### 3.2. Settings Menu
+
+*   This menu provides access to all relevant configuration settings for Burp Suite.
+
+#### 3.3. Scope
+
+*   **What it is:** Defining the specific targets (URLs, hosts) that Burp Suite should interact with.
+*   **Why it's crucial:**
+    *   **Focus:** Ensures Burp only captures relevant traffic for your test, ignoring unrelated web applications or background calls.
+    *   **Accuracy:** Guarantees automated scans and payloads target only the intended systems.
+    *   **Efficiency:** Prevents recursive (endless) site discovery by automated spider mapping features.
+*   **How to set:** Restrict captured traffic based on Protocol, Port, or File paths.
+
+#### 3.4. Connection Settings
+
+*   **Platform Authentication:** Configure Burp to automatically handle authentication for web applications requiring:
+    *   Basic Authentication
+    *   NTLMv1 Authentication
+    *   NTLMv2 Authentication
+*   **Upstream Proxy Server:** Set an upstream proxy if your traffic needs to be routed through another proxy (e.g., for Kerberos authentication).
+
+#### 3.5. Mutual Authentication Settings
+
+*   **Purpose:** Essential for testing Web API Endpoints that use TLS/SSL authentication with client certificates.
+*   **How to configure:** Add any provided Client TLS certificates to Burp; it will automatically include them in requests to the API endpoints.
+
+#### 3.6. Burp Suite Extensions
+
+*   **Purpose:** Extend Burp's capabilities, automate tasks, simplify tests, and save time in identifying vulnerabilities.
+*   **Availability:**
+    *   Found and installed directly within Burp Suite's User Interface.
+    *   Can be downloaded from PortSwigger's official site and imported manually.
+*   **Note:** Extensions are community-built and rated. Some may require further validation and testing.
+
+#### 3.7. Saving Project Settings
+
+*   You can save all your configured settings (scope, connection, authentication, etc.) into a separate project file.
+*   This file can be loaded into any new or existing Burp Suite project, allowing for quick setup with pre-configured settings.
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 55 ---
+e +
+o 5 New Probe
+
+gowitness, v3 25 Dashboard &3 Gallery E8 Overview
+
+Y 1selected © 200 o 403 © 500 & Group by Similar O Show Failed
+
+200
+
+Happening now i y: 3 Get your next
+
+Join today.
+
+Less social media. More Snapchat.
+
+https://snapchat.com:44
+
+X. It's what's happening /| X Reddit - Dive into anything Pinterest
+
+8 minutes ag:
+
+RGBLOX
+
+Let’s build from here
+
+
+
+--- Page 56 ---
+report Llist -
+
+=
+i3
+
+..ait/aowitness (-zsh)
+
+Failed
+
+Code
+
+Input
+
+URL
+
+~Size
+
+[m1]
+[m1]
+
+oo
+o
+
+[m1}
+o
+
+[m1]
+
+o
+AU N SR S
+
+o
+
+(1}
+W oM
+
+oo
+o
+
+o
+
+o
+@™o mm
+
+W wm
+m
+o
+
+m
+=
+
+[m1]
+B i = At O S8 L N L TN R N L
+
+1y}
+m
+
+o
+
+1]
+TTTT
+
+o
+
+o=
+
+w
+M M
+o
+o
+
+o
+
+o
+o
+
+onoonoonoonoon
+
+1y}
+M
+
+TT T T T
+
+100
+1]
+o
+=
+
+o
+I =
+
+o
+=
+w
+
+o
+
+N
+
+=
+D
+
+o
+=
+M
+
+o
+on
+[y}
+
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+https:
+1/ /Fl
+https:
+https:
+https:
+1/ /d
+https:
+https:
+https:
+2/l
+https:
+https:
+https:
+2/ /e
+https:
+https:
+https:
+https:
+https:
+
+https
+
+https
+
+https
+
+https
+
+/g
+/g
+//F
+//a)
+/i
+/g
+At
+/ic
+/g
+fit
+I7as
+/7ol
+/yt
+/g
+/an
+
+//a:
+7R
+/iw
+
+/b
+/gt
+/g0
+
+lg
+/7 F
+Pt
+
+£ wl
+/7y
+//at
+lp
+/st
+
+143
+
+13
+
+13
+143
+1443
+
+~.com:443
+
+13
+1443
+
+1t.com: 443
+n.com:443
+13
+
+13
+143
+
+1
+
+gn up
+
+Produ. ..
+1
+
+ild Eve...
+g /...
+
+n Up
+
+1
+
+gn up
+
+s | Mic...
+erly Ho...
+& Analy...
+/1
+LatForm...
+m her...
+
+e inter...
+Watch T...
+eliable...
+hoo Fam. ..
+
+ing and...
+
+Line - ...
+
+1khb
+1kh
+3kb
+Akh
+1kh
+Akb
+4kh
+Akb
+1kh
+4khb
+3khb
+1khb
+Akb
+Akh
+Akb
+]
+1kb
+Akh
+Akb
+Akb
+Zkb
+1kb
+1kh
+Akb
+4kh
+Akb
+1kb
+Akb
+3kb
+Akh
+1kb
+4kh
+Akb
+
+200KkBY . . . .. .. . . 00kB*?
+
+=
+1)
+-+
+
+[ <N
+
+W= s =0 s
+
+M) = =
+M~
+
+W W
+
+=
+
+= MR
+Wk =0 WO
+
+]
+
+
+--- Page 57 ---
+Burp Suite
+
+
+--- Page 58 ---
+Burp Suite: Installation
+
+Types of Burp Suite Installations:
+•Burp Suite offers Several versions of Burp Suite 
+which include:
+oBurp Suite Professional : contains the full 
+suite of tools and features that PortSwigger  
+has to offer which include Web Vulnerability 
+scanning, Burp extensions, Intruder , etc. on 
+top of the base features that Burp 
+Community provides.
+oBurp Suite Community : Basic toolkit 
+containing the modules needed to perform 
+manual testing such as Repeater, Decoder, 
+Sequencer and Comparer modules
+•Installation of either version is the same process. 
+Steps involved in installing:
+oDownload executable from the official 
+PortSwigger  web site: 
+https://portswigger.net/burp/communitydo
+wnload
+oRun the installer and follow through the 
+installation wizard instructions.
+
+
+--- Page 59 ---
+Burp Suite: Configuration
+Standard Burp Setups:
+•Burp can be setup in various ways to enable the most efficient manual testing for 
+different types of tests
+•Due to the various environments, APIs, Technologies, Protocols, Network topologies, 
+Frameworks, etc, A “one size fits all” configuration may not always be suitable for each 
+engagement. It is the tester’s responsibility to understand the requirements of each web 
+application test in order to  properly setup Burp to best carry out a penetration test
+•Generally, Burp can be configured to handle the following testing scenarios:
+oWeb Application test: can be setup with or without Platform Authentication.
+oWeb Services/API Testing: can be setup with or without Mutual Authentication/Client 
+Certificates.
+oThick Client Application Testing : can be configured with proxying and intercepting 
+HTTP Traffic. 
+•The Succeeding slides will cover various features that are important to look into  or 
+configure for your engagements.
+
+--- Page 60 ---
+Burp Suite: Configuration
+Burp Projects:
+•Upon starting Burp Professional, create a new project which enables 
+you to continuously save your work that you can go back to at any 
+time.
+
+
+--- Page 61 ---
+Burp Suite: Configuration
+Settings Menu:
+•One of Burp Suite’s main features is its capability as a proxy between a web browser 
+and the target web server/API endpoint which allows testers to view, intercept and 
+modify all requests and responses for testing.
+•All relevant settings can be accessed within the settings menu.
+
+
+--- Page 62 ---
+Burp Suite: Configuration
+Scope:
+•Once a tester has identified the targets of the web 
+application, it is of key importance to set these in 
+the scope to ensure that only the relevant traffic 
+needed for testing is captured by burp while 
+unnecessary traffic is ignored.
+oDue to the complexity of Web Applications, it is 
+beneficial to restrict the scope for several 
+reasons:
+oTo assist the tester in carrying out the 
+inspection of traffic sent between clients and 
+the server only otherwise Burp may capture all 
+traffic to other web applications or calls to 
+URLs that should not be tested.
+oTo ensure that automated scans only target 
+and send payloads to the intended targets.
+oTo help with focusing Burp’s automated spider 
+mapping features to prevent recursive site 
+discovery of a web application.
+•Scope can be set to restrict captured traffic to 
+multiple hosts based on Protocol, Port or File to 
+ensure no important traffic is missed during testing.
+
+
+--- Page 63 ---
+Burp Suite...

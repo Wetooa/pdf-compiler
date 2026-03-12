@@ -1,0 +1,7 @@
+GoWitness
+GoWitness  is a tool for visual  inspection  of websites  across  
+numerous  hosts  and is convenient  for quickly  gaining  an overview  
+of HTTP -based  attack  surface .
+GoWitness  can be installed  in Kali Linux  through  its package  
+manager :
+oapt install  gowitness

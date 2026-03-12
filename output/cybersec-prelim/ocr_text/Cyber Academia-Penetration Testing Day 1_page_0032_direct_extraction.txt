@@ -1,0 +1,11 @@
+TARGET VULNERABILITY AND 
+VALIDATION TECHNIQUES
+TECHNIQUE
+ CAPABILITIES
+Password Cracking •Identifies weak password and password 
+policies.
+Penetration Testing •Tests security using attacker methods and 
+tools
+•Verifies and demonstrates exploitability of 
+vulnerabilities to gain access.
+Social Engineering •Tests procedures and user awareness.

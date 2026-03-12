@@ -1,0 +1,12 @@
+Phases
+Reconnaissance : The tester gathers information about the system and its 
+environment
+Privilege escalation : The tester attempts to gain higher levels of access to the 
+system
+Lateral movement : The tester moves laterally, attempting to gain access to other 
+parts of the network or other systems that are connected to the compromised 
+system. 
+Data exfiltration : The tester attempts to extract sensitive information from the 
+system
+Covering tracks : The tester attempts to cover their tracks to avoid detection by 
+system administrators or security teams.

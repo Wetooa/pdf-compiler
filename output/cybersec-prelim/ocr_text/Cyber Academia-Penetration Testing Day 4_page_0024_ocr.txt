@@ -1,0 +1,44 @@
+REPORTING: Application Details
+
+Target Metadata Engagement Data
+Name . B Type Specification and Implementation
+Review
+Type Protocol Specification and Method sl A0 B e -
+Implementation
+
+Platforms I o Dates 2020-06-01 to 2020-68-14
+Consultants 3
+Level of Effort 16 person-days
+
+Targets
+
+i ] https:/fia= 'p-0214
+
+- e https:// 5= ip-0207
+
+= https:// " p-0251
+
+e https:/# §Sp-0211
+
+(=_2g o https:/# §Rp-0212
+
+S https:/Am 1 i 8 =mp-0215
+
+Implementation of I/l FET wodl /90 (74 https://github.coms s w ams s 14560
+Implementation of I i1 https://github.com: == w4487
+Implementation of F# [71 https://github.com: == w4489
+Implementation of rmr rus https://github.coms == = = 4578
+Changes to [l sl S 0 5 https://github.com: & * + h/pull/258
+Implementation of % 111 https://github.com: & * =/74581
+Changes to ed25519-zebra for S & % https://github.comd® =58 e Ba . il = wnow/pull/24
+
+Finding Breakdown
+Critical issues
+High issues
+
+Medium issues
+
+Low issues
+Informational issues
+Total issues
+

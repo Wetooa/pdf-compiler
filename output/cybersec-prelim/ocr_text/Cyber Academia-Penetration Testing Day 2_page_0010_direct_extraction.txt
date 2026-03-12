@@ -1,0 +1,7 @@
+PRE
+-
+ENGAGEMENT: Sample Scoping Questions 
+for Network Pentest
+How many total IP addresses are being tested?
+How many internal IP addresses, if applicable?
+How many external IP addresses, if applicable?

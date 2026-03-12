@@ -1,0 +1,6 @@
+Burp Suite: Configuration
+Settings Menu:
+•One of Burp Suite’s main features is its capability as a proxy between a web browser 
+and the target web server/API endpoint which allows testers to view, intercept and 
+modify all requests and responses for testing.
+•All relevant settings can be accessed within the settings menu.

@@ -1,0 +1,5 @@
+PRE
+-
+ENGAGEMENT: Scoping
+Defining scope is arguably one of the most important 
+components of a penetration test

@@ -1,0 +1,53 @@
+NMARP: Usage
+
+» Usage: nmap <IP address>
+
+Nmap scan report for
+Host is up (©0.0028s latency).
+Not shown: 987 closed tcp ports (reset)
+PORT STATE SERVICE
+" open s
+
+open
+p open
+p open
+L p open
+cCp open
+Cp open
+Ccp open
+Cp open
+cp open
+Ccp open
+Cp open
+Ccp open
+MAC Address: 0@ 1 (VMware)
+
+—r
+
+-
+<
+¢
+-
+
+-
+
+LI I B B R S
+
+ssn
+t-ds
+
+LA
+
+Lt
+
+A
+
+(il o — I O, TR VO — I — . O |
+
+M A Im Py RY ALY Y
+
+Host script results:
+| ° " eq: Incremental!
+
+Nmap done: 1 IP address (1 host up) scanned in 2.14 seconds
+

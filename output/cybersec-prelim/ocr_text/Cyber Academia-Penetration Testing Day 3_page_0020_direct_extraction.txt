@@ -1,0 +1,49 @@
+Active Testing : Authentication Testing
+Testing for Credentials 
+Transported over an 
+Encrypted Channel
+•Assess whether any use 
+case of the web site or 
+application causes the 
+server or the client to 
+exchange credentials 
+without encryption.
+Testing for Default 
+Credentials
+•Enumerate the applications 
+for default credentials and 
+validate if they still exist.
+•Review and assess new 
+user accounts and if they 
+are created with any 
+defaults or identifiable 
+patterns.
+Testing for Weak Lock Out 
+Mechanism
+•Evaluate the account 
+lockout mechanism’s ability 
+to mitigate brute force 
+password guessing. 
+•Evaluate the unlock 
+mechanism’s resistance to 
+unauthorized account 
+unlocking.
+Testing for Bypassing 
+Authentication Schema
+•Ensure that authentication 
+is applied across all 
+services that require it.
+Testing for Vulnerable 
+Remember Password
+•Validate that the generated 
+session is managed 
+securely and do not put the 
+user’s credentials in 
+danger.
+Testing for Browser Cache 
+Weaknesses
+•Review if the application 
+stores sensitive information 
+on the client -side
+•Review if access can occur 
+without authorization

@@ -1,0 +1,9 @@
+OWASP ZAP: Initial Configuration
+How to run a quick start auto scan?
+•Start ZAP and click the Quick Launch tab in the workspace 
+window
+•Click the Auto Scan button
+•In the Attack URL text box, enter the full URL of the web 
+application
+•Select either Use traditional spider, Use ajax spider or both
+•Click Attack

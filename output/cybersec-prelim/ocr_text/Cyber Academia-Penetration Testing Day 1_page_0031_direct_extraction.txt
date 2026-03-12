@@ -1,0 +1,18 @@
+TARGET IDENTIFICATION AND 
+ANALYSIS TECHNIQUES
+TECHNIQUE
+ CAPABILITIES
+Network Discovery •Uses passive (examination) and active (testing) 
+techniques to discover network devices
+•Identifies communication paths and helps 
+determine network architecture
+Network Port and Service 
+Identification•Uses a port scanner to identify network ports, 
+services, and active devices.
+Vulnerability Scanning •Identifies hosts, attributes, and known 
+vulnerabilities (with high false positives).
+Wireless Scanning •Enables devices to communicate wirelessly 
+without physical connections
+•Passive/Active Wireless Scanning
+•Wireless Device Location Tracking
+•Bluetooth Scanning

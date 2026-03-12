@@ -1,0 +1,7 @@
+CVSS Base Metrics 
+ –
+ 
+Scope
+Scope : The Scope metric captures whether a 
+vulnerability in one vulnerable component impacts 
+resources in components beyond its security scope.

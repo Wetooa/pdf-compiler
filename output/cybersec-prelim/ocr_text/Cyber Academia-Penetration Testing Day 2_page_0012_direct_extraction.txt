@@ -1,0 +1,9 @@
+PRE
+-
+ENGAGEMENT: Pentest Information Sheet
+The target(s) to be tested
+The schedule of the test (Start date and End date)
+Test Credentials
+Specific Instructions to access the application, Important 
+notes and reminders
+Security Test cases (if applicable)

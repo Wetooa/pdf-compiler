@@ -1,0 +1,25 @@
+Startin g
+Nmap scan report for I (XX XX XX . XX)
+Host is up (0.15s latency).
+Not shown: 89 filtered ports
+PORT STATE SERVICE
+“'tcp open {1
+open ¢
+open
+Opeﬂ
+open
+open
+open
+open
+open
+open
+open
+
+Nmap 7.90 ( https://nmap.org ) at year-mo-day hh:mm EDT
+
+&
+'O
+d
+
+Nmap done:
+

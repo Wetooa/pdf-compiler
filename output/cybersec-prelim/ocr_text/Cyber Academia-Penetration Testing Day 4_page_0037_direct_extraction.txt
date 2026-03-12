@@ -1,0 +1,7 @@
+CVSS Base Metrics 
+ –
+ 
+Attack Complexity
+Attack Complexity(AC ): This metric describes the conditions 
+beyond the attacker’s control that must exist in order to 
+exploit the vulnerability.

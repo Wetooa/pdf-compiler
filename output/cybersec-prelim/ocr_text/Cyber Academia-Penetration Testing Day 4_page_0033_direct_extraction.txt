@@ -1,0 +1,4 @@
+REPORTING: Test Cases
+Test Cases are used to test the functional requirement of the 
+application. They are a list of attacks that are used to test the 
+security of an application and find vulnerabilities.

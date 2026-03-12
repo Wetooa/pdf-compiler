@@ -1,0 +1,4 @@
+SQLMap
+Results:
+•We can see that SQLMap  guessed what  the back -end DBMS  is. It will now try to use 
+specific payloads for this DBMS .

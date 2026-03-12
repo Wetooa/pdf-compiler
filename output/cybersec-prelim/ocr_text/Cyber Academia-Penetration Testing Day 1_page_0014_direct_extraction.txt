@@ -1,0 +1,8 @@
+Legal and Ethical Considerations 
+(Data Protection & Responsibility)
+Personal data must be protected and minimized
+ONLY authorized data is accessed during testing
+Reports must use anonymized or redacted data
+No storing, altering, or misusing client data
+Activities must follow contractual agreementsKey principles:
+"Access does not mean permission to misuse."

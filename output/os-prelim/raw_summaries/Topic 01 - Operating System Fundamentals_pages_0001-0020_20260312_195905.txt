@@ -1,0 +1,296 @@
+LEARNING GUIDE: Pages 1-20
+Generated: 2026-03-12 19:59:05
+PDF: Topic 01 - Operating System Fundamentals
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text (Pages 1-20).
+
+---
+
+## Operating System Fundamentals: Topic 01
+
+### 1. Introduction to Operating Systems (OS)
+
+#### 1.1 What is an Operating System?
+*   An OS is a **program** that acts as an **intermediary** between a computer user and the computer hardware.
+
+#### 1.2 Goals of an Operating System:
+1.  **Execute user programs** and make problem-solving easier.
+2.  Make the **computer system convenient** to use.
+3.  Use the **computer hardware efficiently**.
+
+#### 1.3 Brief Computer System History
+*   **Early Computers (e.g., 1950s IBM 704):**
+    *   Could only run **one program at a time**.
+    *   Programs were **fed manually** by computer operators (e.g., using punch cards).
+    *   Manual operation became a **bottleneck** as computers became more powerful.
+
+### 2. Computer System Components
+
+A computer system consists of four main components:
+
+1.  **Hardware:**
+    *   Provides basic computing resources.
+    *   Examples: CPU, memory, I/O devices.
+2.  **Operating System (OS):**
+    *   **Controls and coordinates** the use of hardware.
+    *   Manages hardware among various application programs and users.
+3.  **Application Programs:**
+    *   Define how system resources are used to solve user problems.
+    *   Examples: Compilers, database systems, video games, web browsers.
+4.  **Users:**
+    *   People, machines, or other computers interacting with the system.
+
+### 3. Computer System Booting Sequence
+
+When a computer starts up (boots), a sequence of programs initializes the system:
+
+1.  **Bootstrap Program:**
+    *   The **initial program** stored in the computer's **firmware** (ROM or EEPROM).
+    *   **Initializes basic hardware** needed to start the OS.
+2.  **Kernel (Part of the OS):**
+    *   The **core part of the OS**.
+    *   **Bridges** between software applications and hardware.
+    *   Initializes system resources like the CPU scheduler, memory manager, and device drivers.
+3.  **System Daemons (Part of the OS):**
+    *   Programs that run **continuously in the background** without user interaction.
+    *   Provide specific services (e.g., networking, logging).
+    *   Run in **user space**.
+
+*After these steps, the Operating System is fully booted and ready to respond to events.*
+
+### 4. Computer System Storage Structures
+
+Computer storage is organized in a hierarchy based on speed, cost, and capacity.
+
+#### 4.1 Storage Hierarchy Principles:
+*   **Higher in the hierarchy = Faster access, more expensive per bit, smaller capacity.**
+*   **Lower in the hierarchy = Slower access, cheaper per bit, larger capacity.**
+*   **Speed Gap:** CPUs are incredibly fast, but large storage is slower, creating a "speed gap."
+
+#### 4.2 Volatility:
+*   **Volatile:** Requires power to maintain stored information (e.g., RAM, Cache, Registers).
+*   **Non-volatile:** Retains data even without power (e.g., SSD, HDD).
+
+#### 4.3 Types of Storage:
+
+1.  **CPU Registers:**
+    *   **Fastest possible memory** in a computer.
+    *   **Extremely small** (bits/bytes).
+    *   Located **inside the CPU**.
+    *   Holds **immediate data** (e.g., for calculations).
+    *   **Volatile**.
+
+2.  **Cache Memory (L1, L2, L3):**
+    *   Stores **frequently used** instructions and data.
+    *   Acts as a **buffer** between Registers and Main Memory.
+    *   When data is needed, the system first checks the cache; if not found (a "cache miss"), it looks in Main Memory.
+    *   Sizes: L1 (smallest, ~KBs), L2 (~KBs), L3 (largest, ~MBs).
+    *   **Volatile**.
+
+3.  **Main Memory (RAM - Random Access Memory):**
+    *   Much **larger than caches** (~GBs), but not as fast.
+    *   Holds **all currently running programs and open files**.
+    *   **Volatile**.
+
+4.  **Secondary Memories (Non-volatile Storage):**
+    *   Provides **long-term storage**; data persists after power off.
+    *   **Solid State Drive (SSD):**
+        *   **No moving parts.**
+        *   **Fast** access speeds.
+        *   **More expensive** than HDDs.
+        *   **Non-volatile**.
+    *   **Hard Disk Drive (HDD):**
+        *   Uses **spinning magnetic platters**.
+        *   **Slower** access speeds.
+        *   **Cheaper** than SSDs.
+        *   **Non-volatile**.
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 1 ---
+Operating System 
+Fundamental
+Operating System Topic 01
+CS348
+
+--- Page 2 ---
+Intended Learning Outcomes
+•ILO1. Give the meaning of  operating system and its 
+importance. 
+•ILO2. Identify basic concepts of Operating System 
+•ILO3. Compare the types of Operating System  
+•ILO4. Discuss basic operations of the  ComputerSystem  
+•ILO5. Differentiate all kinds of Computer-System 
+Structures 
+•ILO6. Classify the basic hardware components and its 
+protection 
+
+--- Page 3 ---
+Intro boiiiss
+
+--- Page 4 ---
+A lil bit of computer system 
+history~
+AECHEN 1970Punch Card 
+Programming
+
+
+--- Page 5 ---
+A lil bit of computer system 
+history~
+Big Room Sized Ah Computer in NASA 1957Computer Operators 
+(used to be a job) that 
+will feed the program 
+into the computer 
+manually .Old Computers , such 
+as the IBM 704 , can 
+only run one program 
+at a time.
+But soon, computer 
+became too powerful 
+that the manual 
+operation became the 
+bottleneck.
+
+--- Page 6 ---
+What is an Operating System?
+•A program  that acts as an 
+intermediary between a user of a 
+computer and the computer 
+hardware.
+•Operating system goals:
+•Execute user programs and make solving 
+user problems easier .
+•Make the computer system convenient to 
+use.
+•Use the computer hardware in an 
+efficient manner .
+No, our friend Edgar is no longer 
+the Operating System  He 
+unemployed
+
+--- Page 7 ---
+Computer System
+
+--- Page 8 ---
+Computer System Components
+
+--- Page 9 ---
+Computer System Components
+1. Hardware  – provides basic computing resources (CPU, 
+memory, I/O devices).
+2. Operating  system  – controls and coordinates the use of the 
+hardware among the various application programs for the 
+various users.
+3. Applications  programs  – define the ways in which the 
+system resources are used to solve the computing problems 
+of the users (compilers, database systems, video games, 
+business programs).
+4. Users (people, machines, other computers).
+
+--- Page 10 ---
+compiler   assembler   text-editor  ...  
+dota2.exe
+System and Application Programs
+Operating SystemComputer System Components
+Computer 
+HardwareUser User User
+
+--- Page 11 ---
+Computer System Booting up 
+Sequence
+
+--- Page 12 ---
+Computer System Booting up 
+Sequence
+•Bootstrap Program
+•the initial program that is stored within the computer hardware’s 
+firmware  (ROM or EEPROM).
+•initializes basic hardware needed to start up the OS. 
+•Kernel (Part of OS)
+•core part of the OS that bridge between software application and 
+hardware.
+•Initializes system resources (CPU scheduler , memory manager , device 
+drivers)
+•System Daemons (Part of OS)
+•Programs that are running in the background in all time. 
+•Runs in user space  and provides specific services (networking, logging, 
+etc.) without user interaction.
+•Usually 
+After all of this are initialized/set up, the Operating System is now 
+fully booted and waits for an event to occur .
+
+--- Page 13 ---
+Computer System Booting up 
+Sequence
+Bootstrap Program
+Kernel
+Daemon
+
+--- Page 14 ---
+Computer System Storage 
+Structures
+
+--- Page 15 ---
+Computer System Storage Structures
+CPU STORAGE
+Incredibly Fast Must be large, but 
+large is slowSpeed Gap
+
+--- Page 16 ---
+Computer System Storage Structures
+•Higher == Faster
+•Faster == More expensive per bit
+•Volatile   - anything above SSD
+•Nonvolatile  – SSD and below
+
+--- Page 17 ---
+Computer System Storage Structures
+CPU CORE
+REGISTERS
+•Fastest possible memory in a computer
+•Extremely small , measuring only bits or bytes
+•Holds immediate data  (like 1 + 1)
+•VolatileRAX RBX
+RCX RDX
+RSP RBP
+•Located inside the CPU
+
+--- Page 18 ---
+Computer System Storage Structures
+CACHE
+L1
+smolL3
+~MBsL2
+~KBs
+•Stores frequently used  instructions and data
+•Acts as buffer between Register and Main Memory
+•Computer will try to locate needed instruction/data, and proceed to Main 
+Memory if it’s a Cache Miss.
+•Volatile
+
+--- Page 19 ---
+Computer System Storage Structures
+•So much more larger than caches (~GBs) but not as fast
+•Holds all currently running program  and open files .
+•VolatileMain Memory (RAM)
+
+--- Page 20 ---
+Computer System Storage Structures
+Solid State Drive
+No Moving Fast, Fast
+ExpensiveSSD HDDSecondary Memories
+or
+Hard Disk Drive
+Spinning magnetic platters, Slow
+Cheap
+Both are Non-volatile
+

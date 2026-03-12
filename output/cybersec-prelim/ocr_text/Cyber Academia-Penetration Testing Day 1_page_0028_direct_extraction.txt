@@ -1,0 +1,14 @@
+A09:2025 
+ –
+ 
+Security Logging and Alerting Failures
+•Failures inlogging, monitoring, oralerting security -relevant events
+•Attacks happen, butnoonenotices intimeWhat it is:
+Common Issues:
+•Logs areunclear, incomplete, inconsistent
+•Noreal-time monitoring alerts
+•Sensitive data written directly tologs
+Why it matters:
+•Attacks goundetected forlong periods
+•Delayed response increase damage anddata loss
+•Makes incident response andforensics difficult orimpossible

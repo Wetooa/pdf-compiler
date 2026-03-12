@@ -1,0 +1,17 @@
+Shell
+•The outermost layer 
+(Interfaces for the outside 
+to use) of the OS
+•A special user program 
+that provides an interface 
+for the user to use 
+operating system services.
+•Shell Scripts  – a way to 
+input commands via file.
+•For Linux Systems:
+•BASH (Bourne Again SHell)
+•CSH (C SHell) on the seashore…
+•KSG (Korn SHell)Shell
+OS
+Hardwarechange 
+directory…

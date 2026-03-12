@@ -1,0 +1,14 @@
+A10:2025 
+ –
+ 
+Mishandling of Exceptional Conditions
+•Happens when applications don’t handle errors orunexpected situations properlyWhat it is:
+Common Issues:
+•Error messages that expose sensitive data
+•Applications that crash orbehave unpredictably
+•Systems that failopen instead offailing securely
+•Missing orimproper error handling logic
+Examples:
+•Stack traces shown tousers
+•App crashes when input ismissing
+•Access granted when error occurs

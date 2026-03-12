@@ -24,6 +24,16 @@ class Config:
     PAGES_PER_GROUP = 20
     DEFAULT_OVERLAP = 2
 
+    # Auth: single shared password (no user table)
+    APP_PASSWORD = os.getenv("APP_PASSWORD", "")
+    JWT_SECRET = os.getenv("JWT_SECRET", os.getenv("APP_PASSWORD", "change-me"))
+
+    # Database (optional; if unset, app may use file-based storage fallback)
+    DATABASE_URL = os.getenv(
+        "DATABASE_URL",
+        "postgresql+asyncpg://postgres:postgres@localhost:5432/pdf_compiler",
+    )
+
     # Input/Output configuration
     DEFAULT_INPUT_DIR = "./input"
     DEFAULT_OUTPUT_DIR = "./output"

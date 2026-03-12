@@ -1,0 +1,8 @@
+Computer System Architecture
+Fault Handling
+•Soft Failure
+• the ability to detect and isolate errors without a total 
+crash. 
+System continues running, 
+but the faulty component 
+or process is isolated

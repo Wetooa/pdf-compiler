@@ -1,0 +1,29 @@
+DUTPUT
+
+@& https://www.shodan.io/
+
+%% Exploits % Maps & Download Results &l Create Report
+
+Mic ess
+
+& SSL Certificate
+GTS .
+- 15.12 1 Issued By:
+Poland - Common Name: bi pl
+Details - Organization: St - Pz
+0.0.
+Issued To
+- " - Common Name: w le.pl
+China ? - Organization
+United States 1
+Russian Federation 1 Supported SSL Versions
+Pakistan 1 SSLv2, SSLv3, TLSv1
+b Mi 'ess
+HTTPS (8443) 13 & SSL Certificate
+HTTP (8080) 3 e _.___ ._1bec Issued By
+444 3 - Common Name; ! 1
+HTTP (81) 1 S— Y Primary Intermediate Server CA
+
+Details
+- Organization; S
+

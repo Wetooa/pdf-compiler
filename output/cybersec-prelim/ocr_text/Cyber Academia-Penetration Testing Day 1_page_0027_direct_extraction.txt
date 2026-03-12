@@ -1,0 +1,14 @@
+A08:2025 
+ –
+ 
+Software or Data Integrity Failures
+•Happens when applications trust software updates, code, ordata without verifying integrity
+•Thesystem assumes something issafe when itisntWhat it is:
+Common Issues:
+•Untrusted software updates orplugins
+•Insecure CI/CD pipelines
+•Deserializing untrusted data, nointegrity orsignature checks
+Why it matters:
+•Attackers canmodify code ordata silently
+•Leads tomalware injection, backdoors, ordata tampering
+•Often affects multiple systems atonce

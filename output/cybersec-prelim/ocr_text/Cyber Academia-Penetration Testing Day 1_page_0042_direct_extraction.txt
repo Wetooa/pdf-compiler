@@ -1,0 +1,5 @@
+TestSSL
+ : Installation
+TestSSL  is NOT included with the default installation of Kali Linux but is 
+easily installable through its package manager:
+oapt install testssl.sh

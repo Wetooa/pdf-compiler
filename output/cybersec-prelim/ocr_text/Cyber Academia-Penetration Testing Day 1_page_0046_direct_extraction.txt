@@ -1,0 +1,16 @@
+SQLMap
+ : Installation
+KALI LINUX
+•Kali Linux ( SQLMap  usually comes pre -installed on Kali Linux, so you don't need to install it separately.) 
+WINDOWS
+•Download the latest version of SQLMap  from the official GitHub repository: 
+https://github.com/sqlmapproject/sqlmap.
+•Extract the downloaded zip file to a directory of your choice.
+•Open a command prompt and navigate to the directory where you extracted SQLMap .
+•To verify that SQLMap  is working correctly, run the command: `python sqlmap.py –version`
+•If SQLMap  is working correctly, you should see the version number displayed in the command prompt.
+MAC OS
+•Install Homebrew by running the command: `/usr/bin/ruby -e "$(curl -fsSL  
+https://raw.githubusercontent.com/Homebrew/install/master/install)“`
+•Install Python by running the command: brew `install python`
+•Install SQLMap  by running the command: `pip install sqlmap `

@@ -1,0 +1,18 @@
+PENTESTING PROCESS:
+1.Planning & Scoping : Define scope, rules, 
+and objectives.
+2.Reconnaissance : Gather information (IPs, 
+ports, versions)
+3.Vulnerability Scanning : Identify known 
+weaknesses, vulnerabilities
+4.Exploitation : Exploit identified 
+vulnerabilities manually or with tools.
+5.Post -exploitation : Assess the impact and 
+potential access gained.
+6.Reporting : Document findings and 
+remediation recommendations.
+Overview of Penetration Testing Standards
+Plan
+Exploit
+Scan
+Report

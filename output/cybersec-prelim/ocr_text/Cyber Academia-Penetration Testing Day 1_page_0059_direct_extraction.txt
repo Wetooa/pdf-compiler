@@ -1,0 +1,16 @@
+Burp Suite: Configuration
+Standard Burp Setups:
+•Burp can be setup in various ways to enable the most efficient manual testing for 
+different types of tests
+•Due to the various environments, APIs, Technologies, Protocols, Network topologies, 
+Frameworks, etc, A “one size fits all” configuration may not always be suitable for each 
+engagement. It is the tester’s responsibility to understand the requirements of each web 
+application test in order to  properly setup Burp to best carry out a penetration test
+•Generally, Burp can be configured to handle the following testing scenarios:
+oWeb Application test: can be setup with or without Platform Authentication.
+oWeb Services/API Testing: can be setup with or without Mutual Authentication/Client 
+Certificates.
+oThick Client Application Testing : can be configured with proxying and intercepting 
+HTTP Traffic. 
+•The Succeeding slides will cover various features that are important to look into  or 
+configure for your engagements.

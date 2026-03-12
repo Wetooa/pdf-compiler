@@ -1,0 +1,13 @@
+Computer System Storage Structures
+HDD
+Main Memory (RAM)
+CPU CORE
+REGISTERS
+RAX RBX
+RCX RDX
+RSP RBP
+THISCACHE
+L1
+smolL3
+~MBsL2
+~KBs

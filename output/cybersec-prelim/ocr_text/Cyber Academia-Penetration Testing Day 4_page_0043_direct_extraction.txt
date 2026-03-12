@@ -1,0 +1,11 @@
+CVSS Base Metrics 
+ –
+ 
+Availability
+Availability : This metric measures the impact to the availability of the 
+impacted component resulting from a successfully exploited 
+vulnerability. While the Confidentiality and Integrity impact metrics apply 
+to the loss of confidentiality or integrity of data (e.g., information, files) 
+used by the impacted component, this metric refers to the loss of 
+availability of the impacted component itself, such as a networked 
+service (e.g., web, database, email)

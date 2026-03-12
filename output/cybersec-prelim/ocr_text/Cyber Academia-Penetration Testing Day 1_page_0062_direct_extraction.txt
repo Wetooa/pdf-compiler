@@ -1,0 +1,23 @@
+Burp Suite: Configuration
+Scope:
+•Once a tester has identified the targets of the web 
+application, it is of key importance to set these in 
+the scope to ensure that only the relevant traffic 
+needed for testing is captured by burp while 
+unnecessary traffic is ignored.
+oDue to the complexity of Web Applications, it is 
+beneficial to restrict the scope for several 
+reasons:
+oTo assist the tester in carrying out the 
+inspection of traffic sent between clients and 
+the server only otherwise Burp may capture all 
+traffic to other web applications or calls to 
+URLs that should not be tested.
+oTo ensure that automated scans only target 
+and send payloads to the intended targets.
+oTo help with focusing Burp’s automated spider 
+mapping features to prevent recursive site 
+discovery of a web application.
+•Scope can be set to restrict captured traffic to 
+multiple hosts based on Protocol, Port or File to 
+ensure no important traffic is missed during testing.

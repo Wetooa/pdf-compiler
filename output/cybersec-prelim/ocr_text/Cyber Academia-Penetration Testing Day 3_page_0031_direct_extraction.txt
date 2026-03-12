@@ -1,0 +1,53 @@
+Active Testing: Client
+ -
+Side Testing
+Testing for DOM
+ -
+Based Cross 
+Site Scripting
+•Identify DOM sinks
+•Build payloads that pertain 
+to every sink type
+Testing for 
+ Javascript
+  
+Execution
+•Identify sinks and possible 
+JavaScript injection point
+Testing for HTML Injection
+•Identify HTML injection 
+points and assess severity 
+of the injected content
+Testing for Client
+ -
+Side URL 
+Redirect
+•Identify injection points 
+that handle URLs or paths
+•Assess the  locations that 
+the system can redirect to
+Testing for CSS Injection
+•Identify CSS Injection 
+points
+•Assess the impact of 
+injection
+Testing for Client
+ -
+Side 
+Resource Manipulation
+•Identify sinks with weak 
+input validation
+•Assess the impact of the 
+resource manipulation
+Testing Cross Origin Resource 
+Sharing
+•Identify endpoints that 
+implement CORS
+•Ensure that the CORS 
+configuration is secure or 
+harmless
+Testing for Cross Site Flashing
+•Decompile and analyze the 
+application’s code
+•Assess sink inputs and 
+unsafe method usages

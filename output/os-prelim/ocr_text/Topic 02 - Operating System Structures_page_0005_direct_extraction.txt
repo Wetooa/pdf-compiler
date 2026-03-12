@@ -1,0 +1,9 @@
+User and OS Interface: CLI / CI
+Uses command that are directly inputted .
+•On systems with multiple Command Interpreters to choose 
+from, the interpreters are known as  Shells.
+•Shell Scripts  – set of command line steps that can be run like 
+a program.
+•Many of the commands is for file manipulation:
+•Create, Delete, List, Print, Copy, Execute, 
+etc.

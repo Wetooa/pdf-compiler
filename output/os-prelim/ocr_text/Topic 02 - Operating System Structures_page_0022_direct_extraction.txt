@@ -1,0 +1,12 @@
+File and Directory Management
+Understanding the 
+-rwxrw-r--  3 testuser  usergroup  11K Feb 14 19:30  file.txtLong Format:
+File Type
+d is directory
+- is fileRead, Write, Execute 
+Permissions 
+(owner , group, others)
+- means noHard Links
+Number of direct 
+links inside, including 
+self  (.) and parent (..)

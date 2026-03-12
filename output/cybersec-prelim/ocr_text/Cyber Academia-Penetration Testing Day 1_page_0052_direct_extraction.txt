@@ -1,0 +1,2 @@
+NMAP: Usage
+Usage : nmap  <IP address>

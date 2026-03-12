@@ -1,0 +1,14 @@
+A04:2025 
+ –
+ 
+Cryptographic Failures
+•Failures related tomissing, weak, orimproperly implemented cryptography
+•Includes poor encryption practices anexposed ormismanaged cryptographic keysWhat it is:
+Common Causes:
+•Weak oroutdated encryption algorithms
+•Insufficient randomness (poor entropy)
+•Predictable orbroken random generators
+Examples:
+•Storing passwords without hashing
+•Using weak encryption orcustom crypto
+•Poor TLS/SSL configuration  

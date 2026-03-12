@@ -1,0 +1,5 @@
+Web Application Security Testing
+A web application security test focuses only on evaluating the 
+security of a web application. 
+The process involves an active analysis of the application for 
+any weaknesses, technical flaws, or vulnerabilities.

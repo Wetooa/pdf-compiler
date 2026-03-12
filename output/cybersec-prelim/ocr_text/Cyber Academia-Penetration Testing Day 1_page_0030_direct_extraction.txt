@@ -1,0 +1,14 @@
+TECHNICAL ASSESSMENT TECHNIQUES
+Target Identification 
+ & 
+Analysis TechniquesThese techniques identify systems, ports, 
+services, and vulnerabilities, typically using 
+automated tools, though they can be performed 
+manually.
+Target Vulnerability 
+Validation TechniquesThese techniques confirm vulnerabilities and can 
+be performed manually or with automated tools, 
+depending on the technique and test team skills.
+ 
+THINK:  "What exists and what's exposed?"
+THINK:  "Can this actually be abused?"

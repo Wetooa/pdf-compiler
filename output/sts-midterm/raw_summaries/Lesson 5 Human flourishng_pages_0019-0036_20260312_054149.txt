@@ -1,0 +1,283 @@
+LEARNING GUIDE: Pages 19-36
+Generated: 2026-03-12 05:41:49
+PDF: Lesson 5 Human flourishng
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+## Learning Guide: Science, Technology, and Human Flourishing
+
+This guide simplifies the core concepts of human flourishing, scientific methodology, and theories of scientific confirmation.
+
+---
+
+### I. Human Flourishing: Eastern vs. Western Perspectives
+
+**A. Eastern Conception**
+*   **Focus:** Community-centric.
+*   **Principle:** Individual sacrifices for the sake of society.
+*   **Examples:** Chinese Confucianism, Japanese Bushido.
+*   **Purpose of Studies:** Literature, sciences, and arts are pursued for a greater, societal cause.
+
+**B. Western Conception**
+*   **Focus:** Individual-centric.
+*   **Principle:** Human flourishing is an end in itself.
+*   **Root:** Aristotelian view.
+*   **Goal:** Aims for **eudaimonia** (often translated as "human flourishing," "well-being," or "living well") as the ultimate good.
+
+---
+
+### II. Science, Technology, and Human Flourishing
+
+*   **Contribution to Knowledge:** Every discovery, innovation, and success expands our collective human knowledge.
+*   **Self-Location:** Helps humans understand their place in the world by providing proofs for evolution and other phenomena.
+*   **Sense of Self-Importance:** Elicits our idea of self-importance through achievements and understanding.
+*   **Heidegger's View on Technology:** Technology is a human activity where we excel as a result of achieving science.
+*   **Truth and Good:** Good is inherently related to the truth.
+
+---
+
+### III. The Nature of Science
+
+**A. Science as Methods and Results**
+*   Science relies on **objectivity**, achieved through a rigid methodological approach.
+*   It claims to be based on **reason** and **empiricism** (knowledge derived from sensory experience/observation).
+
+**B. Steps in the Scientific Method**
+1.  **Observe:** Notice a phenomenon or pattern.
+2.  **Determine the Problem:** Identify a question or issue to investigate.
+3.  **Formulate Hypothesis:** Propose a testable explanation for the problem.
+4.  **Conduct Experiment:** Design and carry out a test to evaluate the hypothesis.
+5.  **Gather and Analyze Data:** Collect and interpret the results of the experiment.
+6.  **Formulate Conclusion and Provide Recommendation:** State whether the hypothesis is supported and suggest further actions or research.
+
+---
+
+### IV. Theories of Scientific Confirmation
+
+**A. Verification Theory**
+*   **Definition:** A theory or discipline is considered scientific if it can be **confirmed** by observation or experimentation. An alternative hypothesis is accepted if it can also be confirmed.
+*   **Emphasis:** **Empiricism** is paramount; knowledge comes from observable, verifiable experience.
+*   **Criteria:** Focuses on measurable results and repeatable experiments.
+*   **The Vienna Circle:** A group of scholars who believed:
+    *   Only what can be observed is meaningful.
+    *   Anything that cannot be directly accessed or observed is meaningless.
+*   **Limitation (Example):** A person might observe certain gestures and *verify* their theory that someone likes them. However, these observations might be insufficient or misinterpreted if the observed person's actions are general friendliness, not specific affection. The theory was "verified" by selective observation but ultimately proven incorrect when broader context was revealed.
+
+**B. Falsification Theory**
+*   **Definition:** An ideology or theory is accepted as long as it is *not proven to be false* and can best explain a phenomenon compared to alternative theories.
+*   **Key Proponent:** **Karl Popper**.
+    *   Argued that science aims to produce new, **falsifiable** predictions.
+    *   Scientific practice involves continually testing theories against experience and making revisions based on the outcomes of these tests.
+*   **Advantage:** Allows for the emergence and testing of theories that might be difficult to directly verify but can still be potentially disproven. It encourages rigorous research to identify weaknesses in theories.
+*   **How it Works (Example):** If someone hypothesizes that a person dislikes them based on observed avoidance, they might then *test* this by interacting with that person. If, through interaction, they discover the person is merely shy and not hostile, their initial hypothesis is **falsified** and rejected.
+
+**C. Nuances and Limitations**
+*   There's no universally agreed-upon rule for how many rejections or falsifications are needed to completely abandon a theory.
+*   It's challenging to ensure that observable events or "evidence" are truly direct manifestations of a particular concept or theory, as interpretations can vary.
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 19 ---
+EASTERN 
+ Community Centric WESTERN 
+Focused on the 
+individual
+
+--- Page 20 ---
+EASTERN CONCEPTION
+Focus is community -
+centric
+Individual should sacrifice 
+himself for the sake of 
+society
+Chinese Confucian system 
+“Japanese Bushido”
+Encourage studies of 
+literature , sciences, and 
+arts for a greater cause.WESTERN CONCEPTION
+More focused on the 
+individual
+Human flourishing as an 
+end
+Aristotelian view
+Aims for eudaimonia  as 
+the ultimate good
+
+--- Page 21 ---
+Science, Technology and Human 
+Flourishing
+Every discovery, innovation, and success 
+contributes to our pool of human knowledge.
+Human’s perpetual need to locate himself in 
+the world by finding proofs to trace evolution
+Elicits our idea of self -importance
+
+--- Page 22 ---
+Technology is a human activity we 
+excel in  as a result of achieving 
+science. (Heidegger)
+Good is inherently related to the 
+truth.
+
+--- Page 23 ---
+Science as Methods and Results
+Science stems from objectivity 
+brought upon by a rigid method
+Claim to reason and empiricism
+
+--- Page 24 ---
+Steps in Scientific Method
+1.Observe
+2.Determine the Problem
+3.Formulate hypothesis
+4.Conduct experiment
+5.Gather and analyze
+6.Formulate conclusion and provide 
+recommendation
+
+--- Page 25 ---
+Verification Theory
+A discipline is science if it can be 
+confirmed or interpreted in the event 
+of an alternative hypothesis being 
+accepted.
+Premium on empiricism
+Takes into account those results which 
+are measurable and experiments which 
+are repeatable.
+
+--- Page 26 ---
+Vienna Circle
+
+group of scholars who believed that
+» only those which can be observed should be
+
+regarded as meaningful,
+
+» Reject those which cannot be directly accessed as
+meaningless.
+
+N VIENNA
+
+A
+-
+| |
+
+' |
+N
+
+R CIRCLE
+
+" n
+de )
+
+‘," l
+
+FRANY
+
+
+
+--- Page 27 ---
+Suppose, for instance, the girl, Lea has a 
+theory that her classmate Ian likes her. 
+Good, she thought, I like him too. But how 
+do I know that he likes me?
+She began by observing him and his 
+interactions with her.  Several gestures she 
+noted include his always exchanging 
+pleasantries with her whenever they bump 
+into each other, his big smile when he sees 
+her, and him going out of his way to greet 
+her even when riding a jeepney .
+
+--- Page 28 ---
+Through these observations, she 
+was then able to conclude that Ian 
+does like her because, she 
+thought, why would anyone do 
+something like that for a person he 
+does not like?
+
+--- Page 29 ---
+As it turns out, however, Ian is just 
+generally happy to meet people he 
+knew. He had known Lea since they 
+were in first year and regards her as a 
+generally okay person.  It is no surprise 
+then that upon learning that Ian 
+basically does this to everyone, Lea 
+was crushed.  She vowed to herself 
+that she would never assume again. 
+
+--- Page 30 ---
+Falsification Theory
+As long as an ideology is not proven to be 
+false and can best explain a phenomenon 
+over alternative theories, we should accept  
+the said ideology.
+Allowed emergence of theories otherwise 
+rejected by the verification theory.
+Encourages research in order to determine 
+which among the theories can stand the 
+test of falsification.
+
+--- Page 31 ---
+* KARL POPPER
+
+— aim at the production of new, falsifiable®
+predictions
+
+— scientific practice is characterized by its continual
+effort to test theories against experience and
+make revisions based on the outcomes of these
+tests
+
+
+
+--- Page 32 ---
+Ian is generally everybody’s friend. He 
+likes to be around people and 
+generally aspires to become 
+everybody’s friend.  However, there is 
+this one girl, Lea, who seemed to not 
+like him when he is around. Every time 
+he waves at her, she turns away, and 
+when they are in the same room, she 
+avoids his glances
+
+--- Page 33 ---
+Through this he concluded that Lea does 
+not like him and does his best to show her 
+that he is not a threat.
+He began greeting her whenever they pass 
+by each other at the corridor, even going so 
+far as calling her attention when he was in 
+the jeepney  and saw her walking past.
+
+--- Page 34 ---
+When they were able to talk to each other, 
+he found out that Lea is just really shy and 
+is not accustomed to people greeting her.  
+He then was able to conclude that his 
+initial impression of her not liking him is 
+wrong and thus said proposition is rejected.
+
+--- Page 35 ---
+There is no known rule as to the number of 
+instance that a theory is rejected or 
+falsified in order for it to be set aside.
+There is no assurance that observable event 
+or “evidences”are  indeed manifestations of 
+a certain concept or “theories”.
+
+--- Page 36 ---
+Thank you!
+
+\
+
+
+

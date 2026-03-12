@@ -1,0 +1,29 @@
+Active Testing : Authorization Testing
+Testing Directory Traversal 
+File Include
+•Identify injection points 
+that pertain to path 
+traversal. 
+•Assess bypassing 
+techniques and identify the 
+extent of path traversal
+Testing for Bypassing 
+Authorization Schema
+•Assess if horizontal or 
+vertical access is possible.
+Testing for Privilege 
+Escalation
+•Identify injection points 
+related to privilege 
+manipulation. 
+•Fuzz  or otherwise  attempt  
+to bypass  security  
+measures .
+Testing for Insecure Direct 
+Object References
+•Identify points where 
+object references may 
+occur. 
+•Assess the access control 
+measures and if they’re 
+vulnerable to IDOR.

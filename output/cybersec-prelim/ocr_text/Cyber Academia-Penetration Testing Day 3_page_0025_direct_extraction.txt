@@ -1,0 +1,42 @@
+Active Testing : Input Validation Testing
+Testing for Reflected Cross 
+Site Scripting
+•Identify variables that are 
+reflected in responses. 
+•Assess the input they 
+accept and the encoding 
+that gets applied on return 
+(if any).
+Testing for Stored Cross Site 
+Scripting
+•Identify stored input that is 
+reflected on the client -side. 
+•Assess the input they 
+accept and the encoding 
+that gets applied on return 
+(if any).
+Testing for HTTP Parameter 
+Pollution
+•Identify the backend and 
+the parsing method used. 
+•Assess injection points and 
+try bypassing input filters 
+using HPP.
+Testing for SQL Injection
+•Identify SQL injection 
+points. 
+•Assess the severity of the 
+injection and the level of 
+access that can be achieved 
+through it.
+Testing for LDAP Injection
+•Identify LDAP injection 
+points. 
+•Assess the severity of the 
+injection.
+Testing for XML Injection
+•Identify XML injection 
+points. 
+•Assess the types of exploits 
+that can be attained and 
+their severities.

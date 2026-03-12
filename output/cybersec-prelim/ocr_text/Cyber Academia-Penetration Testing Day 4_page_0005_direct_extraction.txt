@@ -1,0 +1,6 @@
+Post
+-
+Exploitation
+During this phase, the attacker attempts to maintain persistent access, 
+escalate their privileges, and gather sensitive information or perform 
+malicious activities .

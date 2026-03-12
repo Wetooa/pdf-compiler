@@ -1,0 +1,47 @@
+#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successfulShell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+5.Input and Output  –    
+take user input and 
+produce output.
+thescript.sh

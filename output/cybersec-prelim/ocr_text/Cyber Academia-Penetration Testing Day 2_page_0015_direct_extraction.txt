@@ -1,0 +1,17 @@
+SCOPE: Importance of a Clearly Defined 
+Pentesting
+  
+Scope
+Focuses the AssessmentIdentify target systems
+Ensures that the testing effort is 
+focused and efficient
+Avoids DisruptionOrganization can prepare in advance 
+and minimize any potential 
+interruptions or downtime.
+Ensures ComplianceMeet regulatory obligations
+Maintain the security and integrity of 
+its systems and data.
+Maximizes Resources Time, personnel and budget
+Facilitates CommunicationAvoids scope creep – occurs when 
+testing effort expands beyond the 
+initial scope and objectives

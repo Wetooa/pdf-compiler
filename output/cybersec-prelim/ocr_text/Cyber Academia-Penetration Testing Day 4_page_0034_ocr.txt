@@ -1,0 +1,27 @@
+REPORTING: Test Cases
+
+Authentication and Session Management — Incorrect
+Authentication and Session Management — Missing
+Authorization — Incorrect
+Authorization — Missing
+Components with known vulnerabilities
+Covert Channel (Timing Attacks, etc.)
+
+Cross Site Request Forgery (CSRF)
+
+Cross Site Scripting (XSS)
+Server-Side Request Forgery (SSRF)
+Unrestricted File Uploads
+Unvalidated Redirects and Forwards
+Cryptography — Incorrect
+Cryptography — Missing
+Denial of Service (DoS)
+Information Exposure
+Injection Flaws (SQL, XML, Command, Path, etc)
+Insecure Design
+Insecure Direct Object References
+Memory Corruption (Buffer and Integer Overflows, Format String, etc)
+Race Conditions
+Security Misconfiguration
+User Privacy
+

@@ -1,0 +1,6 @@
+Best Practices
+Obtain proper authorization
+Minimize the impact of testing
+Protect sensitive information
+Document all findings
+Provide clear and actionable recommendations

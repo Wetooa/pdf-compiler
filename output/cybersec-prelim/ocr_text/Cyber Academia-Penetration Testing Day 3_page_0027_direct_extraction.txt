@@ -1,0 +1,57 @@
+Active Testing : Input Validation Testing
+Testing for Incubated 
+Vulnerability
+•Identify injections that are 
+stored and require a recall 
+step to the stored injection. 
+•Understand how a recall 
+step could occur. 
+•Set listeners or activate the 
+recall step if possible.
+Testing for HTTP Splitting 
+Smuggling
+•Assess if the application is 
+vulnerable to splitting, 
+identifying what possible 
+attacks are achievable. 
+•Assess if the chain of 
+communication is 
+vulnerable to smuggling, 
+identifying what possible 
+attacks are achievable.
+Testing for HTTP Incoming 
+Requests
+•Monitor all incoming and 
+outgoing HTTP requests to 
+the Web Server to inspect 
+any suspicious requests. 
+•Monitor HTTP traffic 
+without changes of end 
+user Browser proxy or 
+client -side application.
+Testing for Host Header 
+Injection
+•Assess if the Host header is 
+being parsed dynamically in 
+the application. Bypass 
+security controls that rely 
+on the header.
+Testing for Server
+ -
+Side 
+Template Injection
+•Detect template injection 
+vulnerability points.
+•Identify the templating 
+engine. 
+•Build the exploit.
+Testing for Server
+ -
+Side 
+Request Forgery
+•Identify SSRF injection 
+points. 
+•Test if the injection points 
+are exploitable. 
+•Asses the severity of the 
+vulnerability.

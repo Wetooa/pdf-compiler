@@ -1,0 +1,310 @@
+LEARNING GUIDE: Pages 37-56
+Generated: 2026-03-12 19:58:32
+PDF: Cyber Academia-Penetration Testing Day 1
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text, focused on essential information for studying.
+
+---
+
+## **Penetration Testing Tools: A Learning Guide**
+
+This guide covers several key penetration testing tools, their purpose, installation, and basic usage.
+
+---
+
+### **1. OWASP ZAP (Zed Attack Proxy)**
+
+**What it is:**
+*   An open-source web application security testing tool.
+
+**Key Functions:**
+*   **Passive Scanning:** Automatically monitors web requests for vulnerabilities.
+*   **Dictionary Attacks:** Uses wordlists to find hidden files and folders on web servers.
+*   **Crawling:** Identifies site structure and retrieves all links/URLs.
+*   **Interception:** Intercepts, displays, modifies, and forwards web requests between browsers and web applications.
+
+**Installation:**
+*   **Available for:** Windows, Linux, MAC OS/X. Docker images also available.
+*   **Download from:** `https://www.zaproxy.org/download/`
+*   **Prerequisite:** Requires Java 8+ to run.
+*   **Important:** Always get permission from the web application owner before performing a penetration test.
+
+**Initial Configuration: Quick Start Auto Scan**
+1.  **Start ZAP.**
+2.  Click the **Quick Launch** tab in the workspace window.
+3.  Click the **Auto Scan** button.
+4.  Enter the full URL of the web application in the **Attack URL** text box.
+5.  Select either **Use traditional spider**, **Use ajax spider**, or both.
+6.  Click **Attack**.
+
+---
+
+### **2. TestSSL**
+
+**What it is:**
+*   A command-line tool for testing the SSL/TLS security of web servers.
+
+**Purpose:**
+*   **Identify Vulnerabilities:** Pinpoints weaknesses in SSL/TLS configurations (e.g., weak ciphers, certificate issues, protocol vulnerabilities).
+*   **Ensure Compliance:** Helps verify web servers comply with industry standards and regulations (e.g., PCI DSS, HIPAA, GDPR).
+
+**Installation:**
+*   **Kali Linux:** Not included by default, but easily installed.
+*   **Command:** `apt install testssl.sh`
+
+**Sample Command for Penetration Testing:**
+*   `testssl -p -s -S -U <domain>`
+    *   `-p`: Checks for TLS protocols.
+    *   `-s`: Checks for cipher suite strength.
+    *   `-S`: Checks for server defaults.
+    *   `-U`: Checks for TLS-related vulnerabilities.
+
+---
+
+### **3. SQLMap**
+
+**What it is:**
+*   An open-source penetration testing tool.
+*   Automates detecting and exploiting SQL injection (SQLi) flaws in databases.
+
+**Key Capabilities:**
+*   Detects and exploits SQL injection vulnerabilities.
+*   Enumerates databases, tables, and columns.
+*   Can access the operating system.
+*   Detects and cracks password hashes.
+*   Highly customizable with many options.
+
+**Prerequisite:**
+*   Requires knowledge of SQL injection vulnerabilities and SQL databases for effective use.
+
+**Installation:**
+*   **Kali Linux:** Usually comes pre-installed.
+*   **Windows:**
+    1.  Download the latest version from `https://github.com/sqlmapproject/sqlmap`.
+    2.  Extract the ZIP file to a directory.
+    3.  Open a command prompt and navigate to the extracted directory.
+    4.  Verify installation: `python sqlmap.py --version`
+*   **MAC OS:**
+    1.  Install Homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    2.  Install Python: `brew install python`
+    3.  Install SQLMap: `pip install sqlmap`
+
+**Sample Command for Penetration Testing:**
+*   **Basic usage (test URL for SQLi, list databases, specify parameter):**
+    *   `sqlmap -u "url" --dbs -p username`
+        *   `-u`: The URL to test.
+        *   `--dbs`: Displays a list of available databases if a parameter is vulnerable.
+        *   `-p`: Specifies which parameter to test (e.g., `username`).
+
+**Results:**
+*   SQLMap will attempt to guess the back-end DBMS (Database Management System) and use specific payloads for it.
+*   It displays detailed server information and lists available database names.
+
+---
+
+### **4. Nmap (Network Mapper)**
+
+**What it is:**
+*   A popular open-source tool for network exploration and security auditing.
+
+**Key Features:**
+*   **Port Scanning:** Identifies open ports and running services on a network.
+*   **Host Discovery:** Finds active hosts on a network.
+*   **Service Detection:** Identifies software and version numbers of services.
+*   **OS Detection:** Identifies the operating system running on a host.
+*   **Scriptable Interaction:** Can be extended with scripts to automate tasks.
+
+**Installation:**
+*   **Kali Linux:** Installed by default.
+*   **Other OS:** Available from `https://nmap.org/download.html`.
+
+**Basic Usage:**
+*   `nmap <IP address>`
+*   **Output includes:** Host status, open ports, services, OS detection, latency, MAC address.
+
+---
+
+### **5. GoWitness**
+
+**What it is:**
+*   A tool for visual inspection of websites across numerous hosts.
+
+**Purpose:**
+*   Convenient for quickly gaining an overview of the HTTP-based attack surface (e.g., taking screenshots of multiple websites).
+
+**Installation:**
+*   **Kali Linux:** Installable via package manager.
+*   **Command:** `apt install gowitness`
+
+**Usage / Output:**
+*   GoWitness typically presents a dashboard or gallery of captured website screenshots.
+*   It shows a list of scanned URLs with their HTTP status codes and page sizes, providing a quick visual and informational overview.
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 37 ---
+OWASP ZAP
+OWASP ZAP (Zed Attack Proxy) is an open -source web application 
+security testing tool.
+Key Functions of OWASP ZAP 
+•Passively scanning web request
+•Using dictionary list to search for files and folders on web 
+servers
+•Using crawlers to identify a site’s structure and retrieve all links 
+and URLs
+•Intercepting, displaying, modifying, and forwarding web 
+request between browsers and web applications 
+
+--- Page 38 ---
+OWASP ZAP: Installation
+ZAP has installer  for Windows  , Linux,  and 
+MAC  OS/X . There  are also Docker  images  
+available  on the download  site listed  
+below .  
+https ://www .zaproxy .org/download/
+Install  ZAP on the system  you intended  to 
+perform  pen testing  on
+Download  the appropriate  installer  from  the 
+download  page
+NOTE  that ZAP requires  Java  8+ in order  to 
+run.
+Before  proceeding,  ensure  you have  
+permission  from  web application  owner  to 
+perform  a penetration  test.
+
+
+--- Page 39 ---
+OWASP ZAP: Initial Configuration
+How to run a quick start auto scan?
+•Start ZAP and click the Quick Launch tab in the workspace 
+window
+•Click the Auto Scan button
+•In the Attack URL text box, enter the full URL of the web 
+application
+•Select either Use traditional spider, Use ajax spider or both
+•Click Attack
+
+
+--- Page 40 ---
+TestSSL
+
+
+--- Page 41 ---
+TestSSL
+➢A command -line tool used for testing SSL/TLS security of web servers
+➢Used to identify vulnerabilities in SSL/TLS configurations, including weak 
+ciphers, certificate issues, and protocol vulnerabilities.
+➢Used to ensure that web servers comply with industry standards and regulations, 
+such as PCI DSS, HIPAA, and GDPR What it is:
+
+--- Page 42 ---
+TestSSL
+ : Installation
+TestSSL  is NOT included with the default installation of Kali Linux but is 
+easily installable through its package manager:
+oapt install testssl.sh
+
+
+--- Page 43 ---
+TestSSL
+Sample command that you can use in  testssl  for penetration testing:
+•Testssl  –p –s –S –U <domain>
+-p : Check for TLS protocols
+-s : Check for cipher suites strength
+-S : Check for server defaults
+-U : Check for TLS -related vulnerabilities
+
+--- Page 44 ---
+SQLMap
+
+
+--- Page 45 ---
+SQLMap
+SQLMap  is an open -source 
+penetration testing tool.
+It automates the process of detecting 
+and exploiting SQL injection flaws in 
+a database.
+It can detect and exploit SQL 
+injection vulnerabilities, enumerate 
+databases, tables, and columns, and 
+access the operating system
+It can also detect and crack password 
+hashes.
+It is highly customizable and has a 
+variety of configuration options and 
+settings.
+SQLMap  requires knowledge of SQL 
+injection vulnerabilities and SQL 
+databases to be used effectively.
+
+
+--- Page 46 ---
+SQLMap
+ : Installation
+KALI LINUX
+•Kali Linux ( SQLMap  usually comes pre -installed on Kali Linux, so you don't need to install it separately.) 
+WINDOWS
+•Download the latest version of SQLMap  from the official GitHub repository: 
+https://github.com/sqlmapproject/sqlmap.
+•Extract the downloaded zip file to a directory of your choice.
+•Open a command prompt and navigate to the directory where you extracted SQLMap .
+•To verify that SQLMap  is working correctly, run the command: `python sqlmap.py –version`
+•If SQLMap  is working correctly, you should see the version number displayed in the command prompt.
+MAC OS
+•Install Homebrew by running the command: `/usr/bin/ruby -e "$(curl -fsSL  
+https://raw.githubusercontent.com/Homebrew/install/master/install)“`
+•Install Python by running the command: brew `install python`
+•Install SQLMap  by running the command: `pip install sqlmap `
+
+--- Page 47 ---
+SQLMap
+Sample commands that you can use in SQLmap  for penetration testing:
+•Basic usage: This command will test the URL for SQL injection vulnerabilities
+•`sqlmap  –u “url" --dbs -p username `
+o-u : URL that we will be testing. 
+o--dbs : will display a list of database available on the server if a parameter is 
+vulnerable
+o-p : Specify which parameter to test
+
+--- Page 48 ---
+SQLMap
+Results:
+•We can see that SQLMap  guessed what  the back -end DBMS  is. It will now try to use 
+specific payloads for this DBMS .
+
+
+--- Page 49 ---
+SQLMap
+Screenshot below shows that the detailed information about the server and also  the names 
+of available databases
+
+
+--- Page 50 ---
+NMAP
+
+
+--- Page 51 ---
+NMAP
+Nmap (Network Mapper) is a popular open -source tool used for network exploration and 
+security auditing.
+KEY FEATURES:
+•Port scanning : Nmap can scan a network to identify open ports and the services running 
+on them.
+•Host discovery : Nmap can identify active hosts on a network by sending packets and 
+analyzing the responses.
+•Service detection : Nmap can identify the software and version numbers of services 
+running on a network.
+•OS detection : Nmap can identify the operating system running on a host.
+•Scriptable interaction : Nmap can be used with scripts to automate tasks and extend its 
+capabilities.
+INSTALLATION:
+Nmap is installed in the d...

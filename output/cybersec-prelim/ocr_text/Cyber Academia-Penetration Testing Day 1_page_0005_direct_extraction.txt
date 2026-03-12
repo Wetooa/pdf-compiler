@@ -1,0 +1,10 @@
+Involves simulating attacks on 
+computer systems, and applications to 
+IDENTIFY  and EXPLOIT  vulnerabilities 
+before attackers do.
+Identifies WEAKNESSES , 
+MISCONFIGURATIONS , and 
+VULNERABILITIES .
+Provides RISK -BASED  
+recommendations to improve security.
+What is penetration testing?

@@ -1,0 +1,11 @@
+Computer System Storage Structures
+CACHE
+L1
+smolL3
+~MBsL2
+~KBs
+•Stores frequently used  instructions and data
+•Acts as buffer between Register and Main Memory
+•Computer will try to locate needed instruction/data, and proceed to Main 
+Memory if it’s a Cache Miss.
+•Volatile

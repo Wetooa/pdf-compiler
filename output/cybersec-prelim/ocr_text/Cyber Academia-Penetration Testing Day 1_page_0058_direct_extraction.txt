@@ -1,0 +1,23 @@
+Burp Suite: Installation
+
+Types of Burp Suite Installations:
+•Burp Suite offers Several versions of Burp Suite 
+which include:
+oBurp Suite Professional : contains the full 
+suite of tools and features that PortSwigger  
+has to offer which include Web Vulnerability 
+scanning, Burp extensions, Intruder , etc. on 
+top of the base features that Burp 
+Community provides.
+oBurp Suite Community : Basic toolkit 
+containing the modules needed to perform 
+manual testing such as Repeater, Decoder, 
+Sequencer and Comparer modules
+•Installation of either version is the same process. 
+Steps involved in installing:
+oDownload executable from the official 
+PortSwigger  web site: 
+https://portswigger.net/burp/communitydo
+wnload
+oRun the installer and follow through the 
+installation wizard instructions.

@@ -1,0 +1,4 @@
+Information Gathering
+Helps in identifying potential attack vectors
+Helps the tester assess the security posture of the target
+Helps collect valuable intelligence about the target

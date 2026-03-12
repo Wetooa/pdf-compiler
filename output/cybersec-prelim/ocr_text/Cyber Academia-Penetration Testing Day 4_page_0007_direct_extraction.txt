@@ -1,0 +1,8 @@
+Objectives
+Maintain Persistence
+Escalate Privileges
+Perform Reconnaissance
+Move Laterally
+Ex-filtrate Data
+Cover Their Tracks
+Use the compromised system as a platform for further attacks

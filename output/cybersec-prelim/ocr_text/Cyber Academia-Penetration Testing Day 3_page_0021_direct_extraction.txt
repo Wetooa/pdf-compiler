@@ -1,0 +1,42 @@
+Active Testing : Authentication Testing
+Testing for Weak Password 
+Policy
+•Determine the resistance of 
+the application against 
+brute force password 
+guessing using available 
+password dictionaries by 
+evaluating the length, 
+complexity, reuse, and 
+aging requirements of 
+passwords.
+Testing for Weak Security 
+Question Answer
+•Determine the complexity 
+and how straight -forward 
+the questions are. 
+•Assess possible user 
+answers and brute force 
+capabilities.
+Testing for Weak Password 
+Change or Reset 
+Functionalities
+•Determine the resistance of 
+the application to subversion 
+of the account change 
+process allowing someone to 
+change the password of an 
+account. 
+•Determine  the resistance  of 
+the passwords  reset  
+functionality  against  guessing  
+or bypassing .
+Testing for Weaker 
+Authentication in Alternative 
+Channel
+•Identify alternative 
+authentication channels. 
+•Assess the security 
+measures used and if any 
+bypasses exists on the 
+alternative channels.

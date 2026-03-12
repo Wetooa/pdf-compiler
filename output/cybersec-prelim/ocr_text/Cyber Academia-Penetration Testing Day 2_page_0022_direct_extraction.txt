@@ -1,0 +1,7 @@
+Open
+ -
+Source Intelligence (OSINT)
+A form of intelligence collection management that involves 
+finding, selecting, and acquiring information from publicly 
+available sources and analyzing it to produce actionable 
+intelligence.

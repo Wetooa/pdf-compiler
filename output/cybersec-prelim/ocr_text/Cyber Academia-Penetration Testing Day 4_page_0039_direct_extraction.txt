@@ -1,0 +1,7 @@
+CVSS Base Metrics 
+ –
+ 
+User Interaction
+User Interaction : This metric captures the requirement for a 
+human user, other than the attacker, to participate in the 
+successful compromise of the vulnerable component.

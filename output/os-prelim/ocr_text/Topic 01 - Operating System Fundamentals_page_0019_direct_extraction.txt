@@ -1,0 +1,4 @@
+Computer System Storage Structures
+•So much more larger than caches (~GBs) but not as fast
+•Holds all currently running program  and open files .
+•VolatileMain Memory (RAM)

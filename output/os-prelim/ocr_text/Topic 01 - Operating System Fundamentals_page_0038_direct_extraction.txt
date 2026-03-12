@@ -1,0 +1,8 @@
+Computer System Architecture
+Multiprocessor Systems
+• Comes in two types:
+•Asymmetric multiprocessing – consists of a Boss processor that 
+controls the system. This scheme defines master-slave / boss-
+worker relationship. 
+•Symmetric multiprocessing (SMP) – the most common type. Each 
+processor , which are all peers, performs all task within the OS.

@@ -1,0 +1,17 @@
+Things to remember in Exploitation
+Not all exploits work on all systems
+•Not every exploit will work on every system.
+•Testers need to be familiar with the different types of exploits for specific targets.
+Some exploits are more effective than others
+•Testers should use the most appropriate one for the situation.
+•For example, if you’re exploiting a web application, it’s more appropriate to use XSS 
+exploit instead of Buffer Overflow.
+Some exploits require more setup than others
+•Some exploits may require additional setup to work properly (e.g., changing firewall 
+rules).
+•Testers should be aware of these requirements before attempting any exploit.
+Not all identified vulnerabilities can be exploited against the target
+•Testers need to be familiar with the different types of vulnerabilities and what they can 
+do.
+•For example, some vulnerabilities may only allow an attacker to read common files, while 
+others may allow an attacker to execute code on a system.

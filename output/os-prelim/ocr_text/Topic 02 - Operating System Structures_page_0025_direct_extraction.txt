@@ -1,0 +1,11 @@
+File and Directory Management
+These commands help manage files and directories efficiently.
+•$ cp dir1 dir2 –  Copies files/directories dir1 to dir2.
+•-r – Copy recursively
+•-i – Prompt before overwriting
+•-u – Copy only if destination is folder
+•-v – Show Progress
+•$ mv dir1 dir2 –    Move or rename dir1 to dir2 .
+•-i – Ask before overwriting
+•-u – Move only if destination is folder
+•-v – Show progress

@@ -1,0 +1,9 @@
+CVSS Base Metrics 
+ –
+ 
+Attack Vector
+Attack Vector(AV) : This metric reflects the context by which 
+vulnerability exploitation is possible. This metric value (and 
+consequently the Base Score) will be larger the more remote 
+(logically, and physically) an attacker can be to exploit the 
+vulnerable component

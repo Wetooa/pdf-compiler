@@ -1,0 +1,58 @@
+Active Testing: Business Logic Testing
+Test Business Logic 
+Data Validation
+•Identify data injection 
+points. 
+•Validate that all checks are 
+occurring on the back end 
+and can’t be bypassed.
+•Attempt to break the 
+format of the expected 
+data and analyze how the 
+application is handling it.
+Test Ability to Forge Requests
+•Review the project 
+documentation looking for 
+guessable, predictable, or 
+hidden functionality of 
+fields. 
+•Insert logically valid data in 
+order to bypass normal 
+business logic workflow.
+Test Integrity Checks
+•Review the project 
+documentation for 
+components of the system 
+that move, store, or handle 
+data. 
+•Determine what type of 
+data is logically acceptable 
+by the component and 
+what types the system 
+should guard against. 
+Determine who should be 
+allowed to modify or read 
+that data in each 
+component. 
+•Attempt to insert, update, 
+or delete data values  used 
+by each component that 
+should not be allowed per 
+the business logic 
+workflow.
+Test for Process Timing
+• Review the project 
+documentation for system 
+functionality that may be 
+impacted by time. 
+•Develop and execute 
+misuse cases.
+Test Number of Times A 
+Function Can Be Used Without 
+Limits
+•Identify functions that must 
+set limits to the times they 
+can be called. 
+•Assess if there is a logical 
+limit set on the functions and 
+if it is properly validated.

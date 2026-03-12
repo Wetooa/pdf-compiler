@@ -1,0 +1,7 @@
+Attack against Web Applications:
+•SQL Injection to extract sensitive information
+•Cross -site Scripting to run malicious scripts
+•Code Injection to run malicious code
+•Session Hijacking to gain access to the target
+•Directory Traversal to retrieve sensitive files
+Exploitation

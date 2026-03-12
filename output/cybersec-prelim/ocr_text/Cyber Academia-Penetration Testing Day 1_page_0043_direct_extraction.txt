@@ -1,0 +1,7 @@
+TestSSL
+Sample command that you can use in  testssl  for penetration testing:
+•Testssl  –p –s –S –U <domain>
+-p : Check for TLS protocols
+-s : Check for cipher suites strength
+-S : Check for server defaults
+-U : Check for TLS -related vulnerabilities

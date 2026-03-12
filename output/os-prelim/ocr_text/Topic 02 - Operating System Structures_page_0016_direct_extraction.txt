@@ -1,0 +1,5 @@
+Working with CLI/CI
+This is how our command line interface will look like.
+There is also the indicator of the current user on which 
+device.
+username@hostname

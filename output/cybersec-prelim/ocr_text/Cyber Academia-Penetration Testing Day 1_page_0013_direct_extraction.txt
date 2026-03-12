@@ -1,0 +1,7 @@
+Testing must be EXPLICITLY authorized
+Scope must be clearly defined before testing
+Sensitive data must be handled confidentially
+Activate governed by contracts & laws
+No testing without WRITTEN PERMISSION
+Without permission, it's hacking not testing
+Rules of Engagement (Legal & Ethical)

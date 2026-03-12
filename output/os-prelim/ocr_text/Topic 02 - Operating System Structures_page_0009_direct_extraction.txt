@@ -1,0 +1,14 @@
+System Calls: Passing Parameters to 
+OS?
+•Passing via Register  - Parameters 
+are stored in registers. However , 
+there may be more parameters 
+than registers.t
+•Passing via Address  - Parameters 
+are stored in a block of memory 
+and the address is passed via 
+Register .
+•Passing via Stack  - Parameters 
+are pushed in the Process Stack 
+by the program and popped off 
+by the operating system

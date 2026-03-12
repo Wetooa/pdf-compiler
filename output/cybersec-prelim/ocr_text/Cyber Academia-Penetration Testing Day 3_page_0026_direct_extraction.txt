@@ -1,0 +1,35 @@
+Active Testing : Input Validation Testing
+Testing for SSI Injection
+•Identify SSI injection 
+points. 
+•Assess the severity of the 
+injection.
+Testing for XPath Injection
+•Identify XPATH injection 
+points.
+Testing for IMAP SMTP 
+Injection
+•Identify IMAP/SMTP 
+injection points. 
+•Understand the data flow 
+and deployment structure 
+of the system. 
+•Assess the injection 
+impacts.
+Testing for Code Injection
+•Identify injection points 
+where you can inject code 
+into the application. Assess 
+the injection severity.
+Testing for Command 
+Injection
+•Identify and assess the 
+command injection points.
+Testing for Format String 
+Injection
+•Assess whether injecting 
+format string conversion 
+specifiers into user -
+controlled fields causes 
+undesired behavior from 
+the application.

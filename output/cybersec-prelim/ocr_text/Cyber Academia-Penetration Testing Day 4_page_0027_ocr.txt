@@ -1,0 +1,10 @@
+1. Install Scripts Command Injection
+
+Severity Medium
+
+Vulnerability Class Injection Flaws
+
+Component
+
+Status Closed
+

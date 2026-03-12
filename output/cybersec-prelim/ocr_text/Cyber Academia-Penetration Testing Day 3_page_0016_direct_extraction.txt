@@ -1,0 +1,21 @@
+Active Testing : Information Gathering
+Identify Application Entry 
+Points
+•Identify possible entry and 
+injection points through 
+request and response 
+analysis.
+Map Execution Paths Through 
+Application
+•Map the target application 
+and understand the 
+principal workflows.
+Fingerprint Web Application 
+Framework
+•Fingerprint the 
+components being used by 
+the web applications.
+Map Application Architecture
+•Generate a map of the 
+application at hand based 
+on the research conducted.

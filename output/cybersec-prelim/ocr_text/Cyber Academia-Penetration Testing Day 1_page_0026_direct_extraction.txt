@@ -1,0 +1,14 @@
+A07:2025 
+ –
+ 
+Authentication Failures
+•Weaknesses inhow applications verify user identity
+•Allows attackers tologinassomeone elseWhat it is:
+Common Issues:
+•Weak orreused passwords
+•Missing orpoorly implemented MFA
+•Session fixation orbroken session handling
+Why it matters:
+•Leads toaccount takeover
+•Often thefirst step todata breaches orprivilege escalation
+•Automated attacks likecredential stuffing make itthiseasy toexploit

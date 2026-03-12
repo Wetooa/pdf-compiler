@@ -44,12 +44,15 @@ export GEMINI_API_KEY=your_api_key_here
 
 ## Web Frontend
 
-A Svelte + Tailwind + shadcn-svelte web interface lets you upload PDFs, process batches, and download compiled learning guides. Batch history is stored in localStorage (no authentication required).
+A Next.js + Tailwind + shadcn/ui web interface lets you upload PDFs, process batches, and download compiled learning guides. Batch metadata and compiled PDFs are stored in PostgreSQL when the API is run with a database. Access is protected by a single shared password; set `APP_PASSWORD` in `.env` (see `.env.example`).
 
-**Run the web app:**
+**Run the web app (development):**
 
-1. Start the API (from project root):
+1. Start the API (from project root; requires PostgreSQL and `DATABASE_URL` in `.env`):
 ```bash
+# Optional: run migrations (or use init_db on first startup)
+alembic upgrade head
+
 uvicorn api.main:app --reload --port 8000
 ```
 
@@ -58,9 +61,27 @@ uvicorn api.main:app --reload --port 8000
 cd frontend && npm run dev
 ```
 
-3. Open http://localhost:5173
+3. Open http://localhost:3000
 
-**Environment:** The frontend expects the API at `http://localhost:8000` by default. Set `VITE_API_URL` in `frontend/.env` if your API runs elsewhere.
+**Environment:** The frontend expects the API at `http://localhost:8000` by default. Set `NEXT_PUBLIC_API_URL` in `frontend/.env.local` if your API runs elsewhere.
+
+## Docker Compose
+
+Run the full stack (PostgreSQL, API, frontend) with one command:
+
+```bash
+# Set your Gemini API key and app password (required for web auth)
+export GEMINI_API_KEY=your_key_here
+export APP_PASSWORD=your_app_password_here
+
+docker compose up --build
+```
+
+- **Frontend:** http://localhost:4173 (log in with `APP_PASSWORD`)
+- **API:** http://localhost:8000
+- **PostgreSQL:** localhost:5432 (user `postgres`, password `postgres`, database `pdf_compiler`)
+
+Batch metadata and compiled PDF blobs are stored in Postgres. Set `DATABASE_URL` and `APP_PASSWORD` in `.env` for local runs (see `.env.example`).
 
 ## CLI Usage
 

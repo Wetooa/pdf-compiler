@@ -1,0 +1,5 @@
+OUTPUT
+Services running in the server hosting the target
+Technology stack used by the target
+Important functionalities / use cases of the target
+Protection mechanisms in place

@@ -1,0 +1,7 @@
+Mitigation and Prevention
+Security Awareness
+Access Controls
+Patch Management
+Network Segmentation
+Monitoring and Logging
+Incident Response Plan

@@ -1,0 +1,17 @@
+Operating Systems
+Time Sharing Operating Systems
+•CPU time is divided into small units 
+called time slices (quantum)
+•Each process gets the CPU for one 
+time slice
+•A timer interrupt  enforces the 
+time slices
+•An input interrupt  allows 
+responsiveness to user actions
+•Key defining feature is: 
+ResponsivenessOperating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTINGTimer 
+Interrupt
