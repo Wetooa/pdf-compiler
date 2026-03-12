@@ -7,8 +7,8 @@ services:
       POSTGRES_DB: pdf_compiler
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+    expose:
+      - "5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
@@ -27,19 +27,19 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_API_URL: http://localhost:8000
+        NEXT_PUBLIC_API_URL: https://pdf-compiler.api.wetooa.org
     depends_on:
       - backend
-    ports:
-      - "4173:80"
+    expose:
+      - "3000"
 
 volumes:
   postgres_data:
