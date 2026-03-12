@@ -13,7 +13,7 @@ ARG SERVICE_URL_BACKEND
 ARG NEXT_PUBLIC_API_URL
 ENV NODE_OPTIONS=--max-old-space-size=4096
 
-RUN export NEXT_PUBLIC_API_URL="${SERVICE_URL_BACKEND:-${NEXT_PUBLIC_API_URL:-http://localhost:8000}}" && npm run build
+ENV NEXT_PUBLIC_API_URL="${SERVICE_URL_BACKEND:-${NEXT_PUBLIC_API_URL:-http://localhost:8000}}" && npm run build
 
 # Stage 2: serve with nginx
 FROM nginx:alpine
