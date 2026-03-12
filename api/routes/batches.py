@@ -135,7 +135,7 @@ async def get_compiled_pdf(batch_id: str):
     return FileResponse(
         pdf_path,
         media_type="application/pdf",
-        filename="compiled.pdf",
+        filename=pdf_path.name,
     )
 </think>
 Simplifying background task execution:

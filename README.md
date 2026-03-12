@@ -89,7 +89,7 @@ Put PDFs in named folders and get one output folder per input folder with the sa
 ```bash
 # One folder
 python -m src.main input/topcit
-# -> output/topcit/summaries/, output/topcit/compiled.pdf, etc.
+# -> output/topcit/summaries/, output/topcit/topcit-compiled.pdf, etc.
 
 # Multiple folders
 python -m src.main input/topcit input/semester2-math
@@ -123,12 +123,12 @@ python -m src.main input/ --discover
 
 **Flat mode** (single output dir):
 - `output/summaries/`: Individual Markdown files per PDF
-- `output/compiled.pdf`: Combined PDF with all learning guides
+- `output/<folder_name>-compiled.pdf`: Combined PDF with all learning guides (flat mode; folder name is the output root's last segment)
 - `output/ocr_text/`, `output/raw_summaries/`: Per-page OCR text and raw API responses
 
 **Folder mode** (one subfolder per input folder, same name):
 - `output/<folder_name>/summaries/`: Individual Markdown files for PDFs in that folder
-- `output/<folder_name>/compiled.pdf`: Combined PDF for that folder only
+- `output/<folder_name>/<folder_name>-compiled.pdf`: Combined PDF for that folder only
 - `output/<folder_name>/ocr_text/`, `output/<folder_name>/raw_summaries/`: Same as above, scoped to that folder
 
 File naming:

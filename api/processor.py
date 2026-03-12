@@ -63,7 +63,7 @@ def run_batch_processing(
         )
 
         pdf_names = [Path(p).name for p in successful_pdfs]
-        compiled_pdf = output_dir / "compiled.pdf"
+        compiled_pdf = output_dir / f"{batch_id}-compiled.pdf"
         compiled_exists = compiled_pdf.exists()
 
         meta = {

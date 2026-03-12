@@ -17,6 +17,7 @@ from .utils import (
     ensure_directory,
     normalize_folder_name,
     discover_pdf_folders,
+    sanitize_filename,
 )
 
 logger = logging.getLogger(__name__)
@@ -161,7 +162,9 @@ def process_pdf_list(
         logger.info("Generating compiled PDF from all summaries in folder...")
         logger.info(f"{'='*60}\n")
         try:
+            output_filename = f"{sanitize_filename(output_gen.output_dir.name)}-compiled.pdf"
             compiled_pdf = output_gen.compile_summaries_folder_to_pdf(
+                output_filename=output_filename,
                 title=compiled_title
             )
             if compiled_pdf:
