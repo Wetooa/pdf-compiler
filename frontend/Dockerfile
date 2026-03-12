@@ -8,11 +8,12 @@ RUN npm ci
 
 COPY . .
 
-ARG NEXT_PUBLIC_API_URL=http://localhost:8000
-ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+# Coolify injects ARGs; use SERVICE_URL_BACKEND when set, else NEXT_PUBLIC_API_URL, else default
+ARG SERVICE_URL_BACKEND
+ARG NEXT_PUBLIC_API_URL
 ENV NODE_OPTIONS=--max-old-space-size=4096
 
-RUN npm run build
+RUN export NEXT_PUBLIC_API_URL="${SERVICE_URL_BACKEND:-${NEXT_PUBLIC_API_URL:-http://localhost:8000}}" && npm run build
 
 # Stage 2: serve with nginx
 FROM nginx:alpine
@@ -26,7 +27,7 @@ RUN echo 'server { \
     root /usr/share/nginx/html; \
     index index.html; \
     location / { try_files $uri $uri/ /index.html; } \
-}' > /etc/nginx/conf.d/default.conf
+    }' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
