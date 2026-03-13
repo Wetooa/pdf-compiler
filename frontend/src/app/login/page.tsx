@@ -39,14 +39,14 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center bg-muted/40 px-6 py-12">
-      <Card className="w-full max-w-sm border border-border shadow-lg py-8">
-        <CardHeader className="space-y-2 px-8 pt-2">
+      <Card className="w-full max-w-sm border border-border shadow-lg gap-3 px-8 py-6">
+        <CardHeader className="space-y-1.5 px-0 pt-0 pb-3">
           <CardTitle>PDF Compiler</CardTitle>
           <CardDescription>Enter the password to continue.</CardDescription>
         </CardHeader>
         <form onSubmit={onSubmit}>
-          <CardContent className="space-y-6 px-8 py-4">
-            <div className="space-y-3">
+          <CardContent className="space-y-4 px-0 pt-0 pb-2">
+            <div className="space-y-2">
               <label
                 htmlFor="password"
                 className="text-sm font-medium"
@@ -61,13 +61,14 @@ export default function LoginPage() {
                 placeholder="Password"
                 autoComplete="current-password"
                 disabled={submitting}
+                className="h-10 px-3 py-2"
               />
             </div>
             {error && (
               <p className="text-sm text-destructive">{error}</p>
             )}
           </CardContent>
-          <CardFooter className="flex flex-col gap-4 px-8 pt-6 pb-2">
+          <CardFooter className="flex flex-col gap-4 px-0 pt-2 pb-0">
             <Button
               type="submit"
               className="w-full"
