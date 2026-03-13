@@ -27,7 +27,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# Only ignore root-level lib (e.g. Python); frontend/src/lib is needed
+/lib/
 lib64/
 parts/
 sdist/
