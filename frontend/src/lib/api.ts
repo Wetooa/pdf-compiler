@@ -1,9 +1,25 @@
-import { getToken } from "./auth";
+import { getToken, clearToken } from "./auth";
 
 const API_URL =
   typeof process !== "undefined"
     ? process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
     : "http://localhost:8000";
+
+export class SessionExpiredError extends Error {
+  constructor() {
+    super("Session expired");
+    this.name = "SessionExpiredError";
+  }
+}
+
+function throwIfUnauthorized(res: Response): void {
+  if (res.status !== 401) return;
+  clearToken();
+  if (typeof window !== "undefined") {
+    window.location.replace("/login");
+  }
+  throw new SessionExpiredError();
+}
 
 export interface BatchMeta {
   id: string;
@@ -34,6 +50,7 @@ async function fetchWithAuth(
     headers,
     credentials: "include",
   });
+  throwIfUnauthorized(res);
   return res;
 }
 
@@ -86,6 +103,7 @@ export async function createBatch(
     body: formData,
     credentials: "include",
   });
+  throwIfUnauthorized(res);
   if (!res.ok) {
     const data = await res.json().catch(() => ({}));
     throw new Error(data.detail ?? "Upload failed");
@@ -102,27 +120,37 @@ export async function deleteBatch(id: string): Promise<void> {
 }
 
 export async function downloadCompiledPdf(id: string): Promise<void> {
-  const res = await fetchWithAuth(`/api/batches/${id}/compiled`);
-  if (!res.ok) throw new Error("Failed to download PDF");
-  const blob = await res.blob();
-  const disposition = res.headers.get("Content-Disposition");
-  const match = disposition?.match(/filename="?([^";]+)"?/);
-  const filename = match ? match[1] : `${id}-compiled.pdf`;
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
+  try {
+    const res = await fetchWithAuth(`/api/batches/${id}/compiled`);
+    if (!res.ok) throw new Error("Failed to download PDF");
+    const blob = await res.blob();
+    const disposition = res.headers.get("Content-Disposition");
+    const match = disposition?.match(/filename="?([^";]+)"?/);
+    const filename = match ? match[1] : `${id}-compiled.pdf`;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (e) {
+    if (e instanceof SessionExpiredError) return;
+    throw e;
+  }
 }
 
 export async function openSourcePdf(id: string, filename: string): Promise<void> {
-  const res = await fetchWithAuth(
-    `/api/batches/${id}/pdfs/${encodeURIComponent(filename)}`
-  );
-  if (!res.ok) throw new Error("Failed to load PDF");
-  const blob = await res.blob();
-  const url = URL.createObjectURL(blob);
-  window.open(url, "_blank", "noopener,noreferrer");
-  setTimeout(() => URL.revokeObjectURL(url), 60000);
+  try {
+    const res = await fetchWithAuth(
+      `/api/batches/${id}/pdfs/${encodeURIComponent(filename)}`
+    );
+    if (!res.ok) throw new Error("Failed to load PDF");
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    window.open(url, "_blank", "noopener,noreferrer");
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  } catch (e) {
+    if (e instanceof SessionExpiredError) return;
+    throw e;
+  }
 }

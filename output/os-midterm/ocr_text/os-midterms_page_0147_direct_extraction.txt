@@ -1,0 +1,13 @@
+Process Termination
+•Process executes last statement and asks the operating 
+system to decide it ( exit).
+•Output data from child to parent (via wait).
+•Process’ resources are deallocated by operating system.
+•Parent may terminate execution of children processes 
+(abort ).
+•Child has exceeded allocated resources.
+•Task assigned to child is no longer required.
+•Parent is exiting.
+•Operating system does not allow child to continue if its parent 
+terminates.
+•Cascading termination.

@@ -1,0 +1,15 @@
+Priority Scheduling
+•A priority number (integer) is associated with each process
+•Scheduler ALWAYS  choose a process of high priority over one of 
+lower priority
+•Smaller number == higher priority
+•Still suffers from starvation , where low priority may never 
+execute. However , aging can be implemented to increase the 
+priority of a  process based on its age or execution history
+Preemptive Priority
+Executing job is pre-empted if its 
+priority is lower than priority of 
+new job. If equal, use FCFS.Nonpreemptive Priority
+When CPU is available, it is 
+allocated to the job with highest 
+priority. If equal, use FCFS.

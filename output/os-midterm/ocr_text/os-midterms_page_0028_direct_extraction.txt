@@ -1,0 +1,15 @@
+Computer System I/O Structure
+•I/O Structure
+•I/O Operation : 
+1.The device driver loads the appropriate registers within the device 
+controller 
+2.The device controller examines the contents of these registers to 
+determine what action
+3.The controller starts the transfer of data from the device to its local buffer .
+4.The device controller informs the device driver via an interrupt  that it has 
+finished its operation. 
+5.Device driver then returns control to the operating system, possibly 
+returning the data or a pointer to the data if the operation was a read. For 
+other operations, a status information is returned instead
+This is fine for small amounts of data, but inefficient for larger ones. To solve 
+this, direct memory access ( DMA) is used.

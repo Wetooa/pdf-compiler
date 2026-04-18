@@ -1,0 +1,13 @@
+1.Process  Control – Manages process creation, termination, and 
+synchronization (e.g., fork(), exit()).
+2.File Manipulation  – Handles file operations such as creation, reading, 
+writing, and deletion (e.g., open(), read(), write()).
+3.Device Manipulation  – Manages interactions with hardware devices like 
+printers and disks (e.g., ioctl(), read(), write()).
+4.Information  Maintenance  – Retrieves and modifies system data such as 
+time, process details, and system configuration (e.g., getpid(), 
+settimeofday()).
+5.Communication  – Enables inter-process communication (IPC) through 
+message passing or shared memory (e.g., pipe(), socket()).
+6.Protection  – Controls access to resources and enforces security policies 
+(e.g., chmod(), setuid()).Types of System Calls

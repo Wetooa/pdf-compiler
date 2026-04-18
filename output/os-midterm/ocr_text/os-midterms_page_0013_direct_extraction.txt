@@ -1,0 +1,5 @@
+Computer System Booting up 
+Sequence
+Bootstrap Program
+Kernel
+Daemon

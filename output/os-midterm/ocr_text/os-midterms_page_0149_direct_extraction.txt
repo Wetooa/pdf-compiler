@@ -1,0 +1,13 @@
+Interprocess Communication (IPC)
+•IPC facility provides two operations:
+•send(message ) 
+•receive( message )
+•If P and Q wish to communicate, they need to:
+•establish a communication  link between them
+•exchange messages via send/receive
+•Implementation of communication link
+•physical  (e.g., shared memory, hardware bus)
+•logical (e.g., logical properties)Process P1
+Process P2Interprocess
+ Communication (IPC)
+Link

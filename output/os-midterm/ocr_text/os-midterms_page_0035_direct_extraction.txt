@@ -1,0 +1,17 @@
+Computer System Architecture
+Single-Processor
+One general-purpose 
+main processor with 
+special-purpose 
+processor .Multiprocessor
+Aka parallel or multicore  
+systems. Multiple 
+processors in close 
+communication that are 
+either asymmetric  or 
+symmetric .Clustered 
+Type of multiprocessor 
+that is loosely coupled, 
+meant to provide high-
+availability through 
+clustering .

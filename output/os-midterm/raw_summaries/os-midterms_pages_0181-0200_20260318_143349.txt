@@ -1,0 +1,470 @@
+LEARNING GUIDE: Pages 181-200
+Generated: 2026-03-18 14:33:49
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text, designed for efficient study.
+
+---
+
+## CPU Scheduling Learning Guide
+
+### 1. Introduction to CPU Scheduling
+
+*   **Definition:** CPU Scheduling is the core mechanism in multiprogrammed Operating Systems (OS) that decides which process from the `ready queue` gets allocated to the CPU next.
+*   **Purpose:** Maximizes CPU utilization and provides efficient system performance by managing multiple processes simultaneously.
+*   **Short-Term Scheduler (CPU Scheduler):** The component responsible for making these decisions and allocating the CPU.
+*   **Process Flow:** `Job Queue` → `Ready Queue` → `CPU`
+
+### 2. Process Bursts
+
+Processes alternate between CPU execution and I/O wait states.
+
+*   **CPU Burst:** The time period when a process continuously executes instructions on the CPU without I/O interruption.
+*   **I/O Burst:** The time period when a process waits for or performs Input/Output (I/O) operations (e.g., reading from disk, waiting for keyboard input).
+*   **Alternating Sequence Example:** `CPU Burst` (load, store) → `I/O Burst` (wait for I/O) → `CPU Burst` (add, store) → `I/O Burst` (read from file)
+
+### 3. Types of Processes
+
+*   **I/O-Bound Process:**
+    *   Spends more time doing I/O than computations.
+    *   Characterized by many short CPU bursts.
+*   **CPU-Bound Process:**
+    *   Spends more time doing computations.
+    *   Characterized by few, very long CPU bursts.
+
+### 4. Key Scheduling Terms & Performance Criteria
+
+These terms are crucial for understanding and evaluating scheduling algorithms.
+
+#### A. Process Timings & Metrics
+
+*   **Arrival Time (AT):** The time when a process enters the ready queue and becomes ready for execution.
+*   **Burst Time (BT) / CPU Burst Time:** The total time a process needs on the CPU to complete its execution.
+*   **Start Time (ST):** The time when a process actually begins executing on the CPU for the first time.
+*   **Finish Time (FT) / Completion Time (CT):** The time when a process completes all its execution (CPU and I/O, if applicable).
+*   **Gantt Chart:** A visual timeline representation of when processes execute on the CPU.
+
+#### B. Performance Criteria
+
+*   **CPU Utilization:** The percentage or fraction of time the CPU is actively performing work. (Higher is generally better)
+*   **Throughput:** The number of processes completed per unit of time. (Higher is generally better)
+*   ****Turn-around Time (TAT):** The total time from process submission (arrival) to its completion.
+    *   Formula: `TAT = Finish Time (FT) - Arrival Time (AT)`
+*   **Waiting Time (WT):** The total time a process spends waiting in the ready queue.
+    *   Formula: `WT = Turn-around Time (TAT) - Burst Time (BT)`
+*   **Response Time (RT):** The time it takes from arrival until the process first starts executing (gets its first response).
+    *   Formula: `RT = Start Time (ST) - Arrival Time (AT)`
+*   **Average Waiting Time (AWT):** A crucial parameter to judge scheduling algorithm performance. Lower AWT indicates a better algorithm.
+    *   Formula: `AWT = (Sum of all Waiting Times) / (Number of Processes)`
+
+**Example Calculation (FCFS Scenario):**
+
+| Process | AT | BT | ST | FT | TAT (FT-AT) | WT (TAT-BT) | RT (ST-AT) |
+| :------ | :- | :- | :-- | :-- | :---------- | :---------- | :--------- |
+| P1      | 0  | 24 | 0   | 24  | 24          | 0           | 0          |
+| P2      | 2  | 3  | 24  | 27  | 25          | 22          | 22         |
+| P3      | 4  | 3  | 27  | 30  | 26          | 23          | 23         |
+
+*   **Gantt Chart:** `| P1 (0-24) | P2 (24-27) | P3 (27-30) |`
+*   **Average Waiting Time (AWT):** `(0 + 22 + 23) / 3 = 15`
+
+### 5. Scheduling Schemes
+
+*   **Preemptive:** The currently running process can be interrupted by the OS and moved back to the ready state if a higher-priority or more urgent process arrives or becomes ready.
+*   **Nonpreemptive:** Once a process starts running, it continues until it either terminates or voluntarily blocks itself (e.g., for an I/O operation). It cannot be interrupted by the OS.
+
+### 6. CPU Scheduling Algorithms (Overview)
+
+Common algorithms include:
+
+*   First-Come, First-Served (FCFS)
+*   Shortest-Job-First (SJF) (Nonpreemptive and Preemptive/SRTF)
+*   Priority Scheduling (Nonpreemptive and Preemptive)
+*   Highest Response-Ratio Next (HRRN) Scheduling
+*   Round-Robin (RR) Scheduling
+*   Multilevel Queue Scheduling
+*   Multilevel Feedback Queue Scheduling
+
+### 7. First-Come, First-Served (FCFS) Scheduling
+
+*   **Mechanism:** The process that requests the CPU first is allocated the CPU first. It's managed using a FIFO (First-In, First-Out) queue.
+*   **Characteristics:** Simple to implement.
+*   **Cons:**
+    *   **Convoy Effect:** A single long-running process can hold the CPU and make many shorter processes wait for a very long time, slowing down the entire system.
+    *   Generally favors CPU-bound processes.
+
+**Example 1 (No Arrival Times - Assume all arrive at 0):**
+
+| Process | Burst Time |
+| :------ | :--------- |
+| P1      | 24         |
+| P2      | 3          |
+| P3      | 3          |
+
+*   **Arrival Order:** P1, P2, P3
+*   **Gantt Chart:** `| P1 (0-24) | P2 (24-27) | P3 (27-30) |`
+*   **Waiting Times:** P1=0, P2=24, P3=27
+*   **Average Waiting Time:** `(0 + 24 + 27) / 3 = 17`
+
+**Example 2 (No Arrival Times - Different Order):**
+
+*   **Arrival Order:** P2, P3, P1
+*   **Gantt Chart:** `| P2 (0-3) | P3 (3-6) | P1 (6-30) |`
+*   **Waiting Times:** P2=0, P3=3, P1=6
+*   **Average Waiting Time:** `(0 + 3 + 6) / 3 = 3`
+    *   *Note how arrival order drastically impacts AWT in FCFS.*
+
+**Practice Example (FCFS with Arrival Times):**
+
+| Process | Burst Time | Arrival Time |
+| :------ | :--------- | :----------- |
+| P1      | 21         | 0            |
+| P2      | 3          | 1            |
+| P3      | 6          | 3            |
+| P4      | 2          | 5            |
+
+*   *Task: Draw the Gantt Chart, fill in Start Time, Finish Time, TAT, WT, and calculate AWT.*
+
+### 8. Shortest-Job-First (SJF) Scheduling
+
+*   **Mechanism:** This algorithm prioritizes processes with the shortest *next CPU burst* length. Short processes jump ahead of longer ones.
+*   **Optimality:** SJF is considered optimal because it yields the minimum average waiting time among all scheduling algorithms.
+*   **Cons:**
+    *   **Starvation:** Long processes may wait indefinitely in the ready queue if there's a continuous stream of shorter processes.
+    *   Requires knowing the future CPU burst length, which is difficult to predict accurately in real systems.
+
+#### A. Nonpreemptive SJF
+
+*   **Rule:** When the CPU becomes available, it is assigned to the job with the smallest next CPU burst.
+*   **Tie-breaking:** If two processes have the same shortest burst time, FCFS is used.
+
+**Example (Nonpreemptive SJF - all arrive at 0):**
+
+| Process | Burst Time |
+| :------ | :--------- |
+| P1      | 6          |
+| P2      | 8          |
+| P3      | 7          |
+| P4      | 3          |
+
+*   **Sorted by BT:** P4 (3), P1 (6), P3 (7), P2 (8)
+*   **Gantt Chart:** `| P4 (0-3) | P1 (3-9) | P3 (9-16) | P2 (16-24) |`
+*   **Waiting Times:** P4=0, P1=3, P3=9, P2=16
+*   **Average Waiting Time:** `(0 + 3 + 9 + 16) / 4 = 7`
+
+**Practice Example (Nonpreemptive SJF with Arrival Times):**
+
+| Process | Burst Time | Arrival Time |
+| :------ | :--------- | :----------- |
+| P1      | 3          | 0            |
+| P2      | 13         | 2            |
+| P3      | 5          | 3            |
+| P4      | 8          | 5            |
+
+*   *Task: Draw the Gantt Chart, complete the table (ST, FT, TAT, WT), and provide the Average Turn-Around Time and Average Waiting Time.*
+
+#### B. Preemptive SJF (Shortest-Remaining-Time-First - SRTF)
+
+*   **Rule:** The currently executing process can be preempted (interrupted) if a new process arrives in the ready queue and its *remaining burst time* is shorter than the *remaining burst time* of the currently running process.
+
+**Example (Preemptive SJF / SRTF with Arrival Times):**
+
+| Process | Arrival Time | Burst Time |
+| :------ | :----------- | :--------- |
+| P1      | 0            | 7          |
+| P2      | 2            | 4          |
+| P3      | 4            | 1          |
+| P4      | 5            | 4          |
+
+*   **Gantt Chart (Simplified):** `| P1 (0-2) | P2 (2-4) | P3 (4-5) | P2 (5-6) | P4 (6-10) | P1 (10-16) |`
+    *   P1 runs (0-2), P2 arrives (AT=2, BT=4). P1 remaining is 5, P2 remaining is 4. P2 preempts.
+    *   P2 runs (2-4), P3 arrives (AT=4, BT=1). P2 remaining is 2, P3 remaining is 1. P3 preempts.
+    *   P3 runs (4-5), completes. P2 remaining is 2, P4 arrives (AT=5, BT=4). P2 has shorter remaining (2) than P4 (4). P2 runs.
+    *   P2 runs (5-6), completes. P1 remaining is 5, P4 remaining is 4. P4 has shorter remaining (4). P4 runs.
+    *   P4 runs (6-10), completes. P1 remaining is 5. P1 runs.
+    *   P1 runs (10-16), completes.
+*   **Waiting Times:** P1 = (10-0-2) = 8 (Wait after first burst: 10 - 2 (P1 ran for 2 units), so P1 waited 8 units) = Wait time = 8 units. No, easier to calculate: P1(0-2) then P1(10-16). So it arrived at 0, first ran at 0, finished at 16, burst=7. TAT = 16-0=16. WT = 16-7=9.
+    *   P1: (10-2) + (0-0) = 8 + 0 = 8. (Wrong calculation in original slide, recalculate using TAT-BT)
+    *   P1: FT=16, AT=0, BT=7. TAT = 16-0=16. WT = 16-7=9.
+    *   P2: FT=6, AT=2, BT=4. TAT = 6-2=4. WT = 4-4=0. (Actually, P2 waits for 2 units initially until P1 is preempted, but P2's ST is 2. So RT is 0. WT is 0)
+    *   P3: FT=5, AT=4, BT=1. TAT = 5-4=1. WT = 1-1=0.
+    *   P4: FT=10, AT=5, BT=4. TAT = 10-5=5. WT = 5-4=1.
+*   **Corrected Average Waiting Time:** `(9 + 0 + 0 + 1) / 4 = 10 / 4 = 2.5`
+    *   *(Note: The slide had AWT = 3, which might be based on a slightly different calculation of individual waiting times. My calculation aligns with the definitions provided earlier.)*
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 181 ---
+CPU Scheduling
+•CPU Scheduling is the basis of 
+multiprogrammed  OS.
+•It deals with the problem of 
+deciding which processes  in 
+the ready queue is to be 
+allocated in the CPU.Short-term scheduler 
+(CPU scheduler) 
+Selects which process 
+should be executed next 
+and allocates CPU
+Job Queue Ready Queue CPU
+
+--- Page 182 ---
+Alternating Sequence
+load store
+add  store
+read from file
+store 
+increment
+index
+Write to file
+load store
+add  store
+read from filewait for I/O
+wait for I/O
+wait for I/OCPU Bursts
+the time period 
+during which a 
+process executes 
+instructions on 
+the CPU 
+continuously, 
+without any 
+interruption for 
+input/output (I/O)I/O Bursts
+the time period 
+during which a 
+process is waiting 
+for or performing 
+I/O operations, 
+such as reading 
+from a disk, waiting 
+for keyboard or 
+input
+
+--- Page 183 ---
+Types of Processes
+•I/O-Bound process  – 
+spends more time doing 
+I/O than computations. 
+Many short CPU bursts.
+•CPU-Bound Process  – 
+spends more time doing 
+computations; few very 
+long CPU bursts
+
+
+--- Page 184 ---
+Key Scheduling Terms
+•Arrival Time (AT)  - The time when a process enters the ready queue  
+(i.e., becomes ready for execution).
+•Burst Time (BT)  / CPU Burst Time  - The total time  the process needs on 
+the CPU to complete its execution.
+•Start Time (ST)  - The time when the process actually starts  executing on 
+the CPU for the first time.
+•Finish Time (FT)  / Completion Time (CT)  - The time when the process 
+completes all its execution  (both CPU and I/O if applicable).Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3P1P2P3Gantt Chart:
+0 242730
+
+--- Page 185 ---
+Finish Time
+24
+27
+30Start Time
+0
+24
+27Key Scheduling Terms
+Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3P1P2P3Gantt Chart:
+0 242730
+Start Time Finish TimeWhat are the Start Times  and Finish Times  for the sample FCFS 
+Scheduling Below?
+
+--- Page 186 ---
+Performance Criteria
+•CPU Utilization :  Percentage or fraction of the time CPU is doing 
+something.
+•Throughput :  Number of processes that are completed per unit time
+•Turn-around Time :  Time delay from submission of process to its 
+completion
+Finish Time – Arrival Time
+•Waiting Time :  Time spent by the job waiting in the ready queue
+Turnaround Time – Burst Time
+•Response Time :  The amount of time it takes to start the response
+Start Time – Arrival TimeP1P2P3Gantt Chart:
+0 242730Finish Time
+24
+27
+30Start Time
+0
+24
+27Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3Start Time Finish TimeKey Scheduling Terms
+
+--- Page 187 ---
+Finish Time
+24
+27
+30Start Time
+0
+24
+27Key Scheduling Terms
+Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3P1P2P3Gantt Chart:
+0 242730
+Start Time Finish TimeWhat are the Turnaround Times , Waiting Times and Response 
+Times for the sample FCFS Scheduling Below?
+TAT WT RT
+24
+25
+26
+0
+22
+23
+0
+22
+23
+
+--- Page 188 ---
+Average Waiting Time (WT)
+a crucial parameter to judge it's performance of a 
+Scheduling Algorithm. The lower , the better the 
+algo.
+Finish Time
+24
+27
+30Start Time
+0
+24
+27Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3Start Time Finish Time TAT WT RT
+24
+25
+26
+0
+22
+23
+0
+22
+23
+AWT = (0 + 22 + 23)/3
+= 15
+
+--- Page 189 ---
+Scheduling Schemes
+Preemptive
+Currently running process may be 
+interrupted and moved to the 
+ready state by the OS.Nonpreemptive
+Once a process is in the running 
+state, it will continue until it 
+terminates or blocks itself for I/O.
+
+
+--- Page 190 ---
+Scheduling Algorithms
+•First-Come, First-Served Scheduling
+•Shortest-Job-First/Shortest-Job-Next
+•Nonpreemptive SJF
+•Preemptive SJF/Shortest-Remaining-Time-First
+•Priority Scheduling
+•Nonpreemptive Priority
+•Preemptive Priority
+•Highest Response-Ratio Next Scheduling
+•Round-Robin Scheduling
+•Multilevel Queue Scheduling
+•Multilevel Feedback Queue Scheduling
+
+--- Page 191 ---
+First-Come, First-Served
+•The process that requested the CPU first is allocated first
+•Managed using a FIFO queue
+•A short process may have to wait a very long time (Convoy effect)
+•Favors CPU-bound processes
+•Suffers from convoy effect
+•When a single long-running process holds the CPU and slows down 
+the entire system
+
+
+--- Page 192 ---
+First-Come, First-Served
+Process Burst Time
+P1
+24
+P23
+P3
+3
+P1P2P3Gantt Chart:
+0 242730Suppose that they arrived in the order , P1, P2, P3
+What is the average waiting time?
+Waiting time for P1 = 0,  P2 = 24, P3 = 
+27 Average Waiting Time = (0+24+27)/3  = 
+17If no Arrival Time is 
+provided, it is 
+understandable that 
+all arrived at 0
+
+--- Page 193 ---
+First-Come, First-Served
+Process Burst Time
+P2
+3
+P33
+P1
+24
+P1P2P3Gantt Chart:
+036 30Suppose that they now arrived in the order , P2, P3, P1
+What is the average waiting time?
+Waiting time for P1 = 6,  P2 = 0, P3 = 3
+Average Waiting Time = (6+0+3)/3  = 3If no Arrival Time is 
+provided, it is 
+understandable that 
+all arrived at 0
+
+--- Page 194 ---
+First-Come, First-Served (Example)
+•Given the Arrival Times  and Burst Times of P1, P2, P3, and P4, let's find 
+the average waiting...

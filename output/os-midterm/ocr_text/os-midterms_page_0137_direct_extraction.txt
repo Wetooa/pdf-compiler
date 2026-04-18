@@ -1,0 +1,9 @@
+Intended Learning Outcomes
+•ILO1. Enumerate the different scheduling queues.
+•ILO2. Distinguish the different schedulers.
+•ILO3. Identify the responsibilities of the operating system 
+during context switching.
+•ILO4. Analyze the major impact of Process Manageme
+nt on Operating System performance.
+•ILO5. Implement the producer-consumer algorithm.
+•ILO6. Create program on thread creation

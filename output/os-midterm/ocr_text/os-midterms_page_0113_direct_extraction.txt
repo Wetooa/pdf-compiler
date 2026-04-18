@@ -1,0 +1,19 @@
+Main.cVisualizing: 
+start()
+it
+ltmain()#include <pthread.h>
+#include <stdio.h>
+void* immortalthread( void* arg);
+void* longThread( void* arg);
+int main() {
+    pthread_t  it, lt;
+    
+    pthread_create(&it, NULL, foo, 
+NULL);
+    
+    pthread_create(&lt, NULL, foo, 
+NULL);
+    pthread_join(it, NULL);
+    
+    pthread_join(lt, NULL);
+}

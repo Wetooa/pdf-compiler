@@ -1,0 +1,14 @@
+#4.) Round Robin
+Consider the table below for processes with their respective 
+Arrival Times, CPU burst times, and priorities. For a Round Robin  
+scheduling with Time Quantum of 10, draw the Gantt chart and 
+compute for the ff: Average TAT, average WT, average RT
+Process Arrival Time Burst Time
+P1
+52
+ 41
+P20 30
+P3
+30
+ 53
+P425 25

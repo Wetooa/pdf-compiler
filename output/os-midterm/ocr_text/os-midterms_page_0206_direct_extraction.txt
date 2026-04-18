@@ -1,0 +1,11 @@
+#5: Identify the ff:
+a)The amount of time it takes to start the response 
+(Start time – Arrival Time)
+b)Time delay from submission of process to its 
+completion (Finish time – Arrival time)
+c)The time spent by the job waiting in the ready 
+queue (Turn-Around time – Burst Time)
+d)The total time the process needs on the CPU to 
+complete its execution.
+e)True or false. Higher Average TAT means a much 
+more efficient scheduling.

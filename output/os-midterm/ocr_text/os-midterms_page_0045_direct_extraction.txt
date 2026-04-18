@@ -1,0 +1,41 @@
+Operating System
+•Process  
+•a self-contained execution 
+environment
+•has a complete, private set 
+of basic runtime resources 
+(has own memory space)
+•Thread
+•The smallest unit of CPU 
+execution within a process.
+•Threads within same 
+process share basic runtime 
+resources.1st Thread
+int i = 1;
+int n = 
+getNum();
+while(i < n):
+print(i);
+print(“Done!”)2nd Thread
+String s; 
+print(“Who u?”);
+S = getString();
+print(“Hello” + 
+s)Data FilesRegiste
+r
+Counte
+r
+StackRegiste
+r
+Counte
+r
+StackA process with 2 threads
+int x = getNum();
+int y = getNum();
+int result = x + 6;
+print(result)DataRegiste
+r
+Counte
+r
+StackSingle Threaded 
+Process

@@ -1,0 +1,462 @@
+LEARNING GUIDE: Pages 127-146
+Generated: 2026-03-18 14:32:58
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+This learning guide condenses the provided text (Pages 127-146) into key concepts, definitions, and practical information, eliminating verbose explanations.
+
+---
+
+## Learning Guide: Threads, Concurrency, and Process Management
+
+### Section 1: Java Threads
+
+Threads allow programs to perform multiple tasks concurrently.
+
+#### 1.1 How to Create Threads
+
+There are two main ways to create threads in Java:
+
+1.  **Extending the `Thread` class:**
+    *   Create a class that `extends Thread`.
+    *   Override the `run()` method with the code the thread should execute.
+    *   **Example:**
+        ```java
+        class LongProcess extends Thread {
+            public void run() {
+                try {
+                    System.out.println("Long Process");
+                    sleep(1000); // Pause for 1 second
+                } catch (InterruptedException e) { /* handle exception */ }
+            }
+        }
+        ```
+
+2.  **Implementing the `Runnable` interface:**
+    *   Create a class that `implements Runnable`.
+    *   Override the `run()` method with the code the thread should execute.
+    *   **Example:**
+        ```java
+        class ImmortalProcess implements Runnable {
+            public void run() {
+                while (true) {
+                    System.out.println("Running at all times");
+                }
+            }
+        }
+        ```
+
+#### 1.2 How to Start Threads
+
+Once a thread class is defined, you start execution:
+
+1.  **For classes extending `Thread`:**
+    *   Instantiate an object of your `Thread` subclass.
+    *   Call its `start()` method.
+    *   **Example:** `LongProcess lp = new LongProcess(); lp.start();`
+
+2.  **For classes implementing `Runnable`:**
+    *   Instantiate an object of your `Runnable` implementation.
+    *   Create a `Thread` object, passing your `Runnable` object to its constructor.
+    *   Call the `Thread` object's `start()` method.
+    *   **Example:** `ImmortalProcess ip = new ImmortalProcess(); Thread ipThread = new Thread(ip); ipThread.start();`
+
+#### 1.3 Waiting for Threads to Finish (`join()`)
+
+*   The `join()` method makes the *current* thread wait until the thread it's called on finishes execution.
+*   **Important:** `join()` can throw an `InterruptedException`, so always use a `try-catch` block.
+*   **Example:** `lp.join(); ipThread.join();` (This would make the `main` thread wait for `lp` and `ipThread` to complete).
+
+### Section 2: Concurrency Problems and Prevention
+
+#### 2.1 Concurrency Problems
+
+These occur when multiple threads access and modify shared resources simultaneously.
+
+*   **Shared Resource:** Any data or object that multiple threads can interact with (e.g., a shared `Storage` object).
+*   **Common Problems:**
+    *   **Temporary Update Problem:** Data is temporarily updated by one transaction but rolled back, leading to other transactions reading incorrect temporary data.
+    *   **Incorrect Summary Problem:** When reading a summary (e.g., total count) while other transactions are updating the individual items, leading to an inconsistent summary.
+    *   **Lost Update Problem:** One thread's update is overwritten by another thread's update because both read the same outdated value.
+    *   **Unrepeatable Read Problem:** A thread reads data, and when it tries to read the same data again, it finds that another thread has modified or deleted it.
+    *   **Phantom Read Problem:** A thread reads data, and when it re-executes the same query, it finds new rows inserted by another transaction.
+
+#### 2.2 Preventing Concurrency Problems
+
+1.  **`isAlive()` method:**
+    *   Checks if a thread has been started and has not yet terminated.
+    *   **Caution:** While you *can* use `isAlive()` to check a thread's status, it's generally **not recommended** for making one thread wait for another (use `join()` instead). Continuously checking `isAlive()` in a loop (busy-waiting) wastes CPU cycles.
+
+2.  **Semaphores (`java.util.concurrent.Semaphore`)**
+    *   A semaphore controls access to a shared resource using a counter.
+    *   **Purpose:** Limits the number of threads that can access a critical section (a piece of code that manipulates a shared resource) at any given time.
+    *   **Initialization:** `Semaphore s = new Semaphore(int permits);`
+        *   `permits`: The maximum number of threads allowed to access the resource concurrently.
+        *   `new Semaphore(1)` creates a **binary semaphore** (similar to a mutex), allowing only one thread at a time.
+    *   **Usage:**
+        *   `s.acquire()`: A thread calls this to request permission to enter the critical section. If the permit count is 0, the thread waits until a permit is released.
+        *   `s.release()`: A thread calls this to release a permit after exiting the critical section, incrementing the permit count.
+    *   **Example:**
+        ```java
+        import java.util.concurrent.Semaphore;
+        // ... inside a thread's run method that accesses shared resource
+        try {
+            semaphore.acquire(); // Acquire a lock (permit)
+            // Critical section: Access shared resource here
+            Thread.sleep(10); // Simulate work
+        } catch (InterruptedException e) { /* handle */ }
+        finally {
+            semaphore.release(); // Release the lock
+        }
+        ```
+
+### Section 3: Process Management
+
+Process Management is a core function of the Operating System.
+
+#### 3.1 Process Concept
+
+*   **Process:** A program in execution. Each process progresses sequentially.
+*   **Self-contained execution environment:** A process has its own resources.
+*   **Components of a Process:**
+    *   **Program Counter (PC):** Points to the next instruction to be executed.
+    *   **Stack:** Stores temporary data (e.g., function parameters, local variables, return addresses).
+    *   **Data Section:** Stores global variables.
+
+#### 3.2 Process Life Cycle / Process States
+
+A process transitions through different states during its execution:
+
+1.  **New / Start:** The process is being created.
+2.  **Ready:** The process is waiting to be assigned to a CPU. It's loaded into main memory and ready to run.
+3.  **Running:** Instructions of the process are being executed by the CPU.
+4.  **Waiting (Blocked):** The process is waiting for some event to occur (e.g., I/O completion, receiving a signal). It cannot execute until the event happens.
+5.  **Terminated / Exit:** The process has finished execution.
+
+#### 3.3 Process Control Block (PCB)
+
+*   **Definition:** A data structure maintained by the Operating System for *every* process.
+*   **Purpose:** Contains all the information needed to manage a specific process.
+*   **Information stored in a PCB:**
+    *   **Process State:** Current state (New, Ready, Running, Waiting, Terminated).
+    *   **Process Privileges:** Access rights to system resources.
+    *   **Process ID (PID):** Unique identifier for the process.
+    *   **Pointer:** To a parent process (for hierarchical process structures).
+    *   **Program Counter:** Address of the next instruction.
+    *   **CPU Registers:** Values of CPU registers when the process was last suspended.
+    *   **CPU Scheduling Information:** Process priority, pointers to scheduling queues.
+    *   **Memory Management Information:** Base/limit registers, page tables.
+    *   **Accounting Information:** CPU usage, real time used, job numbers.
+    *   **I/O Status Information:** List of open files, I/O devices allocated.
+
+#### 3.4 Context Switch
+
+*   **Definition:** The mechanism by which the CPU saves the state of the currently running process and loads the saved state of another process to resume its execution.
+*   **When it occurs:** When the CPU switches from one process to another (e.g., time slice expires, I/O request, interrupt).
+*   **Overhead:** Context-switch time is pure overhead; the system performs no useful work during this period. Its duration depends on hardware support.
+*   **Steps:**
+    1.  Save the PCB of the old process.
+    2.  Load the PCB of the new process.
+
+#### 3.5 Process Scheduling Queues
+
+Queues help the OS manage processes at different stages of their lifecycle.
+
+1.  **Job Queue:**
+    *   Contains *all* processes in the system, typically those waiting to enter main memory.
+
+2.  **Ready Queue:**
+    *   Contains all processes residing in main memory that are ready and waiting to execute on the CPU.
+    *   Processes in the Ready state are in this queue.
+
+3.  **Device Queues (I/O Queues):**
+    *   Contains processes waiting for a particular I/O device to become available or for an I/O operation to complete.
+
+#### 3.6 Schedulers
+
+Schedulers are special system software that manage the flow of processes.
+
+1.  **Long-Term Scheduler (Job Scheduler):**
+    *   **Role:** Selects which processes from the **Job Queue** should be brought into the **Ready Queue** (i.e., loaded into main memory).
+    *   **Frequency:** Less frequent, as it controls the degree of multiprogramming.
+
+2.  **Short-Term Scheduler (CPU Scheduler):**
+    *   **Role:** Selects which process from the **Ready Queue** should be executed next by the CPU.
+    *   **Frequency:** Very frequent, runs every few milliseconds. It is responsible for making fast decisions to optimize CPU utilization.
+
+3.  **Medium-Term Scheduler:**
+    *   **Role:** Manages "swapped-out" processes. It can remove processes from main memory (swap them out to disk) to reduce the degree of multiprogramming or free up memory. Later, it can swap them back in.
+    *   **Necessity:** Not always necessary; common in systems with limited RAM or for balancing system load.
+    *   **Swapping:** Moving a process from RAM to disk and vice-versa.
+
+#### 3.7 Process States and Flow Summary
+
+This summarizes how processes move between states and queues, managed by schedulers:
+
+1.  **New** process enters the **Job Queue**.
+2.  **Long-Term Scheduler** picks processes from the Job Queue and moves them to the **Ready Queue** (loading them into memory).
+3.  From the Ready Queue, the **Short-Term Scheduler (CPU Scheduler)** selects a process to move to the **Running** state.
+4.  While **Running**:
+    *   If its time slice expires (e.g., due to an interrupt), it returns to the **Ready Queue**.
+    *   If it makes an I/O request, it moves to the **Waiting** state and enters a **Device Queue**.
+    *   If it forks a child process, the child enters the Ready Queue.
+    *   If an interrupt occurs, it might return to the Ready state or handle the interrupt.
+5.  From the **Waiting** state, once the awaited event (e.g., I/O completion) occurs, the process moves back to the **Ready Queue**.
+6.  A process in the Running state can eventually move to the **Terminated** state after completing its execution.
+7.  The **Medium-Term Scheduler** can move processes between main memory (Ready/Waiting states) and secondary storage (swapped-out processes) to manage memory and load.
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 127 ---
+public class  Main{
+   public static  void main(String[] 
+args){
+ // LongProcess extends Thread
+   LongProcess lp = new 
+LongProcess();
+lp.start();
+ // ImmortalProcess implements Runnable
+   ImmortalProcess ip = new
+                       
+LongProcess();
+Thread ipThread = new Thread(ip);
+ipThread.start();
+ // join() throws a 
+InterruptedException
+ // so make sure to use try-catch!
+pl.join(); 
+ipThread.join();
+    }
+}class ImmortalProcess implements Runnable{
+   public void run() {
+while(true){
+  System.out.println( “Running at all 
+times");}
+   }
+}
+Main.java
+1.Extending Thread 
+Class: Override 
+run() methodHow to create 
+Threads?class LongProcess extends Thread{
+   public void run() {
+      try{
+           System .out.println( “Long Process" );
+           sleep( 1000);
+      }catch(InterruptedException e){}
+   }
+}
+2.Implementing 
+Runnable 
+interface: 
+Implement 
+run() method.
+
+--- Page 128 ---
+public class  Main{
+   public static  void main(String[] 
+args){
+ // LongProcess extends Thread
+   LongProcess lp = new 
+LongProcess();
+lp.start();
+ // ImmortalProcess implements Runnable
+   ImmortalProcess ip = new
+                       
+LongProcess();
+Thread ipThread = new Thread(ip);
+ipThread.start();
+ // join() throws a 
+InterruptedException
+ // so make sure to use try-catch!
+pl.join(); 
+ipThread.join();
+    }
+}
+Main.java
+1.Instantiate an 
+Object extending 
+Thread. Call 
+start() .How to start 
+Threads?
+2.Instantiate a 
+Thread  with an 
+object 
+implementing 
+Runnable. Call 
+start() .class ImmortalProcess implements Runnable{
+   public void run() {
+while(true){
+  System.out.println( “Running at all 
+times");}
+   }
+}
+
+--- Page 129 ---
+public class  Main{
+   public static  void main(String[] 
+args){
+ // LongProcess extends Thread
+   LongProcess lp = new 
+LongProcess();
+lp.start();
+ // ImmortalProcess implements Runnable
+   ImmortalProcess ip = new
+                       
+LongProcess();
+Thread ipThread = new Thread(ip);
+ipThread.start();
+ // join() throws a 
+InterruptedException
+ // so make sure to use try-catch!
+pl.join(); 
+ipThread.join();
+    }
+}
+Main.javaVisualizing: 
+start()
+lp.run()
+ip.run()main()
+
+--- Page 130 ---
+public class  Main{
+   public static  void main(String[] 
+args){
+ // LongProcess extends Thread
+   LongProcess lp = new 
+LongProcess();
+lp.start();
+ // ImmortalProcess implements Runnable
+   ImmortalProcess ip = new
+                       
+LongProcess();
+Thread ipThread = new Thread(ip);
+ipThread.start();
+ // join() throws a 
+InterruptedException
+ // so make sure to use try-catch!
+pl.join(); 
+ipThread.join();
+    }
+}
+Main.javaVisualizing :  
+join()
+main()
+lp.run() ip.run()
+
+--- Page 131 ---
+thread2thread1
+thread3Suppose we have a resource 
+that is shared between our 
+threads,
+Storage s
+What happens if we try to use 
+s between threads?
+Concurrency 
+Problemss.add(o)
+;s.edit(o
+)s.delete(o
+)
+
+--- Page 132 ---
+thread2thread1
+thread3Concurrency 
+Problems
+s.add(o)
+;s.edit(o
+)s.delete(o
+)Common problems faced while 
+maintaining any shared 
+resource.
+Most commonly on Database 
+Management Systems.
+Temporary Update Problem
+Incorrect Summary Problem
+Lost Update Problem
+Unrepeatable Read Problem
+Phantom Read Problem
+
+--- Page 133 ---
+thread2thread1
+Preventing concurrency 
+Problems
+s.add(o)
+;
+while(thread1.isAlive()){
+  //waiting
+}
+// don’t do that though, 
+// just thread1.join()
+// to make this thread wait
+s.edit(o)You can use 
+isAlive()  
+method to check if 
+a thread is alive.
+Checks if a thread 
+is alive (started and 
+not yet ended)???X
+
+--- Page 134 ---
+thread2 thread1 thread3Preventing concurrency 
+Problems
+Since checking for status of 
+other threads won’t be enough 
+for all cases, you can use 
+java.util.concurrent.Semaphore
+to lock resources instead.
+(Controls access to a shared 
+resource through the use of a 
+counter  )
+Semaphore  s = new Semaphore( int 
+permits);
+permits – the number of allowed threads within 
+the critical part (locked) of instructionsimport java.util.concurrent.*;
+...
+Semaphore s = new Semaphore(1);
+MyThread t1 = new MyThread(s);
+MyThread t2 = new MyThread(s);
+MyThread t3 = new MyThread(s);
+...
+t1.start(); t2.start(); 
+t3.start();
+
+--- Page 135 ---
+thread2 thread1Preventing concurrency 
+Problems
+s.acquire();s.acquire(); // acquire lock
+Thread.sleep(10);
+// CPU is free, but 
+// semaphore is not
+s.release(); //release lockYou can use 
+isAlive()  
+method to check if 
+a thread is alive.
+Checks if a thread 
+is alive (started and 
+not yet ended)
+
+--- Page 136 ---
+Process 
+Management
+Operating System Topic 03
+CS348
+
+--- Page 137 ---
+Intended Learning Outcomes
+•ILO1. Enumerate the different scheduling queues.
+•ILO2. Distinguish the different schedulers.
+•ILO3. Identify the responsibilities of the operating system 
+during context switching.
+•ILO4. Analyze the major impact of Process Manageme
+nt on Operating System performance.
+•ILO5. Implement the producer-consumer algorithm.
+•ILO6. Create program on thread creation
+
+--- Page 138 ---
+Process Concept
+•An operating system executes a ...

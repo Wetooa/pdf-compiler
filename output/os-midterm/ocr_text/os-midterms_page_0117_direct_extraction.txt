@@ -1,0 +1,38 @@
+Main.javaPreventing 
+concurrency 
+Problems
+You can use sem_t  from
+<semaphore.h>
+to lock resources.
+(Controls access to a shared 
+resource through the use of 
+a counter  )
+Initialize a semaphore with:
+sem_init(&sem, pshared, value )
+&sem – semaphore object pointer
+pshared – within same process?
+value - number of permits#include <pthread.h>
+#include <stdio.h>
+#include <semaphore.h>
+sem_t sem;
+int shared = 0;
+int main() {
+    pthread_t  t1, t2;
+    sem_init(&sem, 0, 1);  // binary 
+semaphore
+    pthread_create(&t1, NULL, worker, 
+NULL);
+    pthread_create(&t2, NULL, worker, 
+NULL);
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+    sem_destroy(&sem);
+    return 0;
+}
+void* worker( void* arg) {
+    sem_wait(&sem);   // acquire
+    shared++;
+    printf( "Shared value: %d\n" , shared);
+    sem_post(&sem);   // release
+    return NULL;
+}

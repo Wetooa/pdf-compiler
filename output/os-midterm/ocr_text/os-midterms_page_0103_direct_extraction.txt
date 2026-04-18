@@ -1,0 +1,26 @@
+Main.c
+A library that allows 
+the creation of a new 
+concurrent process 
+flow
+<pthread.h>What is POSIX 
+Threads?
+Every C Program has 
+at least one thread , 
+known as the main 
+or parent thread.
+All other generated 
+threads are known as 
+child threads .#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}

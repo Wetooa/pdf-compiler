@@ -1,0 +1,15 @@
+Cooperating Processes
+Processes that can affect or are affected by other 
+processes running on the system. Cooperating 
+processes may share data with each other . Cooperation 
+is done through Interprocess Communication (IPC) .
+Modularity
+dividing complicated 
+tasks into smaller 
+subtasksComputation 
+speed-up
+Concurrent 
+executionInformation 
+sharing
+access to the same 
+data

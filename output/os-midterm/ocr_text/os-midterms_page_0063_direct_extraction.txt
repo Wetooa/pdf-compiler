@@ -1,0 +1,8 @@
+User and OS Interface
+•Almost all OS have a user interface (UI), which can be any of 
+the ff:
+•Command Line Interface (CLI)  – AKA command interpreter (CI) . 
+Uses command that are directly inputted.
+•Graphical User Interface (GUI)  – user friendly interface with 
+dedicated I/O devices to make selections and input data
+•Batch – commands are entered into files, then files are run.  

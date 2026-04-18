@@ -1,0 +1,7 @@
+File and Directory Management
+Understanding the 
+-rwxrw-r--  3 testuser  usergroup  11K Feb 14 19:30  file.txtOwner of the file/directory
+Rights: rwx
+Group that owns the file/directory
+Rights: rw-File SizeLong Format:
+Date Modified

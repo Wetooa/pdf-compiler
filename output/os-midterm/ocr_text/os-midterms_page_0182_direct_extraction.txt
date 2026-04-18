@@ -1,0 +1,31 @@
+Alternating Sequence
+load store
+add  store
+read from file
+store 
+increment
+index
+Write to file
+load store
+add  store
+read from filewait for I/O
+wait for I/O
+wait for I/OCPU Bursts
+the time period 
+during which a 
+process executes 
+instructions on 
+the CPU 
+continuously, 
+without any 
+interruption for 
+input/output (I/O)I/O Bursts
+the time period 
+during which a 
+process is waiting 
+for or performing 
+I/O operations, 
+such as reading 
+from a disk, waiting 
+for keyboard or 
+input

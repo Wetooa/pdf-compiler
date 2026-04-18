@@ -1,0 +1,18 @@
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are 
+followed?
+Semaphore - a Synchronization 
+primitive used to coordinate concurrent 
+processes or threads by controlling 
+access to shared resources.  Can be 
+Binary (ON/OFF switch) or Counting  
+(multiple identical resource)0
+1
+2 3401
+2
+34
+sCounting Semaphore

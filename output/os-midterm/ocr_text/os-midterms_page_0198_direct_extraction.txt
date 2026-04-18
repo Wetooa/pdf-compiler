@@ -1,0 +1,11 @@
+Shortest-Job-First (Nonpreemptive)
+Process Burst Time Arrival 
+Time
+P1
+21
+ 0
+P23 5
+P3
+6
+ 15
+P42 22Another Example to Practice on

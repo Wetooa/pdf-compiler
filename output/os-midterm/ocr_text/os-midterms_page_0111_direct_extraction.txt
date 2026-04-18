@@ -1,0 +1,26 @@
+Main.c
+How to create 
+Threads?#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}What does this method do?
+pthread_create( 
+  thr, attr, func, arg
+)
+•thr  - stores thread ID
+•attr - thread 
+attributes
+•func – Pointer to the 
+function the thread will 
+execute.
+•arg  - argument passed 
+to function

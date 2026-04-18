@@ -1,0 +1,13 @@
+Round-robin
+•RR, also known as time slicing
+•Preemptive using a clock interrupt generated at periodic 
+intervals
+•If interrupt occurs, running process is pre-empted (each 
+process is given a time quantum, usually 10-100msec to use 
+CPI)
+•No job is allocated the CPU for more than one time 
+quantum.
+•If there are n processes in the ready queue and the time 
+quantum is q, then each process gets 1/n of the CPU time in 
+chunks of at most q time units at once.
+•No process waits more than (n-1)q  time units.

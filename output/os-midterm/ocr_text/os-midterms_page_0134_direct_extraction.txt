@@ -1,0 +1,22 @@
+thread2 thread1 thread3Preventing concurrency 
+Problems
+Since checking for status of 
+other threads won’t be enough 
+for all cases, you can use 
+java.util.concurrent.Semaphore
+to lock resources instead.
+(Controls access to a shared 
+resource through the use of a 
+counter  )
+Semaphore  s = new Semaphore( int 
+permits);
+permits – the number of allowed threads within 
+the critical part (locked) of instructionsimport java.util.concurrent.*;
+...
+Semaphore s = new Semaphore(1);
+MyThread t1 = new MyThread(s);
+MyThread t2 = new MyThread(s);
+MyThread t3 = new MyThread(s);
+...
+t1.start(); t2.start(); 
+t3.start();

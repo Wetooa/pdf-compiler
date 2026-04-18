@@ -1,0 +1,23 @@
+Process Scheduling Queues
+•Job queue – set of all 
+processes in the 
+system.
+•Ready queue – set of 
+all processes residing 
+in main memory, ready 
+and waiting to execute.
+•Device queues – set of 
+processes waiting for a 
+device.
+•Process migration 
+between main and 
+secondary memory 
+(only if not running).Job Queue Ready Queue CPU
+I/O request I/O queue I/O
+time slice 
+expired
+fork a child
+wait for 
+interruptchild executes
+Interrupt 
+occurs

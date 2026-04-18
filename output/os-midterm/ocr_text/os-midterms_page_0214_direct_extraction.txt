@@ -1,0 +1,25 @@
+Highest-Response-Ratio-Next
+Process AT BT
+P1
+0
+ 3
+P22 6
+P3
+4
+ 4
+P46 5
+P5
+8
+ 2P1
+P2
+P3
+P4
+P5
+5 10 15 20Gantt Chart:
+A
+A
+A
+A2.25
+1.6
+1.52.4
+3.5

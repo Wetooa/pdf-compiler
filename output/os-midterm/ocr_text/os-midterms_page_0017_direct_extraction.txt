@@ -1,0 +1,10 @@
+Computer System Storage Structures
+CPU CORE
+REGISTERS
+•Fastest possible memory in a computer
+•Extremely small , measuring only bits or bytes
+•Holds immediate data  (like 1 + 1)
+•VolatileRAX RBX
+RCX RDX
+RSP RBP
+•Located inside the CPU

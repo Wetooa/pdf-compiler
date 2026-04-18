@@ -1,0 +1,12 @@
+File and Directory Management
+These commands help manage files and directories 
+efficiently.
+•$ pwd - Displays the current directory path.
+•$ ls - Displays files and directories. Has the following 
+options:
+•-l – Long format showing details (permissions, owner , size)
+•-a – Show all files, including those hidden (starts with .)
+•-h – Human readable format. 
+•-R – Recursive, lists contents of subdirectories.
+•You can use multiple options, e.g.: -lah
+-rwxrw-r-- 3 testuser usergroup 11K Feb 14 19:30 file.txtLong Format:

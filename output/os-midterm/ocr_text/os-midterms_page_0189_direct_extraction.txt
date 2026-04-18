@@ -1,0 +1,8 @@
+Scheduling Schemes
+Preemptive
+Currently running process may be 
+interrupted and moved to the 
+ready state by the OS.Nonpreemptive
+Once a process is in the running 
+state, it will continue until it 
+terminates or blocks itself for I/O.

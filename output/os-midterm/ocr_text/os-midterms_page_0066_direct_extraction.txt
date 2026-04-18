@@ -1,0 +1,12 @@
+System Calls
+A mechanism used by programs to request services from the 
+operating system (OS).
+•Application Programming Interface (API)  - specifies a set of 
+functions that are available to an application programmer .
+•Windows API
+•POSIX API (UNIX, Linux, MacOSX)
+•Java API (Java Virtual Machine)
+•System Call Interface – serves as link to the system calls that 
+are made available by the operating systems. Intercepts 
+function calls in the API and invokes the necessary system calls 
+(stored on a table).

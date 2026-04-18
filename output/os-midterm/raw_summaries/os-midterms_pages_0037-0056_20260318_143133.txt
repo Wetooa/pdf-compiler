@@ -1,0 +1,316 @@
+LEARNING GUIDE: Pages 37-56
+Generated: 2026-03-18 14:31:33
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text:
+
+---
+
+# Computer System Architecture & Operating Systems: Learning Guide
+
+## I. Computer System Architecture
+
+### A. Multiprocessor Systems
+*   **Definition:** Systems with two or more general-purpose CPUs (also called Parallel Systems or Multicore Systems).
+*   **Memory Access:** Changes from Uniform Memory Access (UMA) to Non-Uniform Memory Access (NUMA).
+*   **Advantages:**
+    *   Increased throughput (more tasks per unit time).
+    *   Economy of scale (cost-effective).
+    *   Increased reliability (if one CPU fails, others can continue).
+*   **Types:**
+    *   **Asymmetric Multiprocessing:** Has a "Boss" processor controlling the system (master-slave relationship).
+    *   **Symmetric Multiprocessing (SMP):** Most common type. All processors are peers and perform all OS tasks.
+*   **Multicore Chips:**
+    *   Multiple computing cores on a single chip.
+    *   Faster and use less power than multiple single-core chips.
+
+### B. Clustered Systems
+*   **Definition:** A type of multiprocessor system that is "loosely coupled." Designed for **high-availability** through **redundancy**.
+*   **Structure:** Composed of two or more independent computer systems (nodes) joined together.
+*   **Failover Mechanism:** Each node monitors others. If a node fails, a monitoring node takes over its tasks and resources, allowing the failed node to restart.
+*   **Types:**
+    *   **Symmetric:** All machines run applications and can run more than one application.
+    *   **Asymmetric:** One machine is in "hot-standby" mode, ready to take over if the active node fails.
+*   **Capability:** Can provide **high-performance computing** (greater than SMP) through parallelization.
+
+---
+
+## II. Operating System (OS) Fundamentals
+
+### A. Purpose of an Operating System
+*   **Manages hardware resources** and provides services.
+*   Enables multiple programs to **execute efficiently and safely**.
+*   **Key Responsibilities:**
+    *   Managing execution (processes, threads).
+    *   Managing resources (CPU, memory, I/O).
+    *   Coordinating concurrent activities.
+    *   Sharing the system among users and programs.
+
+### B. Core OS Concepts
+
+1.  **Process:**
+    *   A self-contained execution environment.
+    *   Has a complete, private set of basic runtime resources, including its own memory space.
+
+2.  **Thread:**
+    *   The smallest unit of CPU execution *within* a process.
+    *   Threads within the same process share basic runtime resources (like memory space).
+
+3.  **Interrupt:**
+    *   A signal that indicates an event has occurred (from hardware or software).
+    *   Requires immediate attention from the CPU.
+    *   **Action:** Temporarily pauses the current CPU task to handle the event (via an Interrupt Service Routine), then resumes the interrupted task.
+
+---
+
+## III. Types of Operating Systems
+
+### A. Batch Operating Systems
+*   **Function:** Processes similar jobs in groups (batches) without user interaction during execution.
+*   **Key Innovation: Multiprogramming**
+    *   **Definition:** Improves CPU **utilization** by organizing jobs (code and data) so the CPU is always busy.
+    *   Keeps multiple processes in memory simultaneously.
+    *   When one process waits for I/O, the CPU switches to another ready job to avoid idle time.
+*   **Key Defining Feature:** **Utilization** (of the CPU).
+*   **Nature:** Not interactive.
+
+### B. Time-Sharing Operating Systems
+*   **Concept:** A logical extension of Multiprogramming.
+*   **Function:** The CPU executes multiple processes by rapidly switching among them. The switches are so frequent that users can **interact** with each program while it's running.
+*   Allows multiple users to share the system concurrently.
+*   **Mechanism:**
+    *   CPU time is divided into small units called **time slices (or quantum)**.
+    *   Each process gets the CPU for one time slice.
+    *   A **timer interrupt** enforces these time slices, forcing the CPU to switch processes.
+    *   An **input interrupt** allows responsiveness to user actions.
+*   **Key Defining Feature:** **Responsiveness** (to user interaction).
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 37 ---
+Computer System Architecture
+Multiprocessor Systems
+•Aka Parallel Systems  or Multicore 
+Systems
+•Has two or more general-purpose CPU.
+•Changes memory access model from 
+uniform memory access (UMA)  to 
+non-uniform memory access (NUMA)
+•Three main advantages:
+•Increased throughput
+•Economy of scale
+•Increased reliability
+
+
+--- Page 38 ---
+Computer System Architecture
+Multiprocessor Systems
+• Comes in two types:
+•Asymmetric multiprocessing – consists of a Boss processor that 
+controls the system. This scheme defines master-slave / boss-
+worker relationship. 
+•Symmetric multiprocessing (SMP) – the most common type. Each 
+processor , which are all peers, performs all task within the OS.
+
+
+--- Page 39 ---
+Computer System Architecture
+Multiprocessor 
+Systems
+•Multicore  chips
+•Multiple computing 
+cores on a single 
+chip
+•Faster than the usual 
+multiprocessor .
+•Uses less power than 
+similar number of 
+single core chips.
+
+
+--- Page 40 ---
+Computer System Architecture
+Clustered Systems
+
+
+--- Page 41 ---
+Computer System Architecture
+Clustered Systems
+•A type of multiprocessor system that is loosely coupled .
+•Designed for high-availability , achieved through redundancy .
+•Composed of two or more nodes (computer system)  joined 
+together . 
+•Each node can monitor other nodes. If a node fails, a monitoring 
+node can take over the task and resources, allowing the former 
+node to restart Has two types:
+•Symmetric  – all machines are running applications, but requires to be 
+able to run more than one application in a system.
+•Asymmetric  - one machine is hot-standby mode ready to take cover
+•Can provide high-performance computing  (greater than SMP) 
+through parallelization .
+
+--- Page 42 ---
+interconnect Interconnect
+computer computer 1 computer
+
+
+
+--- Page 43 ---
+Operating System
+
+--- Page 44 ---
+Operating System
+•structured to manage hardware resources and provide 
+services so multiple programs  can execute efficiently and 
+safely.
+•Managing execution (processes, threads)
+•Managing resources (CPU, memory, I/O)
+•Coordinating concurrent activities
+•Sharing the system among users and programs
+
+--- Page 45 ---
+Operating System
+•Process  
+•a self-contained execution 
+environment
+•has a complete, private set 
+of basic runtime resources 
+(has own memory space)
+•Thread
+•The smallest unit of CPU 
+execution within a process.
+•Threads within same 
+process share basic runtime 
+resources.1st Thread
+int i = 1;
+int n = 
+getNum();
+while(i < n):
+print(i);
+print(“Done!”)2nd Thread
+String s; 
+print(“Who u?”);
+S = getString();
+print(“Hello” + 
+s)Data FilesRegiste
+r
+Counte
+r
+StackRegiste
+r
+Counte
+r
+StackA process with 2 threads
+int x = getNum();
+int y = getNum();
+int result = x + 6;
+print(result)DataRegiste
+r
+Counte
+r
+StackSingle Threaded 
+Process
+
+--- Page 46 ---
+Operating System
+•Interrupt
+•Signals an occurrence of an event from either hardware  or 
+software . 
+•Requires immediate attention.
+•Temporarily pauses CPU task to handle the event, which will then 
+resume the interrupted task after .
+
+
+--- Page 47 ---
+Types of Operating System
+
+--- Page 48 ---
+Types of Operating System
+Batch Operating Systems
+•Processes similar jobs in groups or batches without user interaction during 
+execution.
+Operating SystemMain Memory
+MAXSeconday MemoryJob PoolBatch
+Job 1
+Job 2
+Job 3
+Job 4
+Job 5
+Job 6COMPUTER
+LOADE
+DJob 1
+Job 2
+Job 3
+Job 4
+Job 5
+Job 6Process 1
+Process 2
+Process 3
+Process 4RUN
+
+--- Page 49 ---
+Types of Operating System
+Batch Operating Systems
+•Processes similar jobs in groups or batches without user interaction during execution.
+•Introduced Multiprogramming
+•Utilization of CPU by organizing jobs (code and data) so that the CPU is always 
+busy
+•multiple processes are kept in memory at the same time
+•Key defining feature:
+           Utilization
+Operating SystemMain Memory
+MAXProcess 1
+Process 2
+Process 3
+Process 4EXECUTINGI/O 
+RequestSwitches to another job to 
+avoid CPU idle
+
+--- Page 50 ---
+Types of Operating System
+Operating SystemMain Memory
+MAXProcess 1
+Process 2
+Process 3
+Process 4EXECUTINGI/O 
+Request
+I/O 
+RequestSwitches to another job to 
+avoid CPU idleBatch Operating Systems
+•Processes similar jobs in groups or batches without user interaction during execution.
+•Introduced Multiprogramming
+•Utilization of CPU by organizing jobs (code and data) so that the CPU is always 
+busy
+•multiple processes are kept in memory at the same time
+•Key defining feature:
+           Utilization
+
+--- Page 51 ---
+Types of Operating System
+Operating SystemMain Memory
+MAXProcess 1
+Process 2
+Process 3
+Process 4EXECUTINGI/O 
+Request
+I/O 
+RequestSwitches to another job to 
+avoid CPU idleBatch Operating Systems
+•Processes similar jobs in groups or batches without user interaction during execution.
+•Introduced Multiprogramming
+•Utilization of CPU by organizing jobs (code and data) so that the CPU is always 
+busy
+•multiple processes are kept in memory at the same time
+•Key defining feature:
+           Utilization
+
+--- Page 52 ---
+Operating Syst...

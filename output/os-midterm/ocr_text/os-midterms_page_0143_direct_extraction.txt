@@ -1,0 +1,22 @@
+Schedulers
+Schedulers are special system software which handle process 
+scheduling in various ways.
+Long-term scheduler
+(job scheduler) 
+Selects which processes 
+should be brought into 
+the ready queue.Short-term scheduler 
+(CPU scheduler) 
+Selects which process 
+should be executed next 
+and allocates CPU
+Job Queue Ready Queue CPUMedium-term 
+scheduler
+In-charge of handling 
+the swapped out-
+processes.
+Swapping is from RAM 
+to DISK (to free up 
+space).
+Not necessary at all 
+times.

@@ -1,0 +1,17 @@
+#1.) & #2.) Priority Scheduling
+Consider the table below for processes with their respective 
+Arrival Times, CPU burst times, and priorities. For both Non-
+preemptive (#1)  and Preemptive (#2) Priority  Scheduling , draw 
+the Gantt chart and compute for the ff: Average TAT, average WT, 
+average RT
+Process Arrival Time Burst Time Priority
+P1
+52
+ 41
+ 10
+P20 30 40
+P3
+30
+ 53
+ 20
+P425 25 30

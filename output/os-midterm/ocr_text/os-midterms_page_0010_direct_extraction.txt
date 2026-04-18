@@ -1,0 +1,6 @@
+compiler   assembler   text-editor  ...  
+dota2.exe
+System and Application Programs
+Operating SystemComputer System Components
+Computer 
+HardwareUser User User

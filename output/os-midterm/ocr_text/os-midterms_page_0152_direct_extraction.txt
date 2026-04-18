@@ -1,0 +1,19 @@
+Message Passing
+Processes communicate with each other without resorting to shared 
+variables.
+Process P1
+Process P2Interprocess
+ Communication 
+through Logical 
+Means
+item message;
+send(P2, message)P1
+item message;
+receive(P1, message)P2
+No Shared Buffer .
+Mailbox mailbox;
+item message;
+send(mailbox, message)P1
+Mailbox mailbox;
+item message;
+receive(mailbox, message)P2DIRECT INDIRECT

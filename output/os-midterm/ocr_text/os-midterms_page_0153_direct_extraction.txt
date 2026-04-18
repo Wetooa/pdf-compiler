@@ -1,0 +1,10 @@
+Direct Communication
+•Processes must name each other explicitly:
+•send ( P, message ) – send a message to process P
+•receive( Q, message ) – receive a message from process Q
+•Properties of communication link
+•Links are established automatically.
+•A link is associated with exactly one pair of communicating 
+processes.
+•Between each pair there exists exactly one link.
+•The link may be unidirectional but is usually bi-directional.

@@ -1,0 +1,12 @@
+CPU Scheduling
+•CPU Scheduling is the basis of 
+multiprogrammed  OS.
+•It deals with the problem of 
+deciding which processes  in 
+the ready queue is to be 
+allocated in the CPU.Short-term scheduler 
+(CPU scheduler) 
+Selects which process 
+should be executed next 
+and allocates CPU
+Job Queue Ready Queue CPU

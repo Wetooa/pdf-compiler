@@ -1,0 +1,7 @@
+Process Life Cycle/Process States
+•As a process executes, it changes state
+•New/start :  The process is being created.
+•ready:  The process is waiting to be assigned to a processor .
+•running:  Instructions are being executed.
+•waiting:  The process is waiting for some event to occur .
+•Terminated /exit:  The process has finished execution.

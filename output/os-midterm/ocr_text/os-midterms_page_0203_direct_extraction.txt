@@ -1,0 +1,10 @@
+Shortest-Job-First
+ 
+Determining the length of the next CPU Burst
+•Can only estimate length
+•Can be done by using the length of previous bursts, using 
+exponential averaging.
+Tₙ₊₁ = Predicted burst time for the next CPU burst
+tₙ = Actual length of the last CPU burst
+Tₙ = Previous prediction for the last CPU burst
+α (alpha)  = Weight factor (0  α  1) ≤ ≤

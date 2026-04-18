@@ -1,0 +1,8 @@
+First-Come, First-Served
+•The process that requested the CPU first is allocated first
+•Managed using a FIFO queue
+•A short process may have to wait a very long time (Convoy effect)
+•Favors CPU-bound processes
+•Suffers from convoy effect
+•When a single long-running process holds the CPU and slows down 
+the entire system

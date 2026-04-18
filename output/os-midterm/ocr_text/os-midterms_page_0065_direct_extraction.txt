@@ -1,0 +1,14 @@
+User and OS Interface: CLI / CI
+Has two approach:
+Interpreter implements 
+CommandsProgram implements 
+Commands
+cd myFolder
+windows command promptrm file.txt
+UNIX
+The code for cd (change working 
+directory) is stored in the 
+interpreter .The code for rm (remove) is stored 
+on a separate file, rm. Interpreter 
+executes rm with parameter 
+file.txt

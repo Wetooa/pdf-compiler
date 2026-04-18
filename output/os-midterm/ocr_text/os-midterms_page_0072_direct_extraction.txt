@@ -1,0 +1,16 @@
+Hypervisor
+•Also known as a virtual machine monitor or VMM.
+•Program that creates and runs virtual machine
+Can be of two types
+Host Windows Operating 
+SystemHypervisor
+CPU RAM DISK
+NETWORK I/OCPU RAM DISKHypervisorOther 
+Apps
+NETWORK I/OLINUX MacWindow
+sType II Type I
+I act like a 
+lightweight OSI need to 
+borrow 
+resources from 
+HOST!!LINUX Mac

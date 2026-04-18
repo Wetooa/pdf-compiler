@@ -1,0 +1,22 @@
+Main.c
+In a C/C++ program, 
+all other threads 
+terminates once 
+main thread dies. 
+Thus, it is important 
+to wait for child 
+threads before 
+returning.What is POSIX 
+Threads?#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}

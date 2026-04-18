@@ -1,0 +1,9 @@
+Why Threads?
+Since step 3 requires step 1 to be done, then simply 
+just join the threads! To wait for the step 1 to be 
+done!
+main()String s = 
+readLongFile(
+)
+otherLongProcess
+()process( s)join

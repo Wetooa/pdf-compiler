@@ -1,0 +1,28 @@
+Main.c
+1.Include the necessary 
+library:
+#include <pthread.h>
+2.Define the thread 
+function
+•Should return void*
+•Must accept void*
+3.Declare a pointer for 
+thread
+•Type: pthread_t*  
+4.Create the Thread with:
+•pthread_create(
+  thr, attr, func, arg
+  )How to create 
+Threads?#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}

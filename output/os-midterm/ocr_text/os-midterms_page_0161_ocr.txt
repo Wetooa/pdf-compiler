@@ -1,0 +1,43 @@
+Process
+
+Process is heavy weight or resource
+intensive.
+
+Process switching needs interaction
+with operating system.
+
+In multiple processing environments,
+each process executes the same code
+but has its own memory and file
+resources.
+
+If one process is blocked, then no other
+process can execute until the first
+process is unblocked.
+
+Multiple processes without using
+threads use more resources.
+
+In multiple processes each process
+operates independently of the others.
+
+Thread
+
+Thread is light weight, taking lesser
+resources than a process.
+
+Thread switching does not need to
+interact with operating system.
+
+All threads can share same set of open
+files, child processes.
+
+While one thread is blocked and waiting,
+a second thread in the same task can run.
+
+Multiple threaded processes use fewer
+resources.
+
+One thread can read, write or change
+another thread's data.
+

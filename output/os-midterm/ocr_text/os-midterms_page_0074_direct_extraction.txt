@@ -1,0 +1,5 @@
+Working with CLI/CI
+This is how our command line interface will look like.
+On prompts, there is always a preceding $ or a # symbol.
+$ - indicates the current user is a normal user
+# - indicates the current user is a root user (superuser)

@@ -1,0 +1,18 @@
+user
+mode
+
+kernel
+mode
+
+open ()
+
+system call interface
+
+open ()
+
+Implementation
+of open ()
+system call
+
+return
+

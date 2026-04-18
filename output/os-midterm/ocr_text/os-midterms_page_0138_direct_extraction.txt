@@ -1,0 +1,12 @@
+Process Concept
+•An operating system executes a variety of programs:
+•Batch system – jobs
+•Time-shared systems – user programs or tasks
+•Process  
+•a program in execution; process execution must progress in 
+sequential fashion.
+•A self-contained execution environment.
+•A process includes:
+•program counter 
+•stack
+•data section

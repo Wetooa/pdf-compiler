@@ -1,0 +1,24 @@
+#1: FCFS
+Process Burst Time Arrival 
+TimeStart Time Finish 
+TimeTAT WT
+P1
+3
+ 0
+ ?
+ ?
+ ?
+ ?
+P212 2 ? ? ? ?
+P3
+16
+ 5
+ ?
+ ?
+ ?
+ ?
+P48 10 ? ? ? ?Given the Arrival time and Burst Time of P1, P2, P3, and P4, 
+draw the Gantt Chart , complete the Table, and provide the a.) 
+Average Turn-Around Time and b.) Average Waiting Time.
+a)Average Turn-Around Time
+b)Average Waiting Time

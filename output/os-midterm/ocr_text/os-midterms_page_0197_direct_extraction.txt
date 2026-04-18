@@ -1,0 +1,12 @@
+Shortest-Job-First (Nonpreemptive)
+Process Burst Time
+P1
+6
+P28
+P3
+7
+P43P4Gantt Chart:
+039 16P3P1P2
+24
+Average Waiting Time = (3+16+9+0)/4  = 
+7

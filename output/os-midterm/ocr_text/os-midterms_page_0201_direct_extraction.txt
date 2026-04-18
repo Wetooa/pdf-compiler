@@ -1,0 +1,15 @@
+Shortest-Job-First (Preemptive)
+Process Arrival 
+TimeBurst Time
+P1
+0
+ 8
+P21 4
+P3
+2
+ 2
+P43 1
+P5
+4
+ 3
+P65 2Another Example to Practice on

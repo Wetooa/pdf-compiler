@@ -1,0 +1,8 @@
+Why Threads?
+main()String s = 
+readLongFile(
+)otherLongProcess
+()process( s)Suppose we have a program that does the following:
+1. Reads a very long file
+2. Do lots of other long processes
+3. Lastly, process the read file

@@ -1,0 +1,29 @@
+Finish Time
+24
+27
+30Start Time
+0
+24
+27Key Scheduling Terms
+Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3P1P2P3Gantt Chart:
+0 242730
+Start Time Finish TimeWhat are the Turnaround Times , Waiting Times and Response 
+Times for the sample FCFS Scheduling Below?
+TAT WT RT
+24
+25
+26
+0
+22
+23
+0
+22
+23

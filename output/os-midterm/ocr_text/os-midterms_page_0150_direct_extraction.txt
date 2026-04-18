@@ -1,0 +1,24 @@
+Interprocess Communication (IPC)
+•Cooperation by Sharing (Physical)
+•The cooperating processes can cooperate 
+with each other using shared data such as 
+memory, variables, files, databases etc.
+•Producer-Consumer Paradigm
+Process P1
+Shared Data
+Process P2
+…
+Kernel•Cooperation by Communication(Logical)
+•The cooperating processes can 
+cooperate with each other using 
+messages using system-provided 
+primitives
+•Message Passing
+Process P1
+Process P2
+…
+Kernel…M
+M
+MCan be 
+Direct or 
+Indirect

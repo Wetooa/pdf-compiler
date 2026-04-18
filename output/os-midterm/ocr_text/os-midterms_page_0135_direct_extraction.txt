@@ -1,0 +1,13 @@
+thread2 thread1Preventing concurrency 
+Problems
+s.acquire();s.acquire(); // acquire lock
+Thread.sleep(10);
+// CPU is free, but 
+// semaphore is not
+s.release(); //release lockYou can use 
+isAlive()  
+method to check if 
+a thread is alive.
+Checks if a thread 
+is alive (started and 
+not yet ended)

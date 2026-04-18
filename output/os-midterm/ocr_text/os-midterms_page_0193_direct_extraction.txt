@@ -1,0 +1,15 @@
+First-Come, First-Served
+Process Burst Time
+P2
+3
+P33
+P1
+24
+P1P2P3Gantt Chart:
+036 30Suppose that they now arrived in the order , P2, P3, P1
+What is the average waiting time?
+Waiting time for P1 = 6,  P2 = 0, P3 = 3
+Average Waiting Time = (6+0+3)/3  = 3If no Arrival Time is 
+provided, it is 
+understandable that 
+all arrived at 0

@@ -1,0 +1,8 @@
+Why Threads?
+To run tasks in the background without interrupting 
+the main program.
+In other words, to enable concurrent execution . 
+Suppose we have a program that does the following:
+1. Reads a very long file
+2. Do lots of other long processes
+3. Lastly, process the read file

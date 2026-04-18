@@ -1,0 +1,9 @@
+Round-robin
+Performance
+•If q is large, FIFO
+•If q is small, overhead will be too high
+•Ideal case is should be large compared to context switch 
+time, but small enough to allow reasonable response time 
+for interactive processes.
+•This balances throughput, CPU utilization, and response 
+time.

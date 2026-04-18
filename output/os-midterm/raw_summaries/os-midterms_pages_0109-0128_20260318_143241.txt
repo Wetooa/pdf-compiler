@@ -1,0 +1,513 @@
+LEARNING GUIDE: Pages 109-128
+Generated: 2026-03-18 14:32:41
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here's a simplified learning guide based on the provided text:
+
+---
+
+# Threading Concepts & Implementation
+
+## 1. C Threads (Pthreads)
+
+Pthreads is a POSIX standard for threads in C/C++.
+
+### 1.1 How to Create Threads
+
+1.  **Include Library:** `#include <pthread.h>`
+2.  **Define Thread Function:**
+    *   Must return `void*`.
+    *   Must accept `void*` as an argument.
+    *   Example: `void* child(void* arg)`
+3.  **Declare Thread Variable:** `pthread_t thread_id;`
+4.  **Create Thread:** Use `pthread_create()`.
+
+    ```c
+    int pthread_create(pthread_t *thread, const pthread_attr_t *attr,
+                       void *(*start_routine) (void *), void *arg);
+    ```
+
+    *   `thread`: Pointer to `pthread_t` variable where the new thread's ID will be stored.
+    *   `attr`: Thread attributes (e.g., stack size). Pass `NULL` for default.
+    *   `start_routine`: Pointer to the function the thread will execute.
+    *   `arg`: Argument to pass to the `start_routine` function. Pass `NULL` if no argument.
+5.  **Wait for Thread (Join):** `pthread_join(thread_id, NULL);`
+    *   Blocks the calling thread (e.g., `main`) until the specified `thread_id` finishes execution.
+
+### 1.2 Example C Thread Code
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+
+// 2. Define the thread function
+void* child(void* arg) {
+    printf("Thread is running.\n");
+    return NULL;
+}
+
+int main() {
+    // 3. Declare a pthread_t variable
+    pthread_t thread1;
+
+    // 4. Create the Thread
+    pthread_create(&thread1, NULL, child, NULL);
+
+    // 5. Wait for the thread to finish
+    pthread_join(thread1, NULL);
+
+    return 0;
+}
+```
+
+## 2. Concurrency Problems
+
+These problems arise when multiple threads access and modify shared resources simultaneously.
+
+### 2.1 Common Concurrency Problems
+
+*   **Temporary Update Problem:** A transaction updates a data item, but fails before committing, and another transaction reads the uncommitted update.
+*   **Incorrect Summary Problem:** When a summary calculation (e.g., sum) is performed on data that is simultaneously being updated, leading to an incorrect result.
+*   **Lost Update Problem:** Two transactions read the same data, both update it, and the second update overwrites the first one, causing the first update to be lost.
+*   **Unrepeatable Read Problem:** A transaction reads the same data item twice, but another transaction modifies the data item between the two reads, leading to different results.
+*   **Phantom Read Problem:** A transaction executes a query returning a set of rows. When the transaction re-executes the same query, it sees different rows due to another transaction inserting or deleting rows that match the query criteria.
+
+## 3. Preventing Concurrency Problems (Semaphores in C)
+
+Semaphores are synchronization primitives used to control access to shared resources.
+
+### 3.1 Semaphore Functions
+
+1.  **Include Library:** `#include <semaphore.h>`
+2.  **Declare Semaphore:** `sem_t sem;`
+3.  **Initialize Semaphore:** `sem_init(&sem, pshared, value);`
+    *   `&sem`: Pointer to the `sem_t` semaphore object.
+    *   `pshared`: 0 if semaphore is shared *within* a process (threads); non-zero if shared *between* processes.
+    *   `value`: Initial count of available permits (e.g., 1 for a binary semaphore, which acts like a mutex).
+4.  **Acquire Lock (Wait):** `sem_wait(&sem);`
+    *   Decrements the semaphore count. If count is 0, the thread blocks until a permit is available.
+5.  **Release Lock (Post):** `sem_post(&sem);`
+    *   Increments the semaphore count, potentially unblocking a waiting thread.
+6.  **Destroy Semaphore:** `sem_destroy(&sem);`
+    *   Releases resources associated with the semaphore.
+
+### 3.2 Example C Semaphore Code
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+#include <semaphore.h> // Include for semaphores
+
+sem_t sem;      // Declare a semaphore
+int shared = 0; // Shared resource
+
+void* worker(void* arg) {
+    sem_wait(&sem);  // Acquire lock (decrement semaphore, wait if 0)
+    shared++;        // Critical section: modify shared resource
+    printf("Shared value: %d\n", shared);
+    sem_post(&sem);  // Release lock (increment semaphore)
+    return NULL;
+}
+
+int main() {
+    pthread_t t1, t2;
+    sem_init(&sem, 0, 1); // Initialize binary semaphore (value = 1)
+
+    pthread_create(&t1, NULL, worker, NULL);
+    pthread_create(&t2, NULL, worker, NULL);
+
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+
+    sem_destroy(&sem); // Destroy the semaphore
+    return 0;
+}
+```
+
+## 4. Processes and Threads Comparison
+
+*   **Process:**
+    *   A self-contained execution environment.
+    *   Has its own complete, private set of run-time resources, including its own separate memory space.
+*   **Thread:**
+    *   Also known as a "lightweight process."
+    *   Exists *within* a process (every process has at least one thread).
+    *   Threads within the same process *share* basic run-time resources, including memory space.
+
+## 5. Java Threads
+
+Java threads allow a program to run multiple tasks concurrently (simultaneously).
+
+### 5.1 Basics of Java Threads
+
+*   Every Java program has at least one thread, called the **main** or **parent** thread.
+*   Other threads created by the program are called **child threads**.
+*   **Purpose:** To perform tasks in the background without interrupting the main program, enabling concurrent execution.
+    *   Example: Read a large file and perform other long computations at the same time, then process the file once reading is complete.
+
+### 5.2 Creating & Starting Java Threads
+
+There are two main ways to create threads in Java:
+
+#### Method 1: Extending the `Thread` Class
+
+1.  **Create a class** that `extends Thread`.
+2.  **Override the `run()` method**: This method contains the code that the thread will execute.
+
+    ```java
+    class MyThread extends Thread {
+        public void run() {
+            System.out.println("Running on background thread.");
+            // ... long running task ...
+        }
+    }
+    ```
+
+3.  **Instantiate and Start:**
+    *   Create an object of your `MyThread` class.
+    *   Call the `start()` method on this object. **Do not call `run()` directly**, as `start()` handles thread setup and calls `run()` on the new thread.
+
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            MyThread thread1 = new MyThread();
+            thread1.start(); // This starts the new thread and calls its run() method.
+            System.out.println("Running on main thread.");
+        }
+    }
+    ```
+
+#### Method 2: Implementing the `Runnable` Interface
+
+1.  **Create a class** that `implements Runnable`.
+2.  **Implement the `run()` method**: This method contains the code the thread will execute.
+
+    ```java
+    class MyRunnable implements Runnable {
+        public void run() {
+            System.out.println("Runnable thread is running.");
+            // ... another task ...
+        }
+    }
+    ```
+
+3.  **Instantiate and Start:**
+    *   Create an object of your `MyRunnable` class.
+    *   Create a `Thread` object, passing your `Runnable` instance to its constructor.
+    *   Call the `start()` method on the `Thread` object.
+
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            MyRunnable runnable = new MyRunnable();
+            Thread thread2 = new Thread(runnable);
+            thread2.start(); // Starts the new thread and calls runnable's run() method.
+        }
+    }
+    ```
+
+### 5.3 Waiting for Threads (`join()`)
+
+The `join()` method allows one thread to wait for the completion of another thread.
+
+*   When you call `thread.join()`, the current thread (e.g., `main`) will pause its execution until `thread` finishes its `run()` method.
+*   `join()` can throw an `InterruptedException`, so it often needs to be wrapped in a `try-catch` block.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Assume LongProcess extends Thread
+        LongProcess lp = new LongProcess();
+        lp.start();
+
+        // Assume ImmortalProcess implements Runnable
+        ImmortalProcess ip = new ImmortalProcess();
+        Thread ipThread = new Thread(ip);
+        ipThread.start();
+
+        try {
+            lp.join();        // Main thread waits for lp to finish
+            ipThread.join();  // Main thread waits for ipThread to finish
+        } catch (InterruptedException e) {
+            System.err.println("Main thread interrupted while waiting.");
+        }
+        System.out.println("Both background threads have finished.");
+    }
+}
+```
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 109 ---
+Main.c
+1.Include the necessary 
+library:
+#include <pthread.h>
+2.Define the thread 
+function
+•Should return void*
+•Must accept void*
+3.Declare a pointer for 
+thread
+•Type: pthread_t*  
+4.Create the Thread with:
+•pthread_create(
+  thr, attr, func, arg
+  )How to create 
+Threads?#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}
+
+--- Page 110 ---
+Main.c
+How to create 
+Threads?#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}What does this method do?
+pthread_create( 
+  thr, attr, func, arg
+)
+•Assigns a thread id
+•Automatically starts 
+a thread
+
+--- Page 111 ---
+Main.c
+How to create 
+Threads?#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}What does this method do?
+pthread_create( 
+  thr, attr, func, arg
+)
+•thr  - stores thread ID
+•attr - thread 
+attributes
+•func – Pointer to the 
+function the thread will 
+execute.
+•arg  - argument passed 
+to function
+
+--- Page 112 ---
+Main.c
+How to create 
+Threads?#include <pthread.h>
+#include <stdio.h>
+void* child( void* arg) {
+    printf( "Thread is running.\n" );
+    return NULL;
+}
+int main() {
+    pthread_t  thread1;
+    pthread_create(&thread1, NULL, child, 
+NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}Passing an argument to a 
+thread
+pthread_create( 
+  thr, attr, func, arg
+)
+•thr  - stores thread ID
+•attr - thread 
+attributes
+•func – Pointer to the 
+function the thread will 
+execute.
+•arg  - argument passed 
+to function
+
+--- Page 113 ---
+Main.cVisualizing: 
+start()
+it
+ltmain()#include <pthread.h>
+#include <stdio.h>
+void* immortalthread( void* arg);
+void* longThread( void* arg);
+int main() {
+    pthread_t  it, lt;
+    
+    pthread_create(&it, NULL, foo, 
+NULL);
+    
+    pthread_create(&lt, NULL, foo, 
+NULL);
+    pthread_join(it, NULL);
+    
+    pthread_join(lt, NULL);
+}
+
+--- Page 114 ---
+#include <pthread.h>
+#include <stdio.h>
+void* immortalthread( void* arg);
+void* longThread( void* arg);
+int main() {
+    pthread_t  it, lt;
+    
+    pthread_create(&it, NULL, foo, 
+NULL);
+    
+    pthread_create(&lt, NULL, foo, 
+NULL);
+    pthread_join(it, NULL);
+    
+    pthread_join(lt, NULL);
+}
+Main.cVisualizing :  
+join()
+main()
+lp.run() ip.run()
+
+--- Page 115 ---
+thread2thread1
+thread3Suppose we have a resource 
+that is shared between our 
+threads,
+Storage s
+What happens if we try to use 
+s between threads?
+Concurrency 
+Problemss.add(o)
+;s.edit(o
+)s.delete(o
+)
+
+--- Page 116 ---
+thread2thread1
+thread3Concurrency 
+Problems
+s.add(o)
+;s.edit(o
+)s.delete(o
+)Common problems faced while 
+maintaining any shared 
+resource.
+Most commonly on Database 
+Management Systems.
+Temporary Update Problem
+Incorrect Summary Problem
+Lost Update Problem
+Unrepeatable Read Problem
+Phantom Read Problem
+
+--- Page 117 ---
+Main.javaPreventing 
+concurrency 
+Problems
+You can use sem_t  from
+<semaphore.h>
+to lock resources.
+(Controls access to a shared 
+resource through the use of 
+a counter  )
+Initialize a semaphore with:
+sem_init(&sem, pshared, value )
+&sem – semaphore object pointer
+pshared – within same process?
+value - number of permits#include <pthread.h>
+#include <stdio.h>
+#include <semaphore.h>
+sem_t sem;
+int shared = 0;
+int main() {
+    pthread_t  t1, t2;
+    sem_init(&sem, 0, 1);  // binary 
+semaphore
+    pthread_create(&t1, NULL, worker, 
+NULL);
+    pthread_create(&t2, NULL, worker, 
+NULL);
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+    sem_destroy(&sem);
+    return 0;
+}
+void* worker( void* arg) {
+    sem_wait(&sem);   // acquire
+    shared++;
+    printf( "Shared value: %d\n" , shared);
+    sem_post(&sem);   // release
+    return NULL;
+}
+
+--- Page 118 ---
+Main.javaPreventing 
+concurrency 
+Problems
+How to use?
+Simple use 
+sem_wait() to lock, &
+sem_wait()  to release.#include <pthread.h>
+#include <stdio.h>
+#include <semaphore.h>
+sem_t sem;
+int shared = 0;
+int main() {
+    pthread_t  t1, t2;
+    sem_init(&sem, 0, 1);  // binary 
+semaphore
+    pthread_create(&t1, NULL, worker, 
+NULL);
+    pthread_create(&t2, NULL, worker, 
+NULL);
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+    sem_destroy(&sem);
+    return 0;
+}
+void* worker( void* arg) {
+    sem_wait(&sem);   // acquire
+    shared++;
+    printf( "Shared value: %d\n" , shared);
+    sem_post(&sem);   // release
+    return NULL;
+}
+
+--- Page 119 ---
+Processes and 
+Threads
+
+--- Page 120 ---
+Process and Threads
+•Process
+•a self-contained execution environment
+•has a complete, private set of basic run-t...

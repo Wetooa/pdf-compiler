@@ -1,0 +1,38 @@
+public class  Main{
+   public static  void main(String[] 
+args){
+ // LongProcess extends Thread
+   LongProcess lp = new 
+LongProcess();
+lp.start();
+ // ImmortalProcess implements Runnable
+   ImmortalProcess ip = new
+                       
+LongProcess();
+Thread ipThread = new Thread(ip);
+ipThread.start();
+ // join() throws a 
+InterruptedException
+ // so make sure to use try-catch!
+pl.join(); 
+ipThread.join();
+    }
+}
+Main.java
+1.Instantiate an 
+Object extending 
+Thread. Call 
+start() .How to start 
+Threads?
+2.Instantiate a 
+Thread  with an 
+object 
+implementing 
+Runnable. Call 
+start() .class ImmortalProcess implements Runnable{
+   public void run() {
+while(true){
+  System.out.println( “Running at all 
+times");}
+   }
+}

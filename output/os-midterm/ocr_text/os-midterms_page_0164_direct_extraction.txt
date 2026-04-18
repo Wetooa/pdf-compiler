@@ -1,0 +1,19 @@
+Dining Philosophers Problem
+•Philosophers are seated on a table
+•Each philosopher has a plate of noodles
+•In between plates are forks
+•Philosopher can:
+•Think and keep to himself
+•Eat but only if he has two forks
+•Philosophers can only pick up 1 fork at a 
+time.
+•Philosophers can get hungry, and get full
+•Should avoid deadlock  and starvation
+two or more processes are 
+permanently blocked because 
+each is waiting for a resource 
+held by another .occurs when a process waits 
+indefinitely because the 
+resources or CPU time it needs 
+are continually given to other 
+processes.

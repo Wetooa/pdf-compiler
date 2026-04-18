@@ -1,0 +1,369 @@
+LEARNING GUIDE: Pages 199-218
+Generated: 2026-03-18 14:34:05
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text:
+
+---
+
+# CPU Scheduling Algorithms: A Study Guide
+
+This guide covers essential concepts and algorithms in CPU scheduling.
+
+## I. Key Scheduling Metrics
+
+These metrics are used to evaluate the efficiency of scheduling algorithms:
+
+*   **Response Time (RT):** The amount of time it takes to start the response.
+    *   **Calculation:** `Start Time - Arrival Time`
+*   **Turn-Around Time (TAT):** The total time delay from submission of a process to its completion.
+    *   **Calculation:** `Finish Time - Arrival Time`
+*   **Waiting Time (WT):** The time a job spends waiting in the ready queue.
+    *   **Calculation:** `Turn-Around Time - Burst Time`
+*   **Burst Time (BT):** The total time a process needs on the CPU to complete its execution.
+*   **Efficiency Note:** Higher Average TAT generally indicates *less* efficient scheduling.
+
+---
+
+## II. Shortest-Job-First (SJF) Scheduling
+
+SJF schedules the process with the smallest next CPU burst. It aims for minimum average waiting time.
+
+### A. Nonpreemptive SJF
+
+*   **Rule:** Once a process starts executing, it runs to completion, even if a new, shorter job arrives.
+*   **Example Tasks:** Draw Gantt Chart, calculate Average Turn-Around Time, and Average Waiting Time.
+
+### B. Preemptive SJF (Shortest-Remaining-Time-First - SRTF)
+
+*   **Rule:** If a new process arrives in the ready queue with a CPU burst time shorter than the *remaining* time of the currently executing process, the current process is preempted. The new process then starts executing.
+*   **Example Tasks:** Draw Gantt Chart, calculate Average Turn-Around Time, and Average Waiting Time.
+
+### C. Determining the Length of the Next CPU Burst
+
+*   **Challenge:** SJF requires knowing the length of the next CPU burst in advance, which is often impossible.
+*   **Solution:** Estimate the length using **exponential averaging**.
+
+#### Exponential Averaging Formula:
+
+`Tₙ₊₁ = α * tₙ + (1 - α) * Tₙ`
+
+*   **Tₙ₊₁:** Predicted burst time for the *next* CPU burst.
+*   **tₙ:** Actual length of the *last* CPU burst that just completed.
+*   **Tₙ:** Previous prediction for the *last* CPU burst.
+*   **α (alpha):** A weight factor (0 ≤ α ≤ 1).
+    *   If α = 0, `Tₙ₊₁ = Tₙ` (old predictions matter most).
+    *   If α = 1, `Tₙ₊₁ = tₙ` (only the actual last burst matters).
+
+---
+
+## III. Priority Scheduling
+
+Each process has a priority number; the scheduler always chooses the highest priority process.
+
+*   **Priority Rule:** Smaller number usually means higher priority.
+*   **Problem:** **Starvation** – Low-priority processes may never execute if high-priority processes continually arrive.
+*   **Solution:** **Aging** – Gradually increase the priority of processes that wait in the system for a long time.
+
+### A. Nonpreemptive Priority
+
+*   **Rule:** When the CPU becomes available, it is allocated to the job with the highest priority. Once started, it runs to completion.
+*   **Tie-breaker:** If priorities are equal, use First-Come, First-Served (FCFS).
+
+### B. Preemptive Priority
+
+*   **Rule:** If a new job arrives with a higher priority than the currently executing job, the current job is preempted, and the new job starts.
+*   **Tie-breaker:** If priorities are equal, use FCFS.
+*   **Example Tasks:** Draw Gantt chart, compute Average Waiting Time, Average Turn-Around Time, and Average Response Time for both nonpreemptive and preemptive versions.
+
+---
+
+## IV. Round-Robin (RR) Scheduling
+
+RR is a preemptive scheduling algorithm designed for time-sharing systems, also known as "time slicing."
+
+*   **Mechanism:** Uses a clock interrupt at periodic intervals.
+*   **Time Quantum (q):** Each process is given a fixed time slice (e.g., 10-100msec) to use the CPU.
+    *   No job is allocated the CPU for more than one time quantum at a time.
+*   **Preemption:** If the time quantum runs out before a process finishes, it is preempted.
+
+### A. How it Works
+
+1.  New processes are inserted at the **tail** of the ready queue.
+2.  The process at the **head** of the queue runs for at most `q` milliseconds.
+3.  **If the process finishes** before `q` runs out: It is removed from the queue.
+4.  **If the process does not finish** and `q` runs out: It is preempted and transferred to the **tail** of the queue.
+5.  The next process in line becomes the new head of the queue.
+
+### B. Performance Considerations
+
+*   **`q` (time quantum) is large:** RR behaves like FCFS (First-Come, First-Served).
+*   **`q` is small:** Overhead due to frequent **context switches** (saving and restoring CPU state) becomes too high.
+*   **Ideal `q`:** Should be large enough compared to context switch time to minimize overhead, but small enough to provide reasonable response time for interactive processes.
+*   **Typical Results:** Higher average Turn-Around Time than SJF, but significantly better Response Time.
+
+---
+
+## V. Highest-Response-Ratio-Next (HRRN) Scheduling
+
+HRRN is a nonpreemptive scheduling algorithm that aims to balance favoring shorter processes with preventing starvation of longer processes.
+
+*   **Rule:** The process with the highest **Response Ratio** is executed next. Once started, it runs to completion (nonpreemptive).
+*   **Benefit:** Shorter processes are favored initially, but as longer processes wait, their Response Ratio increases, giving them a chance to execute (aging effect).
+
+### A. Response Ratio (RR) Formula
+
+`Response Ratio = (Waiting Time + Burst Time) / Burst Time`
+`Response Ratio = 1 + (Waiting Time / Burst Time)`
+
+*   **Note:** The Waiting Time in the formula refers to the time a process has *already waited* in the ready queue up to the point of selection.
+
+---
+*(Note: Pages 215-218 contained instructions for a seatwork/exam and practice problems, not new conceptual content. Therefore, they have been omitted from this learning guide as per the instructions to focus on essential learning information.)*
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 199 ---
+#2: Nonpreemptive SJF
+Process Burst Time Arrival 
+Time
+P1
+3
+ 0
+P213 2
+P3
+5
+ 3
+P48 5Given the Arrival Time and Burst Time of P1, P2, P3, and P4, 
+draw the Gantt Chart , complete the Table, and provide the a.) 
+Average Turn-Around Time and b.). Average Waiting Time
+a)Average Turn-Around Time
+b)Average Waiting Time
+
+--- Page 200 ---
+Shortest-Job-First (Preemptive)
+Process Arrival 
+TimeBurst 
+Time
+P1
+0
+ 7
+P22 4
+P3
+4
+ 1
+P45 4P1Gantt Chart:
+025711
+Average Waiting Time = (9+1+0+2)/4  = 
+3P2P3P2P4P1
+4 16
+
+--- Page 201 ---
+Shortest-Job-First (Preemptive)
+Process Arrival 
+TimeBurst Time
+P1
+0
+ 8
+P21 4
+P3
+2
+ 2
+P43 1
+P5
+4
+ 3
+P65 2Another Example to Practice on
+
+--- Page 202 ---
+#3: Preemptive SJF
+Process Burst Time Arrival 
+Time
+P1
+10
+ 0
+P26 4
+P3
+2
+ 7
+P43 14Given the Arrival Time and Burst Time of P1, P2, P3, and P4, 
+draw the Gantt Chart , complete the Table, and provide the a.) 
+Average Turn-Around Time and b.). Average Waiting Time 
+a)Average Turn-Around Time
+b)Average Waiting Time
+
+--- Page 203 ---
+Shortest-Job-First
+ 
+Determining the length of the next CPU Burst
+•Can only estimate length
+•Can be done by using the length of previous bursts, using 
+exponential averaging.
+Tₙ₊₁ = Predicted burst time for the next CPU burst
+tₙ = Actual length of the last CPU burst
+Tₙ = Previous prediction for the last CPU burst
+α (alpha)  = Weight factor (0  α  1) ≤ ≤
+
+--- Page 204 ---
+CPU burst (1)
+
+"quess” (1)
+
+
+
+--- Page 205 ---
+•Given alpha of 0.50 and an initial prediction of 14 cycles , provide 
+the series of burst time predictions (round to nearest integer). 
+Exponential Averaging Formula:#4: Burst Time Prediction (SJF)
+Burst # 1 2 3 4 5 6 7
+ (tn)
+ 10
+ 13
+ 14
+ 12
+ 13
+ 15
+ ...
+ (Tn) 141.) ? 2.) ? 3.) ? 4.) ? 5.)? ...
+ 
+
+--- Page 206 ---
+#5: Identify the ff:
+a)The amount of time it takes to start the response 
+(Start time – Arrival Time)
+b)Time delay from submission of process to its 
+completion (Finish time – Arrival time)
+c)The time spent by the job waiting in the ready 
+queue (Turn-Around time – Burst Time)
+d)The total time the process needs on the CPU to 
+complete its execution.
+e)True or false. Higher Average TAT means a much 
+more efficient scheduling.
+
+--- Page 207 ---
+Priority Scheduling
+•A priority number (integer) is associated with each process
+•Scheduler ALWAYS  choose a process of high priority over one of 
+lower priority
+•Smaller number == higher priority
+•Still suffers from starvation , where low priority may never 
+execute. However , aging can be implemented to increase the 
+priority of a  process based on its age or execution history
+Preemptive Priority
+Executing job is pre-empted if its 
+priority is lower than priority of 
+new job. If equal, use FCFS.Nonpreemptive Priority
+When CPU is available, it is 
+allocated to the job with highest 
+priority. If equal, use FCFS.
+
+--- Page 208 ---
+Priority Scheduling
+Consider the table below for processes with their respective 
+Arrival Times, CPU burst times, and priorities. Draw the Gantt 
+chart and compute average waiting time for both Non-preemptive 
+and Preemptive Priority Scheduling.
+Process Arrival Time Burst Time Priority
+P1
+5
+ 10
+ 2
+P21 3 1
+P3
+4
+ 6
+ 4
+P40 2 3
+
+--- Page 209 ---
+Round-robin
+•RR, also known as time slicing
+•Preemptive using a clock interrupt generated at periodic 
+intervals
+•If interrupt occurs, running process is pre-empted (each 
+process is given a time quantum, usually 10-100msec to use 
+CPI)
+•No job is allocated the CPU for more than one time 
+quantum.
+•If there are n processes in the ready queue and the time 
+quantum is q, then each process gets 1/n of the CPU time in 
+chunks of at most q time units at once.
+•No process waits more than (n-1)q  time units.
+
+--- Page 210 ---
+Round-robin
+Performance
+•If q is large, FIFO
+•If q is small, overhead will be too high
+•Ideal case is should be large compared to context switch 
+time, but small enough to allow reasonable response time 
+for interactive processes.
+•This balances throughput, CPU utilization, and response 
+time.
+
+--- Page 211 ---
+Round-robin
+How it works?
+•New process are inserted at Tail
+•Process at Head of queue is run for at most q milliseconds
+•If process finishes before q runs out , it is removed from queue
+•If process is not finished and q runs out, it is transferred at the Tail
+•Next process in line is now the Head
+
+--- Page 212 ---
+Round-robin
+Process Burst Time
+P1
+53
+P217
+P3
+68
+P424What is the Average Waiting Time if q is 20?
+P1P2P3P4P1P3P4P1P3P3Gantt Chart:
+02037577797117121134154162
+Typically higher average Turnaround Time than SJF, but better 
+Response Time
+
+--- Page 213 ---
+Highest-Response-Ratio-Next
+•Nonpreemptive
+•Process with highest Response-Ratio  is executed next
+•Shorter processes are favoured, but aging of longer processes 
+increases the RR
+•Response ratio (RR) is computed per process as:
+ 
+
+--- Page 214 ---
+Highest-Response-Ratio-Next
+Process AT BT
+P1
+0
+ 3
+P22 6
+P3
+4
+ 4
+P46 5
+P5
+8
+ 2P1
+P2
+P3
+P4
+P5
+5 10 15 20Gantt Chart:
+A
+A
+A
+A2.25
+1.6
+1.52.4
+3.5
+
+--- Page 215 -...

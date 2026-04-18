@@ -8,6 +8,7 @@ import {
   downloadCompiledPdf,
   openSourcePdf,
   deleteBatch,
+  SessionExpiredError,
   type BatchMeta,
 } from "@/lib/api";
 import { Button } from "@/components/ui/button";
@@ -55,6 +56,10 @@ export default function BatchDetailClient() {
         }
       } catch (e: unknown) {
         if (cancelled) return;
+        if (e instanceof SessionExpiredError) {
+          setLoading(false);
+          return;
+        }
         setError(e instanceof Error ? e.message : "Failed to load batch");
         setLoading(false);
       }
@@ -72,6 +77,7 @@ export default function BatchDetailClient() {
       await deleteBatch(batchId);
       router.replace("/");
     } catch (e) {
+      if (e instanceof SessionExpiredError) return;
       setError(e instanceof Error ? e.message : "Failed to delete batch");
     }
   }

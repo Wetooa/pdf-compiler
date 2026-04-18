@@ -1,0 +1,396 @@
+LEARNING GUIDE: Pages 145-164
+Generated: 2026-03-18 14:33:14
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text:
+
+---
+
+## Operating System Concepts: Processes, IPC, and Threads
+
+### 1. Process States and Scheduling
+
+Processes move through various states and are managed by schedulers.
+
+*   **Process States:**
+    *   **New:** Process is being created.
+    *   **Ready:** Process is waiting to be assigned to a CPU.
+    *   **Running:** Instructions are being executed by the CPU.
+    *   **Waiting:** Process is waiting for an event (e.g., I/O completion, child termination, interrupt).
+    *   **Terminated:** Process has finished execution.
+*   **Process Flow:**
+    *   A **new** process becomes **ready**.
+    *   The **short-term scheduler** (CPU scheduler) picks a process from **ready** to **running**.
+    *   A **running** process can move to:
+        *   **Waiting:** If it makes an I/O request, forks a child process and waits, or waits for an interrupt.
+        *   **Ready:** If its time slice expires or an interrupt occurs (preemption).
+        *   **Terminated:** If it finishes execution.
+    *   A **waiting** process becomes **ready** when its awaited event occurs (e.g., I/O completion, child terminates).
+*   **Schedulers:**
+    *   **Long-term scheduler (Job Scheduler):** Selects processes from the *job queue* to load into memory (creates them as *ready* processes). Controls the degree of multiprogramming.
+    *   **Short-term scheduler (CPU Scheduler):** Selects processes from the *ready queue* to allocate the CPU to. Executes frequently.
+    *   **Medium-term scheduler:** Used in time-sharing systems to swap processes in/out of memory to reduce the degree of multiprogramming or improve performance.
+
+### 2. Process Termination
+
+A process can terminate itself or be terminated by its parent or the OS.
+
+*   **Self-Termination (via `exit()`):**
+    *   Process executes its last statement.
+    *   Can pass output data to its parent (via `wait()`).
+    *   OS deallocates all its resources.
+*   **Parent Termination (via `abort()`):**
+    *   Parent decides to terminate a child process.
+    *   **Reasons:**
+        *   Child exceeded allocated resources.
+        *   Task assigned to child is no longer needed.
+        *   Parent is exiting.
+*   **Cascading Termination:**
+    *   If a parent process terminates, all its child processes (and their descendants) are also terminated by the operating system.
+
+### 3. Cooperating Processes and Interprocess Communication (IPC)
+
+**Cooperating processes** are processes that can affect or be affected by other processes. They often share data.
+
+*   **Why Cooperate?**
+    *   **Modularity:** Breaking complex tasks into smaller subtasks.
+    *   **Computation Speed-up:** Concurrent execution of subtasks.
+    *   **Information Sharing:** Access to the same data (e.g., a shared file or database).
+*   **Interprocess Communication (IPC):**
+    *   A mechanism for processes to exchange data and synchronize actions.
+    *   Provides two basic operations: `send(message)` and `receive(message)`.
+    *   Requires establishing a **communication link** between processes.
+    *   **Implementation:** Can be **physical** (e.g., shared memory) or **logical** (e.g., message passing).
+
+#### 3.1. IPC by Sharing (Physical)
+
+Processes cooperate by accessing shared data.
+
+*   **Mechanism:** Processes directly share a region of memory, variables, files, or databases.
+*   **Example: Producer-Consumer Paradigm**
+    *   **Producer:** Creates data/items.
+    *   **Consumer:** Consumes data/items.
+    *   **Shared Buffer:** A common area in memory where the producer places items and the consumer takes them.
+    *   Uses `in` and `out` pointers to manage items in the circular buffer.
+    *   **Synchronization:** Needs mechanisms to ensure the producer doesn't write to a full buffer and the consumer doesn't read from an empty buffer.
+
+#### 3.2. IPC by Communication (Logical - Message Passing)
+
+Processes cooperate by exchanging messages through system-provided primitives.
+
+*   **Mechanism:** Processes `send()` and `receive()` messages without direct shared memory. The OS handles the message transfer.
+*   Can be **Direct** or **Indirect**.
+
+##### Direct Communication
+
+*   **Explicit Naming:** Processes must explicitly name each other.
+    *   `send(P, message)`: Send message to process P.
+    *   `receive(Q, message)`: Receive message from process Q.
+*   **Link Properties:**
+    *   Established automatically between communicating processes.
+    *   Associated with exactly one pair of processes.
+    *   Exactly one link between each pair.
+    *   Can be unidirectional or bidirectional.
+
+##### Indirect Communication
+
+*   **Mailboxes (Ports):** Messages are sent to and received from a shared mailbox.
+    *   Each mailbox has a unique ID.
+    *   Processes communicate only if they share a mailbox.
+*   **Operations:**
+    *   `create a new mailbox`
+    *   `send(A, message)`: Send message to mailbox A.
+    *   `receive(A, message)`: Receive message from mailbox A.
+    *   `destroy a mailbox`
+*   **Link Properties:**
+    *   Established only if processes share a common mailbox.
+    *   A link (mailbox) can be associated with many processes.
+    *   Multiple links (mailboxes) can exist between processes.
+    *   Can be unidirectional or bidirectional.
+*   **Mailbox Sharing Problem:** If multiple processes share a mailbox and receive messages, who gets which message?
+    *   **Solutions:**
+        *   Limit a link to at most two processes.
+        *   Allow only one process at a time to execute `receive`.
+        *   System arbitrarily selects the receiver, and notifies the sender.
+
+##### Buffering (for Message Passing)
+
+Messages are queued on the communication link.
+
+1.  **Zero Capacity:**
+    *   Queue holds 0 messages.
+    *   Sender must wait for the receiver to receive the message (known as **rendezvous**).
+2.  **Bounded Capacity:**
+    *   Queue has a finite length (n messages).
+    *   Sender must wait if the link (queue) is full.
+3.  **Unbounded Capacity:**
+    *   Queue has infinite length.
+    *   Sender never waits (messages are always accepted).
+
+### 4. Threads
+
+A **thread** is a lightweight unit of execution within a process.
+
+*   **Definition:** A flow of execution through a process's code, with its own:
+    *   **Program Counter:** Keeps track of the next instruction.
+    *   **System Registers:** Holds current working variables.
+    *   **Stack:** Contains execution history.
+*   Also called a **Lightweight Process**.
+*   Improves OS performance by reducing overhead compared to full processes.
+
+#### 4.1. Single vs. Multi-threaded Process
+
+*   **Single-threaded Process:** Has one flow of execution.
+*   **Multi-threaded Process:** Has multiple threads, each with its own PC, registers, and stack, but sharing the same code, data, and resources (e.g., open files) of the parent process.
+
+#### 4.2. Process vs. Thread Comparison
+
+| Feature                    | Process                                 | Thread                                       |
+| :------------------------- | :-------------------------------------- | :------------------------------------------- |
+| **Weight**                 | Heavyweight, resource-intensive         | Lightweight, less resource-intensive         |
+| **Switching**              | Needs OS interaction (context switch)   | Often doesn't need OS interaction (faster)   |
+| **Resources**              | Own memory space, file resources        | Shares memory, open files, child processes   |
+| **Blocking**               | If one process blocks, others may continue, but within the same process, no other task can execute. | If one thread blocks, another thread in the same process can run. |
+| **Resource Usage**         | Multiple processes use more resources   | Multiple threads use fewer resources         |
+| **Independence**           | Operates independently                  | Can read, write, or change another thread's data (within the same process) |
+
+#### 4.3. Advantages of Threads
+
+*   **Minimized Context Switching Time:** Faster to switch between threads within the same process than between processes.
+*   **Concurrency within a Process:** Allows multiple parts of a single application to execute concurrently.
+*   **Efficient Communication:** Threads within the same process can communicate easily via shared memory.
+*   **Economical:** Cheaper and faster to create and switch threads than processes.
+*   **Multiprocessor Utilization:** Better utilizes multiprocessor architectures by running multiple threads in parallel.
+
+### 5. Synchronization Problems
+
+When processes or threads share resources, their access needs to be synchronized to prevent data corruption and ensure correct execution.
+
+#### 5.1. Dining Philosophers Problem
+
+*   **Scenario:** Philosophers are seated around a table, with a plate of noodles in front of each and one fork between each pair of plates.
+*   **Rules:**
+    *   Philosophers can think or eat.
+    *   To eat, a philosopher needs both the left and right forks.
+    *   A philosopher can only pick up one fork at a time.
+*   **Challenge:** Design a solution that avoids:
+    *   **Deadlock:** Two or more processes (philosophers) are permanently blocked, each waiting for a resource (fork) held by another. (e.g., all pick up their left fork simultaneously).
+    *   **Starvation:** A process (philosopher) waits indefinitely for a resource or CPU time that is continually given to other processes.
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 145 ---
+Job Queue Ready Queue CPU
+I/O request I/O queue I/O
+time slice 
+expired
+fork a child
+wait for 
+interruptchild executes
+Interrupt 
+occursProcess States and Flow
+New Ready Running
+Terminated
+WaitingWaitingLong-term scheduler (Job Scheduler)
+Short-term scheduler (CPU scheduler) 
+Medium-term scheduler
+Queues
+Resource that serves the queuesWaiting**
+
+--- Page 146 ---
+pagedaemon swapper
+user 1 user 2 user 3
+
+
+
+--- Page 147 ---
+Process Termination
+•Process executes last statement and asks the operating 
+system to decide it ( exit).
+•Output data from child to parent (via wait).
+•Process’ resources are deallocated by operating system.
+•Parent may terminate execution of children processes 
+(abort ).
+•Child has exceeded allocated resources.
+•Task assigned to child is no longer required.
+•Parent is exiting.
+•Operating system does not allow child to continue if its parent 
+terminates.
+•Cascading termination.
+
+--- Page 148 ---
+Cooperating Processes
+Processes that can affect or are affected by other 
+processes running on the system. Cooperating 
+processes may share data with each other . Cooperation 
+is done through Interprocess Communication (IPC) .
+Modularity
+dividing complicated 
+tasks into smaller 
+subtasksComputation 
+speed-up
+Concurrent 
+executionInformation 
+sharing
+access to the same 
+data
+
+--- Page 149 ---
+Interprocess Communication (IPC)
+•IPC facility provides two operations:
+•send(message ) 
+•receive( message )
+•If P and Q wish to communicate, they need to:
+•establish a communication  link between them
+•exchange messages via send/receive
+•Implementation of communication link
+•physical  (e.g., shared memory, hardware bus)
+•logical (e.g., logical properties)Process P1
+Process P2Interprocess
+ Communication (IPC)
+Link
+
+--- Page 150 ---
+Interprocess Communication (IPC)
+•Cooperation by Sharing (Physical)
+•The cooperating processes can cooperate 
+with each other using shared data such as 
+memory, variables, files, databases etc.
+•Producer-Consumer Paradigm
+Process P1
+Shared Data
+Process P2
+…
+Kernel•Cooperation by Communication(Logical)
+•The cooperating processes can 
+cooperate with each other using 
+messages using system-provided 
+primitives
+•Message Passing
+Process P1
+Process P2
+…
+Kernel…M
+M
+MCan be 
+Direct or 
+Indirect
+
+--- Page 151 ---
+Producer-Consumer Sample 
+Implementation
+shared_data.c
+#define BUFFER_SIZE 10
+typedef struct {
+    //. . .
+} item;
+item 
+buffer[BUFFER_SIZE];
+int in = 0;
+int out = 0;
+item nextProduced;
+while (1) {
+ while (((in + 1) % 
+    BUFFER_SIZE) == out);  
+   /* do nothing */
+ buffer[in] = 
+nextProduced;
+ in = (in + 
+1)%BUFFER_SIZE;
+}producer .c
+item nextConsumed;
+ while (1) {
+   while (in == out);
+    /* do nothing */
+   nextConsumed = 
+buffer[out];
+   out =(out + 
+1)%BUFFER_SIZE;
+}consumer .c
+Process P1Process P2IPC through Shared Memory (Physical)
+BUFFER
+
+--- Page 152 ---
+Message Passing
+Processes communicate with each other without resorting to shared 
+variables.
+Process P1
+Process P2Interprocess
+ Communication 
+through Logical 
+Means
+item message;
+send(P2, message)P1
+item message;
+receive(P1, message)P2
+No Shared Buffer .
+Mailbox mailbox;
+item message;
+send(mailbox, message)P1
+Mailbox mailbox;
+item message;
+receive(mailbox, message)P2DIRECT INDIRECT
+
+--- Page 153 ---
+Direct Communication
+•Processes must name each other explicitly:
+•send ( P, message ) – send a message to process P
+•receive( Q, message ) – receive a message from process Q
+•Properties of communication link
+•Links are established automatically.
+•A link is associated with exactly one pair of communicating 
+processes.
+•Between each pair there exists exactly one link.
+•The link may be unidirectional but is usually bi-directional.
+
+--- Page 154 ---
+Indirect Communication
+•Messages are directed and received from mailboxes  (also 
+referred to as ports).
+•Each mailbox has a unique id.
+•Processes can communicate only if they share a mailbox.
+•Properties of communication link
+•Link established only if processes share a common mailbox
+•A link may be associated with many processes.
+•Each pair of processes may share several communication links.
+•Link may be unidirectional or bi-directional.
+
+--- Page 155 ---
+Indirect Communication
+•Operations
+•create a new mailbox
+•send and receive messages through mailbox
+•destroy a mailbox
+•Primitives are defined as:
+send( A, message ) – send a message to mailbox A
+receive( A, message ) – receive a message from 
+mailbox A
+
+--- Page 156 ---
+Indirect Communication
+•Mailbox sharing problem
+•P1, P2, and P3 share mailbox A.
+•P1, sends; P2 and P3 receive.
+•Who gets the message?
+•Solutions
+•Allow a link to be associated with at most two processes.
+•Allow only one process at a time to execute a receive 
+operation.
+•Allow the system to select arbitrarily the receiver .  Sender 
+is notified who the receiver was.
+
+--- Page 157 ---
+Buffering
+•Queue of messages attached to the link; 
+implemented in one of three ways.
+1.Zero capacity – 0 messages
+Sender must wait for receiver (rendezvous).
+2.Bounde...

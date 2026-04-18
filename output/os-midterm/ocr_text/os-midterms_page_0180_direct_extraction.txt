@@ -1,0 +1,8 @@
+Intended Learning Outcomes
+•ILO1. Identify the behavior on each of the different 
+scheduling algorithm.
+•ILO2. Compute in relation of the scheduling criteria based 
+on the different scheduling algorithm.
+•ILO3 Present the criteria for choosing a good algorithm
+•ILO4. Exercise on the implementation of the different 
+scheduling algorithms like FCFS and Nonpreemptive SJF

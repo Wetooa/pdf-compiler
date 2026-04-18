@@ -1,0 +1,14 @@
+Computer System Architecture
+Clustered Systems
+•A type of multiprocessor system that is loosely coupled .
+•Designed for high-availability , achieved through redundancy .
+•Composed of two or more nodes (computer system)  joined 
+together . 
+•Each node can monitor other nodes. If a node fails, a monitoring 
+node can take over the task and resources, allowing the former 
+node to restart Has two types:
+•Symmetric  – all machines are running applications, but requires to be 
+able to run more than one application in a system.
+•Asymmetric  - one machine is hot-standby mode ready to take cover
+•Can provide high-performance computing  (greater than SMP) 
+through parallelization .

@@ -1,0 +1,203 @@
+LEARNING GUIDE: Pages 217-220
+Generated: 2026-03-18 14:34:19
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here's a simplified learning guide based on the provided text, focusing on essential information for studying CPU scheduling algorithms.
+
+---
+
+# CPU Scheduling Algorithms: A Study Guide
+
+This guide covers common CPU scheduling algorithms. For each algorithm, you'll learn its core concept, the input data needed, and the metrics used to evaluate its performance.
+
+## Core Concepts & Metrics
+
+CPU scheduling determines which process gets the CPU next. Its goal is to optimize system performance based on various criteria.
+
+*   **Process:** A program in execution.
+*   **Arrival Time (AT):** The time a process enters the ready queue.
+*   **Burst Time (BT):** The total CPU time a process needs to complete its execution.
+*   **Priority:** A value indicating a process's importance. Lower numbers often mean higher priority (this varies by system, but is standard for these problems).
+*   **Gantt Chart:** A visual timeline showing when each process executes on the CPU.
+
+### Performance Metrics:
+
+*   **Turnaround Time (TAT):** The total time a process spends in the system, from arrival to completion.
+    *   `TAT = Completion Time - Arrival Time`
+*   **Waiting Time (WT):** The total time a process spends waiting in the ready queue.
+    *   `WT = Turnaround Time - Burst Time`
+*   **Response Time (RT):** The time from a process's arrival until it first starts executing on the CPU.
+    *   `RT = First Execution Start Time - Arrival Time`
+
+## Scheduling Algorithms
+
+Let's explore specific algorithms with practice problems. For each problem, you'll need to:
+1.  Draw the **Gantt Chart**.
+2.  Compute the **Average TAT**, **Average WT**, and **Average RT**.
+
+---
+
+### 1. & 2. Priority Scheduling (Non-preemptive & Preemptive)
+
+**Concept:** Processes are scheduled based on their priority. Higher priority processes (usually indicated by a lower priority number) execute before lower priority processes.
+
+*   **Non-preemptive:** Once a process starts executing, it runs to completion (or until it blocks) without interruption, even if a higher priority process arrives.
+*   **Preemptive:** If a higher priority process arrives while a lower priority process is executing, the running process is interrupted (preempted) and the higher priority process takes over the CPU.
+
+**Process Data:**
+
+| Process | Arrival Time | Burst Time | Priority |
+| :------ | :----------- | :--------- | :------- |
+| P1      | 52           | 41         | 10       |
+| P2      | 0            | 30         | 40       |
+| P3      | 30           | 53         | 20       |
+| P4      | 25           | 25         | 30       |
+
+**Tasks:**
+*   Solve for **Non-preemptive Priority Scheduling**.
+*   Solve for **Preemptive Priority Scheduling**.
+
+---
+
+### 3. HRRN (Highest Response Ratio Next)
+
+**Concept:** A non-preemptive scheduling algorithm that aims to improve fairness by prioritizing processes based on their "response ratio." It favors shorter jobs and jobs that have been waiting for a long time.
+
+*   **Non-preemptive:** Once a process starts, it runs to completion.
+*   **Response Ratio (RR):** Calculated for each waiting process. The process with the highest RR is chosen next.
+    *   `Response Ratio = (Waiting Time + Burst Time) / Burst Time`
+    *   `Waiting Time = Current Time - Arrival Time`
+
+**Process Data:**
+
+| Process | Arrival Time | Burst Time |
+| :------ | :----------- | :--------- |
+| P1      | 52           | 41         |
+| P2      | 0            | 30         |
+| P3      | 30           | 53         |
+| P4      | 25           | 25         |
+
+**Tasks:**
+*   Solve using HRRN scheduling.
+
+---
+
+### 4. Round Robin (RR)
+
+**Concept:** A preemptive scheduling algorithm designed for time-sharing systems. Each process gets a small, fixed unit of CPU time, called a **Time Quantum (TQ)**. If a process doesn't complete within its quantum, it's preempted and moved to the end of the ready queue.
+
+*   **Preemptive:** Processes are interrupted after their time quantum expires.
+*   **Time Quantum (TQ): 10**
+
+**Process Data:**
+
+| Process | Arrival Time | Burst Time |
+| :------ | :----------- | :--------- |
+| P1      | 52           | 41         |
+| P2      | 0            | 30         |
+| P3      | 30           | 53         |
+| P4      | 25           | 25         |
+
+**Tasks:**
+*   Solve using Round Robin scheduling with a Time Quantum of 10.
+
+---
+
+### 5. Bonus Round: Choose One
+
+**Concept:** This problem asks you to select one of two basic scheduling algorithms.
+
+*   **FCFS (First-Come, First-Served):** Processes are executed in the order they arrive. Non-preemptive.
+*   **SJF Non-preemptive (Shortest Job First):** The process with the shortest burst time among the available processes is executed next. Once started, it runs to completion. Non-preemptive.
+
+**Process Data:**
+
+| Process | Arrival Time | Burst Time |
+| :------ | :----------- | :--------- |
+| P1      | 52           | 41         |
+| P2      | 0            | 30         |
+| P3      | 30           | 53         |
+| P4      | 25           | 25         |
+
+**Tasks:**
+*   **Choose EITHER FCFS OR SJF Non-preemptive.**
+*   Solve using your chosen algorithm.
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 217 ---
+#1.) & #2.) Priority Scheduling
+Consider the table below for processes with their respective 
+Arrival Times, CPU burst times, and priorities. For both Non-
+preemptive (#1)  and Preemptive (#2) Priority  Scheduling , draw 
+the Gantt chart and compute for the ff: Average TAT, average WT, 
+average RT
+Process Arrival Time Burst Time Priority
+P1
+52
+ 41
+ 10
+P20 30 40
+P3
+30
+ 53
+ 20
+P425 25 30
+
+--- Page 218 ---
+#3.) HRRN
+Consider the table below for processes with their respective 
+Arrival Times and CPU burst times. For a HRRT scheduling, draw 
+the Gantt chart and compute for the ff: Average TAT, average WT, 
+average RT
+Process Arrival Time Burst Time
+P1
+52
+ 41
+P20 30
+P3
+30
+ 53
+P425 25
+
+--- Page 219 ---
+#4.) Round Robin
+Consider the table below for processes with their respective 
+Arrival Times, CPU burst times, and priorities. For a Round Robin  
+scheduling with Time Quantum of 10, draw the Gantt chart and 
+compute for the ff: Average TAT, average WT, average RT
+Process Arrival Time Burst Time
+P1
+52
+ 41
+P20 30
+P3
+30
+ 53
+P425 25
+
+--- Page 220 ---
+Choose One:
+FCFS
+SJF Nonpreemptive#5.) Bonus Round
+Process Arrival Time Burst Time
+P1
+52
+ 41
+P20 30
+P3
+30
+ 53
+P425 25Consider the table below for processes with their respective 
+Arrival Times, CPU burst times, and priorities. 
+For a selected scheduling, draw the Gantt chart and 
+compute for the ff: Average TAT, average WT, average RT
+

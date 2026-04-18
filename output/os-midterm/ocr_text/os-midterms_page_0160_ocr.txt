@@ -1,0 +1,13 @@
+Register Register Register
+Register Counter
+Counter Counter Counter
+
+Stack Stack Stack
+
+Code
+
+Single Thread
+First Thread Second Thread Third Thread
+
+Single Process P with single thread Single Process P with three threads
+

@@ -1,0 +1,10 @@
+Indirect Communication
+•Messages are directed and received from mailboxes  (also 
+referred to as ports).
+•Each mailbox has a unique id.
+•Processes can communicate only if they share a mailbox.
+•Properties of communication link
+•Link established only if processes share a common mailbox
+•A link may be associated with many processes.
+•Each pair of processes may share several communication links.
+•Link may be unidirectional or bi-directional.

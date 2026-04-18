@@ -1,0 +1,344 @@
+LEARNING GUIDE: Pages 55-74
+Generated: 2026-03-18 14:31:47
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide based on the provided text:
+
+---
+
+# Operating Systems Learning Guide (Pages 55-74)
+
+## I. Operating Systems Fundamentals
+
+### A. Time-Sharing Operating Systems
+
+Time-sharing is a logical extension of multiprogramming that allows multiple users to interact with a single computer system simultaneously.
+
+1.  **Core Concept:**
+    *   The CPU executes multiple processes by rapidly switching between them.
+    *   Switches occur so frequently that users can interact with each program as if it were running continuously.
+    *   Allows multiple users to share one system.
+
+2.  **Key Mechanisms:**
+    *   **CPU Time Division:** CPU time is divided into small units called **time slices** (or **quantum**).
+    *   **Process Allocation:** Each process gets the CPU for one time slice.
+    *   **Timer Interrupt:** Enforces time slices, ensuring no single process monopolizes the CPU.
+    *   **Input Interrupt:** Allows the system to be responsive to user actions (e.g., keyboard input, mouse clicks).
+
+3.  **Key Defining Feature:**
+    *   **Responsiveness:** The system quickly reacts to user input and provides timely feedback.
+
+### B. User and Operating System Interface
+
+Almost all operating systems provide a **User Interface (UI)** to allow interaction.
+
+1.  **Types of User Interfaces (UI):**
+    *   **Command Line Interface (CLI):** Also known as a **Command Interpreter (CI)**. Users type commands directly.
+    *   **Graphical User Interface (GUI):** A user-friendly interface using visual elements (icons, windows) and input devices (mouse, keyboard).
+    *   **Batch:** Commands are entered into files, which are then run collectively.
+
+2.  **Command Line Interface (CLI) / Command Interpreter (CI):**
+    *   **Shells:** On systems with multiple Command Interpreters, they are known as Shells (e.g., Bash in Linux).
+    *   **Shell Scripts:** A set of command-line steps saved in a file that can be executed like a program.
+    *   **Common CLI Commands:** Often used for file manipulation (e.g., create, delete, list, print, copy, execute).
+
+3.  **CLI Approaches:**
+    *   **Interpreter Implements Commands:** The code for the command (e.g., `cd` for 'change directory' in Windows cmd) is part of the interpreter itself.
+    *   **Program Implements Commands:** The command (e.g., `rm` for 'remove' in UNIX/Linux) is a separate program that the interpreter executes with parameters.
+
+## II. Interacting with the OS
+
+### A. System Calls
+
+**System Calls** are a mechanism used by programs to request services from the operating system (OS).
+
+1.  **Definition & Purpose:**
+    *   Allow user-mode programs to access kernel-mode services (e.g., file I/O, process creation, memory management).
+    *   Enable interaction with hardware devices.
+
+2.  **Application Programming Interface (API):**
+    *   Specifies a set of functions available to application programmers.
+    *   **System Call Interface:** Acts as a link, intercepting API function calls and invoking the necessary system calls provided by the OS (which are often stored in a table).
+    *   **Examples:** Windows API, POSIX API (for UNIX, Linux, macOS), Java API.
+
+3.  **Passing Parameters to the OS:**
+    *   **Via Registers:** Parameters are stored directly in CPU registers. Limited by the number of available registers.
+    *   **Via Address:** Parameters are stored in a block of memory, and the memory block's address is passed via a register.
+    *   **Via Stack:** Parameters are pushed onto the process's stack by the program and then popped off by the operating system.
+
+4.  **Types of System Calls:**
+    *   **Process Control:** Manages process creation, termination, and synchronization (e.g., `fork()`, `exit()`).
+    *   **File Manipulation:** Handles operations on files (e.g., `open()`, `read()`, `write()`, `delete()`).
+    *   **Device Manipulation:** Manages interaction with hardware devices (e.g., `ioctl()` for I/O control, `read()`, `write()`).
+    *   **Information Maintenance:** Retrieves and modifies system data (e.g., `getpid()` for process ID, `settimeofday()` for system time).
+    *   **Communication:** Enables inter-process communication (IPC) via message passing or shared memory (e.g., `pipe()`, `socket()`).
+    *   **Protection:** Controls resource access and enforces security policies (e.g., `chmod()` for file permissions, `setuid()` for user ID).
+
+### B. The Shell
+
+The **Shell** is the outermost layer of the OS, acting as a special user program that provides an interface for users to access operating system services.
+
+1.  **Definition:**
+    *   It's the command interpreter that processes commands entered by the user.
+
+2.  **Shell Scripts:**
+    *   A way to input multiple commands via a file, automating tasks.
+
+3.  **Common Linux Shells:**
+    *   **BASH** (Bourne Again SHell)
+    *   **CSH** (C SHell)
+    *   **KSH** (Korn SHell)
+
+4.  **Command Prompt Symbols in CLI:**
+    *   `$` : Indicates the current user is a **normal user**.
+    *   `#` : Indicates the current user is a **root user** (superuser) with administrative privileges.
+
+## III. Virtualization Basics
+
+### A. Hypervisor (Virtual Machine Monitor - VMM)
+
+A **Hypervisor** is a program that creates and runs **virtual machines (VMs)**, allowing multiple operating systems to share a single hardware platform.
+
+1.  **Definition:**
+    *   Also known as a Virtual Machine Monitor (VMM).
+    *   Manages and isolates guest operating systems from the underlying hardware.
+
+2.  **Types of Hypervisors:**
+    *   **Type I (Bare-Metal/Native):**
+        *   Runs directly on the host hardware.
+        *   Acts like a lightweight operating system itself.
+        *   Examples: VMware ESXi, Microsoft Hyper-V, Xen.
+    *   **Type II (Hosted):**
+        *   Runs on top of an existing host operating system (e.g., Windows, macOS, Linux).
+        *   Borrows resources from the host OS.
+        *   Examples: VMware Workstation, Oracle VirtualBox.
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 55 ---
+Operating Systems
+Time Sharing Operating Systems
+•What is Time Sharing ?
+•a logical extension of 
+Multiprogramming
+•The CPU executes multiple 
+processes by switching among 
+them, but the switches occur so 
+frequently that the users can 
+interact  with each program 
+while it is running
+•Allows multiple usersOperating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTING
+
+--- Page 56 ---
+Operating Systems
+Time Sharing Operating Systems
+•CPU time is divided into small units 
+called time slices (quantum)
+•Each process gets the CPU for one 
+time slice
+•A timer interrupt  enforces the 
+time slices
+•An input interrupt  allows 
+responsiveness to user actions
+•Key defining feature is: 
+ResponsivenessOperating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTING
+
+--- Page 57 ---
+Operating Systems
+Operating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTINGTimer 
+InterruptTime Sharing Operating Systems
+•CPU time is divided into small units 
+called time slices (quantum)
+•Each process gets the CPU for one 
+time slice
+•A timer interrupt  enforces the 
+time slices
+•An input interrupt  allows 
+responsiveness to user actions
+•Key defining feature is: 
+Responsiveness
+
+--- Page 58 ---
+Operating Systems
+Time Sharing Operating Systems
+•CPU time is divided into small units 
+called time slices (quantum)
+•Each process gets the CPU for one 
+time slice
+•A timer interrupt  enforces the 
+time slices
+•An input interrupt  allows 
+responsiveness to user actions
+•Key defining feature is: 
+ResponsivenessOperating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTINGTimer 
+Interrupt
+
+--- Page 59 ---
+Operating Systems
+Time Sharing Operating Systems
+•CPU time is divided into small units 
+called time slices (quantum)
+•Each process gets the CPU for one 
+time slice
+•A timer interrupt  enforces the 
+time slices
+•An input interrupt  allows 
+responsiveness to user actions
+•Key defining feature is: 
+ResponsivenessOperating SystemMain Memory
+MAXProcess 5
+Process 2
+Process 3
+Process 4EXECUTINGTimer 
+Interrupt
+Note that this is just a rough example, there 
+is going to be some scheduling algorithm 
+involved
+
+--- Page 60 ---
+Operating System 
+Structures & Shell 
+Scripting
+Operating System Topic 02
+CS348
+
+--- Page 61 ---
+Intended Learning Outcomes
+•ILO1. Identify the different system components.
+•ILO2. Enumerate the responsibilities of the operating system 
+in connection with the different system components.
+•ILO3. Describe the various services provided by the operating 
+system.
+•ILO4. Manipulate the different Linux commands using shell 
+scripting.
+•ILO5. Explain what happens during system boot.
+•ILO6. Explain the concept of a process, its states, and 
+characteristics.
+
+--- Page 62 ---
+prograrm
+
+execunon
+
+operations systems
+
+user and other system pr
+
+e1h] batch | command line
+
+fim] file
+communication
+
+SEVICES
+aparatng sysiam
+
+
+
+--- Page 63 ---
+User and OS Interface
+•Almost all OS have a user interface (UI), which can be any of 
+the ff:
+•Command Line Interface (CLI)  – AKA command interpreter (CI) . 
+Uses command that are directly inputted.
+•Graphical User Interface (GUI)  – user friendly interface with 
+dedicated I/O devices to make selections and input data
+•Batch – commands are entered into files, then files are run.  
+
+--- Page 64 ---
+User and OS Interface: CLI / CI
+Uses command that are directly inputted .
+•On systems with multiple Command Interpreters to choose 
+from, the interpreters are known as  Shells.
+•Shell Scripts  – set of command line steps that can be run like 
+a program.
+•Many of the commands is for file manipulation:
+•Create, Delete, List, Print, Copy, Execute, 
+etc.
+
+--- Page 65 ---
+User and OS Interface: CLI / CI
+Has two approach:
+Interpreter implements 
+CommandsProgram implements 
+Commands
+cd myFolder
+windows command promptrm file.txt
+UNIX
+The code for cd (change working 
+directory) is stored in the 
+interpreter .The code for rm (remove) is stored 
+on a separate file, rm. Interpreter 
+executes rm with parameter 
+file.txt
+
+--- Page 66 ---
+System Calls
+A mechanism used by programs to request services from the 
+operating system (OS).
+•Application Programming Interface (API)  - specifies a set of 
+functions that are available to an application programmer .
+•Windows API
+•POSIX API (UNIX, Linux, MacOSX)
+•Java API (Java Virtual Machine)
+•System Call Interface – serves as link to the system calls that 
+are made available by the operating systems. Intercepts 
+function calls in the API and invokes the necessary system calls 
+(stored on a table).
+
+--- Page 67 ---
+user
+mode
+
+kernel
+mode
+
+open ()
+
+system call interface
+
+open ()
+
+Implementation
+of open ()
+system call
+
+return
+
+
+
+--- Page 68 ---
+System Calls: Passing Parameters to 
+OS?
+•Passing via Register  - Parameters 
+are stored in registers. However , 
+there may be more parameters 
+than registers.t
+•Passing via Address  - Parameters 
+are stored in a block of memory 
+and the address is passed via 
+Register .
+•Passi...

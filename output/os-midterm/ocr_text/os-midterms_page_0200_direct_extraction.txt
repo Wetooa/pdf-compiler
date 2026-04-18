@@ -1,0 +1,16 @@
+Shortest-Job-First (Preemptive)
+Process Arrival 
+TimeBurst 
+Time
+P1
+0
+ 7
+P22 4
+P3
+4
+ 1
+P45 4P1Gantt Chart:
+025711
+Average Waiting Time = (9+1+0+2)/4  = 
+3P2P3P2P4P1
+4 16

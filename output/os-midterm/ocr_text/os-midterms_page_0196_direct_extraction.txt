@@ -1,0 +1,16 @@
+Shortest-Job-First
+•Shortest Next CPU Burst
+•Make use of the CPU burst length . Short processes jump ahead 
+of longer processes 
+•Optimal- gives minimum average waiting time
+•Long processes suffers from starvation  
+•A process waits indefinitely in the ready queue and never gets 
+scheduled to run on the CPU
+Preemptive SJF
+Preempt the current executing 
+process if its remaining burst time 
+is greater than the new process. , 
+use FCFS.Nonpreemptive SJF
+When CPU is available, it is 
+assigned to the job with the 
+smallest next CPU burst. If tie, FCFS

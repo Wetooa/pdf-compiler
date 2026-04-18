@@ -1,0 +1,12 @@
+Computer System I/O Structure
+•I/O Structure
+This is fine for small amounts of data, but inefficient for larger ones. To solve 
+this, direct memory access ( DMA) is used.
+After setting up buffers, pointers, and 
+counters for the I/O device, the device 
+controller transfers an entire block of data 
+directly  to or from its own buffer storage 
+to memory, with no intervention by the 
+CPU.
+Only one interrupt is generated, to signal 
+that the operation is done.

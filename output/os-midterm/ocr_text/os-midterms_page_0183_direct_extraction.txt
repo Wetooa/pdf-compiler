@@ -1,0 +1,9 @@
+Types of Processes
+•I/O-Bound process  – 
+spends more time doing 
+I/O than computations. 
+Many short CPU bursts.
+•CPU-Bound Process  – 
+spends more time doing 
+computations; few very 
+long CPU bursts

@@ -1,0 +1,12 @@
+Computer System Architecture
+Multiprocessor 
+Systems
+•Multicore  chips
+•Multiple computing 
+cores on a single 
+chip
+•Faster than the usual 
+multiprocessor .
+•Uses less power than 
+similar number of 
+single core chips.

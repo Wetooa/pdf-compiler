@@ -1,0 +1,18 @@
+thread2thread1
+Preventing concurrency 
+Problems
+s.add(o)
+;
+while(thread1.isAlive()){
+  //waiting
+}
+// don’t do that though, 
+// just thread1.join()
+// to make this thread wait
+s.edit(o)You can use 
+isAlive()  
+method to check if 
+a thread is alive.
+Checks if a thread 
+is alive (started and 
+not yet ended)???X

@@ -1,0 +1,30 @@
+Average Waiting Time (WT)
+a crucial parameter to judge it's performance of a 
+Scheduling Algorithm. The lower , the better the 
+algo.
+Finish Time
+24
+27
+30Start Time
+0
+24
+27Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3Start Time Finish Time TAT WT RT
+24
+25
+26
+0
+22
+23
+0
+22
+23
+AWT = (0 + 22 + 23)/3
+= 15

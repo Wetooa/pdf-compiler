@@ -1,0 +1,8 @@
+Computer System Architecture
+Fault Handling
+•Fault Tolerant
+•the ability be able to continue fully operating even if the 
+system suffers failure in any single component
+System continues normal 
+operation despite 
+component failure

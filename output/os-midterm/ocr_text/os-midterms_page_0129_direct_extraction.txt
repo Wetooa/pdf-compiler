@@ -1,0 +1,24 @@
+public class  Main{
+   public static  void main(String[] 
+args){
+ // LongProcess extends Thread
+   LongProcess lp = new 
+LongProcess();
+lp.start();
+ // ImmortalProcess implements Runnable
+   ImmortalProcess ip = new
+                       
+LongProcess();
+Thread ipThread = new Thread(ip);
+ipThread.start();
+ // join() throws a 
+InterruptedException
+ // so make sure to use try-catch!
+pl.join(); 
+ipThread.join();
+    }
+}
+Main.javaVisualizing: 
+start()
+lp.run()
+ip.run()main()

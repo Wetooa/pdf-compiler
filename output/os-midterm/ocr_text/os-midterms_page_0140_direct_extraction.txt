@@ -1,0 +1,18 @@
+Process Control Block (PCB)
+•A Process Control Block is a data structure 
+maintained by the Operating System for 
+every process.
+•Information associated with each process.
+•Process state – current state of the process
+•Process privileges  – allow/disallow access to 
+system resources
+•Process ID – unique identification for each 
+process
+•Pointer – pointer to a parent process
+•Program  counter – a pointer to the address of 
+the next instruction
+•CPU registers
+•CPU scheduling  information  
+•Memory  - management information
+•Accounting  information
+•I/O status information

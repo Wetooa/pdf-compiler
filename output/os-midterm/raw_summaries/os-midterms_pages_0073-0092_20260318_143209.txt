@@ -1,0 +1,420 @@
+LEARNING GUIDE: Pages 73-92
+Generated: 2026-03-18 14:32:09
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here's a simplified, easy-to-read learning guide based on the provided text:
+
+---
+
+# Linux Command Line Basics & Shell Scripting Guide
+
+This guide covers essential Linux command-line interface (CLI) concepts, file management, process control, and an introduction to shell scripting.
+
+## 1. The Shell
+
+The **Shell** is the outermost layer of the operating system, acting as a special user program that provides an interface for you to access OS services.
+
+*   **Function**: It takes your commands and executes them by interacting with the OS kernel.
+*   **Shell Scripts**: Files containing a sequence of shell commands for automated execution.
+*   **Common Linux Shells**:
+    *   **BASH** (Bourne Again SHell) - Most common.
+    *   **CSH** (C SHell)
+    *   **KSH** (Korn SHell)
+
+## 2. Working with the Command Line Interface (CLI)
+
+The CLI is a text-based interface to interact with your system.
+
+### 2.1. Prompt Symbols
+
+The symbol preceding your command prompt indicates your user type:
+*   `$` : Normal user
+*   `#` : Root user (superuser)
+
+### 2.2. User and Hostname Indicator
+
+The prompt often shows `username@hostname`, indicating:
+*   `username`: The current user logged in.
+*   `hostname`: The name of the device you are logged into.
+
+### 2.3. Special Directories
+
+*   `~` (Tilde): Represents the current user's **home directory** (e.g., `/home/username/`).
+*   `/` (Slash): Represents the **root directory**, the top-level directory in the file system hierarchy.
+
+### 2.4. Normal User vs. Root User
+
+| Feature           | Normal User                               | Root User (Superuser)                                    |
+| :---------------- | :---------------------------------------- | :------------------------------------------------------- |
+| **Access**        | Restricted; operates within `/home/username/` and specific system areas. | Unrestricted access to *all* system resources and files. |
+| **Permissions**   | Can only modify their own files and run software without system-wide changes. | Can modify critical system files and perform system-wide changes. |
+| **Password**      | Can change only their own password.       | Can change any user's password.                          |
+| **Admin Rights**  | Can use `sudo` (if allowed) to execute specific commands with root privileges temporarily. | Has full administrative rights by default.               |
+
+### 2.5. Checking Current User
+
+*   `whoami`: Prints the current user's username.
+    *   Example: `$ whoami` -> `mario`
+*   `id -u`: Prints the current user's numeric User ID (UID).
+    *   **Root ID is always `0`**.
+    *   Example: `$ id -u` -> `1000` (for a normal user); `0` (for root).
+
+### 2.6. Identifying & Changing Your Shell
+
+*   `which $SHELL`: Shows the full path of your current shell (e.g., `/bin/bash`).
+*   `chsh`: Change your default login shell.
+    *   `$ chsh`: Prompts for the new shell path.
+    *   `$ chsh -s /bin/bash`: Directly specifies `/bin/bash` as the new shell.
+
+## 3. File and Directory Management
+
+These commands help you navigate and manage files and directories.
+
+| Command             | Description                                     | Common Options                                        |
+| :------------------ | :---------------------------------------------- | :---------------------------------------------------- |
+| `pwd`               | **P**rints **W**orking **D**irectory - Displays the current directory path. | (None)                                                |
+| `ls`                | **L**i**s**ts files and directories in the current path. | `-l`: Long format (details: permissions, owner, size) <br> `-a`: Show **a**ll files, including hidden ones (start with `.`) <br> `-h`: **H**uman-readable sizes (e.g., `11K` instead of `11264`) <br> `-R`: **R**ecursive, lists contents of subdirectories. <br> *(Combine options, e.g., `ls -lah`)* |
+| `cd dir`            | **C**hange **D**irectory - Moves to `dir`. <br> *Use `~` for home, `/` for root.* | (None)                                                |
+| `mkdir my_folder`   | **M**a**k**e **Dir**ectory - Creates a new directory named `my_folder`. | `-p`: Creates parent directories if they don't exist. |
+| `rmdir my_folder`   | **R**e**m**ove **Dir**ectory - Deletes an *empty* directory. | (None)                                                |
+| `rm file/dir`       | **R**e**m**ove - Deletes files or directories. | `-r`: **R**ecursive, removes directories and their contents. <br> `-f`: **F**orce delete without confirmation. <br> `-i`: **I**nteractive, asks before each deletion. <br> `-v`: **V**erbose, shows deleted files. |
+| `cp src_file dest`  | **C**o**p**y - Copies `src_file` to `dest`.   | `-r`: **R**ecursive, copies directories and their contents. <br> `-i`: **I**nteractive, prompts before overwriting. <br> `-u`: **U**pdate, copy only if source is newer or destination is missing. <br> `-v`: **V**erbose, shows progress. |
+| `mv src_file dest`  | **M**o**v**e or **R**ename - Moves `src_file` to `dest` or renames it. | `-i`: **I**nteractive, asks before overwriting. <br> `-u`: **U**pdate, move only if source is newer or destination is missing. <br> `-v`: **V**erbose, shows progress. |
+
+### 3.1. Understanding `ls -l` Output
+
+Example: `-rwxrw-r-- 3 testuser usergroup 11K Feb 14 19:30 file.txt`
+
+| Part               | Description                                                                                                     | Example Value   |
+| :----------------- | :-------------------------------------------------------------------------------------------------------------- | :-------------- |
+| **File Type**      | First character: `-` for a regular file, `d` for a directory.                                                   | `-`             |
+| **Permissions**    | Nine characters in three sets (`rwx`, `rw-`, `r--`) for **owner**, **group**, and **others** respectively. <br> `r`=read, `w`=write, `x`=execute, `-`=no permission. | `rwxrw-r--`     |
+| **Hard Links**     | Number of hard links to the file (for files) or subdirectories (for directories, including `.` and `..`). | `3`             |
+| **Owner**          | The user who owns the file/directory.                                                                           | `testuser`      |
+| **Group**          | The group that owns the file/directory.                                                                         | `usergroup`     |
+| **File Size**      | Size of the file (human-readable with `-h` option).                                                             | `11K`           |
+| **Date Modified**  | Last modification date and time.                                                                                | `Feb 14 19:30`  |
+| **File Name**      | Name of the file or directory.                                                                                  | `file.txt`      |
+
+## 4. File Viewing and Editing
+
+| Command             | Description                                                                                             | Navigation/Shortcuts                                  |
+| :------------------ | :------------------------------------------------------------------------------------------------------ | :---------------------------------------------------- |
+| `cat file.txt`      | Concatenate - Displays the entire content of `file.txt` to the screen.                                  | (None)                                                |
+| `less file.txt`     | Displays `file.txt` content page by page, allowing scrolling. Useful for large files.                   | `SPACE`: Scroll down <br> `b`: Scroll up <br> `/keyword`: Search for `keyword` <br> `q`: Quit                                      |
+| `nano file.txt`     | Opens `file.txt` in the Nano text editor. Simple and user-friendly.                                     | `CTRL-X`: Exit (prompts to save if changes made) <br> `CTRL-O`: Save changes <br> `CTRL-W`: Search                                  |
+
+## 5. File Permissions & Ownership
+
+| Command                  | Description                                                                                                                                                                                                                                                               |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `chmod 755 script.sh`    | **Ch**ange **Mod**e - Modifies file permissions. <br> **Numeric Mode**: Uses three digits (0-7) representing permissions for **Owner**, **Group**, and **Others**. <br> <ul><li>`4` = Read (`r`)</li><li>`2` = Write (`w`)</li><li>`1` = Execute (`x`)</li><li>`0` = No permission (`-`)</li></ul> <br> *Example `755`: Owner has `rwx` (4+2+1=7), Group has `rx` (4+1=5), Others have `rx` (4+1=5).* <br> **Symbolic Mode**: `+w` (adds write permission), `-w` (removes write permission), `u+x` (add execute for user). |
+| `chown user:group file.txt` | **Ch**ange **Own**er - Changes the owner user and/or group of `file.txt`. <br> *Example `chown jefferson:devs project.txt` makes `jefferson` the owner and `devs` the group owner.*                                                                                                                              |
+
+## 6. Process Management
+
+These commands allow you to monitor and control running programs (processes).
+
+| Command         | Description                                                          | Navigation/Options                                       |
+| :-------------- | :------------------------------------------------------------------- | :------------------------------------------------------- |
+| `ps aux`        | **P**rocess **S**tatus - Lists currently running processes.          | `a`: Show processes for **a**ll users <br> `u`: Show detailed **u**ser information <br> `x`: Show processes not associated with a terminal |
+| `top`           | Shows real-time system statistics (CPU, memory, running processes).  | `q`: Quit <br> `k`: **K**ill a process (prompts for PID) <br> `M`: Sort by **M**emory usage                                        |
+| `kill PID`      | Terminates a process identified by its **P**rocess **ID** (`PID`).   | `-9`: **Force kill** (immediately terminates, no cleanup). <br> `-15`: **Graceful kill** (sends termination signal, allows process to shut down cleanly). |
+
+## 7. Shell Scripts
+
+A **Shell Script** is a text file containing a series of commands executed sequentially by a shell interpreter. They are used to automate tasks.
+
+### 7.1. Key Components of a Shell Script
+
+Here's an example script and its components:
+
+```bash
+#!/bin/bash
+# This script prints "Hello, World!"
+
+echo "Hello, World!"
+echo "Listing files:"
+ls -l
+
+name="Jefferson"
+echo "Hello, $name!"
+
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+
+count=1
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+
+mkdir test_dir
+echo "Exit status: $?"
+```
+
+1.  **Shebang (`#!`)**:
+    *   **Purpose**: The very first line of a script. It specifies the interpreter (e.g., `/bin/bash`) that should execute the script.
+    *   **Example**: `#!/bin/bash`
+
+2.  **Comments (`#`)**:
+    *   **Purpose**: Lines starting with `#` are ignored by the shell. Used to add explanations or disable parts of the script.
+    *   **Example**: `# This script prints "Hello, World!"`
+
+3.  **Commands**:
+    *   **Purpose**: Standard Unix/Linux commands (`ls`, `echo`, `mkdir`, etc.) that the script executes.
+    *   **Example**: `echo "Hello, World!"`, `ls -l`
+
+4.  **Variables**:
+    *   **Purpose**: Store data (e.g., numbers, text strings). Can be system-defined (like `$SHELL`) or user-defined.
+    *   **Important**: **Spacing matters!** `name="Jefferson"` is correct. `name = "Jefferson"` is incorrect.
+    *   **Example**: `name="Jefferson"`, `echo "Hello, $name!"`
+
+5.  **Input and Output**:
+    *   **Purpose**: Interact with the user. `read` takes input, `echo` produces output.
+    *   **Example**: `read user_name`, `echo "Hello, $user_name!"`
+
+6.  **Control Statements** (Implicit in original text, but crucial for scripting):
+    *   **Purpose**: Allow scripts to make decisions and repeat actions.
+    *   **Examples**:
+        *   **`if/else`**: Conditional execution.
+            ```bash
+            if [ "$name" == "Jefferson" ]; then
+                echo "Welcome, $name!"
+            else
+                echo "Access Denied!"
+            fi
+            ```
+        *   **`for` loop**: Iterates over a list of items.
+            ```bash
+            for i in {1..5}; do
+                echo "Iteration $i"
+            done
+            ```
+        *   **`while` loop**: Repeats commands as long as a condition is true.
+            ```bash
+            count=1
+            while [ "$count" -le 5 ]; do
+                echo "Count: $count"
+                count=$((count + 1))
+            done
+            ```
+
+7.  **Functions** (Implicit in original text):
+    *   **Purpose**: Group commands into reusable blocks.
+    *   **Example**:
+        ```bash
+        greet() {
+            echo "Hello, $1!" # $1 refers to the first argument passed to the function
+        }
+        greet "Jefferson"
+        ```
+
+8.  **Exit Status** (Implicit in original text):
+    *   **Purpose**: Every command returns an exit status. `0` usually indicates success, non-zero indicates an error.
+    *   **Variable**: `$?` holds the exit status of the *last* executed command.
+    *   **Example**: `mkdir test_dir; echo "Exit status: $?"` (prints 0 if `test_dir` was created successfully).
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 73 ---
+Shell
+•The outermost layer 
+(Interfaces for the outside 
+to use) of the OS
+•A special user program 
+that provides an interface 
+for the user to use 
+operating system services.
+•Shell Scripts  – a way to 
+input commands via file.
+•For Linux Systems:
+•BASH (Bourne Again SHell)
+•CSH (C SHell) on the seashore…
+•KSG (Korn SHell)Shell
+OS
+Hardwarechange 
+directory…
+
+--- Page 74 ---
+Working with CLI/CI
+This is how our command line interface will look like.
+On prompts, there is always a preceding $ or a # symbol.
+$ - indicates the current user is a normal user
+# - indicates the current user is a root user (superuser)
+
+--- Page 75 ---
+Working with CLI/CI
+This is how our command line interface will look like.
+There is also the indicator of the current user on which 
+device.
+username@hostname
+
+--- Page 76 ---
+Working with CLI/CI
+This is how our command line interface will look like.
+There are also some special directory ~ and /
+~ - a user’s home directory ( /home/<username>/ )
+/ - root directory
+
+--- Page 77 ---
+Normal User vs Root User
+•Access and modify their own files 
+in /home/username/
+•Run software that doesn’t require 
+system-wide changes
+•Change only their own password
+•Create, modify, or delete files inside 
+their own home directory
+•Use sudo ( if allowed ) to run specific 
+commands with admin rightsNormal User Root User
+Unrestricted access to 
+all system resources  
+and having the ability to 
+modify critical system 
+files
+
+--- Page 78 ---
+Checking Current User
+Checking username:
+mario@host~$  
+whoami
+mario
+root@host~#  whoami
+root
+You can use the whoami  
+command to print the 
+current user’s usernameChecking username:
+mario@host~$  id -u
+1000
+root@host~#   id -u
+0
+You can also check the id via 
+ud –u. 
+Root ID is always 0
+
+--- Page 79 ---
+Identifying SHELL
+$ which $SHELL
+Shows the path of the current shell ( Will be used later on scripting ).
+Let’s use bash! If your device is not using bash, simply switch 
+via:
+$ chsh 
+or , to specify the path directly:
+$ chsh -s /bin/bash
+
+--- Page 80 ---
+File and Directory Management
+These commands help manage files and directories 
+efficiently.
+•$ pwd - Displays the current directory path.
+•$ ls - Displays files and directories. Has the following 
+options:
+•-l – Long format showing details (permissions, owner , size)
+•-a – Show all files, including those hidden (starts with .)
+•-h – Human readable format. 
+•-R – Recursive, lists contents of subdirectories.
+•You can use multiple options, e.g.: -lah
+-rwxrw-r-- 3 testuser usergroup 11K Feb 14 19:30 file.txtLong Format:
+
+--- Page 81 ---
+File and Directory Management
+Understanding the 
+-rwxrw-r--  3 testuser  usergroup  11K Feb 14 19:30  file.txtLong Format:
+File Type
+d is directory
+- is fileRead, Write, Execute 
+Permissions 
+(owner , group, others)
+- means noHard Links
+Number of direct 
+links inside, including 
+self  (.) and parent (..)
+
+--- Page 82 ---
+File and Directory Management
+Understanding the 
+-rwxrw-r--  3 testuser  usergroup  11K Feb 14 19:30  file.txtOwner of the file/directory
+Rights: rwx
+Group that owns the file/directory
+Rights: rw-File SizeLong Format:
+Date Modified
+
+--- Page 83 ---
+File and Directory Management
+These commands help manage files and directories efficiently.
+•$ cd dir – Moves working directory to dir.
+•You can also refer the special symbols ~ and / here to go to home or root
+•$ mkdir my_folder –  Creates a new directory my_folder .
+•-p – Creates parent folder if it does not exist
+•$ rmdir my_folder –    Deletes the empty directory my_folder .
+•$ rm dir – Deletes file or directory. Has common options:
+•-r – Remove directories and their contents recursively.
+•-f – Force delete without confirmation.
+•-i – Ask before each file deletion.
+•-v – Verbose, show deleted files.
+
+--- Page 84 ---
+File and Directory Management
+These commands help manage files and directories efficiently.
+•$ cp dir1 dir2 –  Copies files/directories dir1 to dir2.
+•-r – Copy recursively
+•-i – Prompt before overwriting
+•-u – Copy only if destination is folder
+•-v – Show Progress
+•$ mv dir1 dir2 –    Move or rename dir1 to dir2 .
+•-i – Ask before overwriting
+•-u – Move only if destination is folder
+•-v – Show progress
+
+--- Page 85 ---
+File Viewing and Editing
+These commands allow you to view and edit file contents.
+•$ cat file.txt –  Display file contents.
+•$ less file.txt –  Display file contents. Has scrolling mechanism.
+•Navigation:
+•SPACE – Scroll down
+•b – Scroll up
+•/keyword – Search for keyword
+•q – Quit. 
+•$ nano file.txt – Opens a file in the Nano editor .
+•Shortcuts:
+•CTRL-X – Exit.
+•CTRL-O – Save Changes
+•CTRL-W – Search
+
+--- Page 86 ---
+File Permissions & Ownership
+These commands allow you modify file permissions and ownerships
+•$ chmod 755 script.sh –  Modify file permission. Has the ff 
+options:
+•+w – adds execute command
+•-w – removes write permission
+•755 – Can also give 3 numbers ranging from 0 to 7. Each digit is binary 
+representation of RWX permission of Owner , Group, and Others
+•$ chwon user:gro...

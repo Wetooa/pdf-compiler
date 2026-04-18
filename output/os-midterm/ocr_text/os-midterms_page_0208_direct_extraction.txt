@@ -1,0 +1,16 @@
+Priority Scheduling
+Consider the table below for processes with their respective 
+Arrival Times, CPU burst times, and priorities. Draw the Gantt 
+chart and compute average waiting time for both Non-preemptive 
+and Preemptive Priority Scheduling.
+Process Arrival Time Burst Time Priority
+P1
+5
+ 10
+ 2
+P21 3 1
+P3
+4
+ 6
+ 4
+P40 2 3

@@ -1,0 +1,8 @@
+Operating System
+•structured to manage hardware resources and provide 
+services so multiple programs  can execute efficiently and 
+safely.
+•Managing execution (processes, threads)
+•Managing resources (CPU, memory, I/O)
+•Coordinating concurrent activities
+•Sharing the system among users and programs

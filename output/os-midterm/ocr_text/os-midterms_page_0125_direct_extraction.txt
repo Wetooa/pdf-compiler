@@ -1,0 +1,10 @@
+Why Threads?
+Instead of doing these steps one by one, why not do 
+steps one and two at the same time?
+main()String s = 
+readLongFile(
+)
+otherLongProcess
+()process( s)I’m stuck, 
+Step One ~ 
+(⸝⸝๑﹏๑⸝⸝)

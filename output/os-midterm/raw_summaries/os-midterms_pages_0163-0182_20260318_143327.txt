@@ -1,0 +1,366 @@
+LEARNING GUIDE: Pages 163-182
+Generated: 2026-03-18 14:33:27
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified learning guide based on the provided text:
+
+---
+
+# Operating Systems: Synchronization & CPU Scheduling
+
+## Part 1: Synchronization Problems
+
+### 1. Synchronization Problem Overview
+*   **Definition:** Issues that arise when multiple processes or threads access shared resources concurrently, requiring coordination to maintain data consistency and prevent race conditions.
+
+### 2. Case Study: Dining Philosophers Problem
+This problem illustrates common synchronization challenges.
+*   **Setup:**
+    *   Philosophers seated at a round table.
+    *   Each has a plate of noodles.
+    *   A single fork is placed between each pair of adjacent plates.
+*   **Rules:**
+    *   A philosopher can **think**.
+    *   A philosopher can **eat** only if they pick up **two forks** (one from their left, one from their right).
+    *   Philosophers can pick up only **one fork at a time**.
+*   **Goals for Solution:**
+    *   Avoid **Deadlock**.
+    *   Avoid **Starvation**.
+
+### 3. Key Synchronization Concepts
+*   **Deadlock:**
+    *   **Definition:** Two or more processes are permanently blocked because each is waiting for a resource held by another.
+    *   **In Dining Philosophers:** Occurs if all philosophers simultaneously pick up one fork (e.g., their left fork), then each waits indefinitely for the right fork that another philosopher holds, forming a **circular wait**.
+*   **Starvation:**
+    *   **Definition:** A process waits indefinitely for the resources or CPU time it needs because these are continually given to other processes.
+    *   **In Dining Philosophers:** Possible if one philosopher repeatedly misses out on forks while others are always able to acquire them.
+
+### 4. Synchronization Primitive: Semaphore
+*   **Definition:** A synchronization primitive used to coordinate concurrent processes or threads by controlling access to shared resources.
+*   **How it Works (General):** Acts as a counter or a flag to signal the availability of resources or to control entry into critical sections.
+*   **Types:**
+    *   **Binary Semaphore:** Like an ON/OFF switch (value 0 or 1), used for mutual exclusion (only one process can access a resource at a time).
+    *   **Counting Semaphore:** Allows multiple identical resources (value can be any non-negative integer), used to control access to a pool of resources.
+*   **Application to Dining Philosophers (Implied):** Semaphores can be used to represent each fork, allowing philosophers to `wait()` (pick up) and `signal()` (put down) forks, thus regulating access.
+
+## Part 2: CPU Scheduling Algorithms
+
+### 1. Introduction to CPU Scheduling
+*   **Purpose:** The fundamental basis of multiprogrammed operating systems. It determines which process among those ready to run should be allocated the CPU next.
+*   **Role of Short-term Scheduler (CPU Scheduler):**
+    *   Selects a process from the **Ready Queue**.
+    *   Allocates the CPU to the selected process.
+*   **Process Flow:**
+    1.  **Job Queue:** All processes in the system.
+    2.  **Ready Queue:** Processes waiting and ready to execute.
+    3.  **CPU:** Executes the chosen process.
+
+### 2. Process Behavior: CPU Bursts and I/O Bursts
+Processes typically alternate between performing computations (CPU bursts) and waiting for I/O operations (I/O bursts).
+*   **CPU Burst:**
+    *   **Definition:** The time period during which a process executes instructions on the CPU continuously, without interruption for input/output (I/O).
+    *   **Example Activities:** `load`, `store`, `add`, `increment`, `index`.
+*   **I/O Burst:**
+    *   **Definition:** The time period during which a process is waiting for or performing I/O operations.
+    *   **Example Activities:** `read from file`, `write to file`, `wait for I/O`, waiting for keyboard input.
+*   **Alternating Sequence:** Processes alternate between CPU-bound work and I/O-bound waits.
+
+### 3. Intended Learning Outcomes (What you should learn)
+After studying CPU scheduling algorithms, you should be able to:
+*   Identify the behavior of different scheduling algorithms.
+*   Compute scheduling criteria (e.g., turnaround time, waiting time) for various algorithms.
+*   Present criteria for choosing an effective scheduling algorithm.
+*   Implement basic scheduling algorithms like First-Come, First-Served (FCFS) and Non-preemptive Shortest-Job-First (SJF).
+
+---
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 163 ---
+Synchronization Problem
+
+--- Page 164 ---
+Dining Philosophers Problem
+•Philosophers are seated on a table
+•Each philosopher has a plate of noodles
+•In between plates are forks
+•Philosopher can:
+•Think and keep to himself
+•Eat but only if he has two forks
+•Philosophers can only pick up 1 fork at a 
+time.
+•Philosophers can get hungry, and get full
+•Should avoid deadlock  and starvation
+two or more processes are 
+permanently blocked because 
+each is waiting for a resource 
+held by another .occurs when a process waits 
+indefinitely because the 
+resources or CPU time it needs 
+are continually given to other 
+processes.
+
+--- Page 165 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are 
+followed?
+Semaphore - a Synchronization 
+primitive used to coordinate concurrent 
+processes or threads by controlling 
+access to shared resources.  Can be 
+Binary (ON/OFF switch) or Counting  
+(multiple identical resource)0
+1
+2 3401
+2
+34
+sCounting Semaphore
+
+--- Page 166 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+0Fork?
+
+--- Page 167 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+0Fork?
+YES!
+
+--- Page 168 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+1Fork?
+
+--- Page 169 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+1Fork?
+YES!
+
+--- Page 170 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+0Fork?
+
+--- Page 171 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+YES!
+0
+
+
+--- Page 172 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+0
+Done!
+
+--- Page 173 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+1Fork?
+
+--- Page 174 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+1
+YES!
+
+--- Page 175 ---
+5
+4
+3
+2
+1Dining Philosophers Problem
+How to ensure the rules are followed?
+Via a Semaphore0
+1
+2 3401
+2
+34s
+1Done!
+
+--- Page 176 ---
+Dining Philosophers Problem
+Is Deadlock  possible? How?0
+1
+2 3401
+2
+34
+
+--- Page 177 ---
+Dining Philosophers Problem
+0
+1
+2 3401
+2
+34Is Deadlock  possible? How?
+When each philosopher 
+picks up 1 fork and they end 
+up waiting for one another . 
+Forming a circular wait.
+Strategy to avoid?
+
+--- Page 178 ---
+Dining Philosophers Problem
+Is Starvation  possible? 0
+1
+2 3401
+2
+34Strategy to avoid?
+
+--- Page 179 ---
+CPU Scheduling 
+Algorithms
+Operating System Topic 04
+CS348
+
+--- Page 180 ---
+Intended Learning Outcomes
+•ILO1. Identify the behavior on each of the different 
+scheduling algorithm.
+•ILO2. Compute in relation of the scheduling criteria based 
+on the different scheduling algorithm.
+•ILO3 Present the criteria for choosing a good algorithm
+•ILO4. Exercise on the implementation of the different 
+scheduling algorithms like FCFS and Nonpreemptive SJF
+
+--- Page 181 ---
+CPU Scheduling
+•CPU Scheduling is the basis of 
+multiprogrammed  OS.
+•It deals with the problem of 
+deciding which processes  in 
+the ready queue is to be 
+allocated in the CPU.Short-term scheduler 
+(CPU scheduler) 
+Selects which process 
+should be executed next 
+and allocates CPU
+Job Queue Ready Queue CPU
+
+--- Page 182 ---
+Alternating Sequence
+load store
+add  store
+read from file
+store 
+increment
+index
+Write to file
+load store
+add  store
+read from filewait for I/O
+wait for I/O
+wait for I/OCPU Bursts
+the time period 
+during which a 
+process executes 
+instructions on 
+the CPU 
+continuously, 
+without any 
+interruption for 
+input/output (I/O)I/O Bursts
+the time period 
+during which a 
+process is waiting 
+for or performing 
+I/O operations, 
+such as reading 
+from a disk, waiting 
+for keyboard or 
+input
+

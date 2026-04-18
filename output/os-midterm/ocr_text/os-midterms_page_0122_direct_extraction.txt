@@ -1,0 +1,28 @@
+class MyThread extends Thread{
+   public void run() {
+      System.out.println( “On 
+Background" );
+    }
+}
+public class  Main{
+   public static  void main(String[] 
+args){
+      Thread thread1 = new MyThread();
+ thread1.start(); 
+ System.out.println( “On Main" );
+    }
+}
+Main.java
+Allows a program to 
+run multiple tasks 
+simultaneously.
+Found in java.langWhat is Java 
+Threads?
+Every Java Program 
+has at least one 
+thread , known as the 
+main or parent 
+thread.
+All other generated 
+threads are known as 
+child threads .

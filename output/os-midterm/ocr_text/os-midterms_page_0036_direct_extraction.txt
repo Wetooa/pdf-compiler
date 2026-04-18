@@ -1,0 +1,9 @@
+Computer System Architecture
+Single-Processor Systems
+•There is only one general-purpose 
+CPU.
+•May work with special-purpose 
+CPU such as:
+•Disk microprocessor
+•Keyboard microprocessor
+•Graphics microprocessor

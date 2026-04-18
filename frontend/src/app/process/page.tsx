@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { createBatch } from "@/lib/api";
+import { createBatch, SessionExpiredError } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -75,6 +75,7 @@ export default function ProcessPage() {
       const batch = await createBatch(files, name || undefined);
       router.replace(`/batches/${batch.id}`);
     } catch (e: unknown) {
+      if (e instanceof SessionExpiredError) return;
       setError(e instanceof Error ? e.message : "Upload failed");
     } finally {
       setUploading(false);

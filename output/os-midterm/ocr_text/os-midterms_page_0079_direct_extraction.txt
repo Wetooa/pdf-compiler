@@ -1,0 +1,8 @@
+Identifying SHELL
+$ which $SHELL
+Shows the path of the current shell ( Will be used later on scripting ).
+Let’s use bash! If your device is not using bash, simply switch 
+via:
+$ chsh 
+or , to specify the path directly:
+$ chsh -s /bin/bash

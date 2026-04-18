@@ -1,0 +1,12 @@
+thread2thread1
+thread3Suppose we have a resource 
+that is shared between our 
+threads,
+Storage s
+What happens if we try to use 
+s between threads?
+Concurrency 
+Problemss.add(o)
+;s.edit(o
+)s.delete(o
+)

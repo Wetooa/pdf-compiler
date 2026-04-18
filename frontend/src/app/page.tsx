@@ -6,6 +6,7 @@ import {
   listBatches,
   downloadCompiledPdf,
   deleteBatch,
+  SessionExpiredError,
   type BatchMeta,
 } from "@/lib/api";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -42,6 +43,7 @@ export default function HomePage() {
       const data = await listBatches();
       setBatches(data);
     } catch (e) {
+      if (e instanceof SessionExpiredError) return;
       setError(e instanceof Error ? e.message : "Failed to load batches");
       setBatches([]);
     } finally {
@@ -55,6 +57,7 @@ export default function HomePage() {
       await deleteBatch(batch.id);
       setBatches((prev) => prev.filter((b) => b.id !== batch.id));
     } catch (e) {
+      if (e instanceof SessionExpiredError) return;
       setError(e instanceof Error ? e.message : "Failed to delete batch");
     }
   }

@@ -1,0 +1,11 @@
+Indirect Communication
+•Mailbox sharing problem
+•P1, P2, and P3 share mailbox A.
+•P1, sends; P2 and P3 receive.
+•Who gets the message?
+•Solutions
+•Allow a link to be associated with at most two processes.
+•Allow only one process at a time to execute a receive 
+operation.
+•Allow the system to select arbitrarily the receiver .  Sender 
+is notified who the receiver was.

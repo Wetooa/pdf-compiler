@@ -1,0 +1,7 @@
+Highest-Response-Ratio-Next
+•Nonpreemptive
+•Process with highest Response-Ratio  is executed next
+•Shorter processes are favoured, but aging of longer processes 
+increases the RR
+•Response ratio (RR) is computed per process as:
+ 

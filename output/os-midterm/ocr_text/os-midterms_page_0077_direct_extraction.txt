@@ -1,0 +1,15 @@
+Normal User vs Root User
+•Access and modify their own files 
+in /home/username/
+•Run software that doesn’t require 
+system-wide changes
+•Change only their own password
+•Create, modify, or delete files inside 
+their own home directory
+•Use sudo ( if allowed ) to run specific 
+commands with admin rightsNormal User Root User
+Unrestricted access to 
+all system resources  
+and having the ability to 
+modify critical system 
+files

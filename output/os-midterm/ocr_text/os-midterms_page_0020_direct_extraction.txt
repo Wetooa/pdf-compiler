@@ -1,0 +1,9 @@
+Computer System Storage Structures
+Solid State Drive
+No Moving Fast, Fast
+ExpensiveSSD HDDSecondary Memories
+or
+Hard Disk Drive
+Spinning magnetic platters, Slow
+Cheap
+Both are Non-volatile

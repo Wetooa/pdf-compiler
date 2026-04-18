@@ -1,0 +1,9 @@
+Indirect Communication
+•Operations
+•create a new mailbox
+•send and receive messages through mailbox
+•destroy a mailbox
+•Primitives are defined as:
+send( A, message ) – send a message to mailbox A
+receive( A, message ) – receive a message from 
+mailbox A

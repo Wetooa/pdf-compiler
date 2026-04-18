@@ -1,0 +1,14 @@
+Computer System Storage Structures
+CPU fetch is always intercepted by …
+HDD
+Main Memory (RAM)
+CPU CORE
+REGISTERS
+RAX RBX
+RCX RDX
+RSP RBP
+THISCACHE
+L1
+smolL3
+~MBsL2
+~KBs

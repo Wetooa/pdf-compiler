@@ -1,0 +1,11 @@
+Computer System Components
+1. Hardware  – provides basic computing resources (CPU, 
+memory, I/O devices).
+2. Operating  system  – controls and coordinates the use of the 
+hardware among the various application programs for the 
+various users.
+3. Applications  programs  – define the ways in which the 
+system resources are used to solve the computing problems 
+of the users (compilers, database systems, video games, 
+business programs).
+4. Users (people, machines, other computers).

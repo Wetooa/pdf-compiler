@@ -1,0 +1,7 @@
+Advantages of Thread
+•Threads minimize the context switching time.
+•Use of threads provides concurrency within a process.
+•Efficient communication.
+•It is more economical to create and context switch threads.
+•Threads allow utilization of multiprocessor architectures to a 
+greater scale and efficiency.

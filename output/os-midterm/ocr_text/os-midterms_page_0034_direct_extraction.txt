@@ -1,0 +1,7 @@
+Computer System Architecture
+Fault Handling
+Error is Isolated
+Failure is hidden  
+Capability is ReducedSoft Failure
+Fault Tolerant
+Graceful Degradation

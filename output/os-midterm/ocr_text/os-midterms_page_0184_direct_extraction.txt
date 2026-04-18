@@ -1,0 +1,18 @@
+Key Scheduling Terms
+•Arrival Time (AT)  - The time when a process enters the ready queue  
+(i.e., becomes ready for execution).
+•Burst Time (BT)  / CPU Burst Time  - The total time  the process needs on 
+the CPU to complete its execution.
+•Start Time (ST)  - The time when the process actually starts  executing on 
+the CPU for the first time.
+•Finish Time (FT)  / Completion Time (CT)  - The time when the process 
+completes all its execution  (both CPU and I/O if applicable).Process Arrival 
+TimeBurst Time
+P1
+0
+ 24
+P22 3
+P3
+4
+ 3P1P2P3Gantt Chart:
+0 242730

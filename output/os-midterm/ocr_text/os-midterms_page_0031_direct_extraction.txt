@@ -1,0 +1,24 @@
+Computer System Architecture
+Fault Handling
+•Graceful Degradation  
+•the ability to continue providing service 
+proportional to the level of surviving hardware.
+DiscordRAM 
+3.8GB / 4.0 
+GB
+Chrom
+eSteam
+FILESDISK/DRIVE 
+124GB / 953 GB
+DiscordRAM 
+3.9GB / 4.0 
+GB
+SteamDISK/DRIVE 
+124GB / 953 GB
+FILESChrom
+e
+Chrom
+eGenshin 
+ImpactSystem remains usable, 
+but performance is 
+reduced

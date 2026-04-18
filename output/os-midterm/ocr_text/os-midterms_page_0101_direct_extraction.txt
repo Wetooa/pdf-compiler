@@ -1,0 +1,10 @@
+Process and Threads
+•Process
+•a self-contained execution environment
+•has a complete, private set of basic run-time 
+resources ( has own memory space )
+•Threads
+•Aka lightweight processes , and exists within 
+processes (always has at least one)
+•Threads within same process share basic run-time 
+resources.

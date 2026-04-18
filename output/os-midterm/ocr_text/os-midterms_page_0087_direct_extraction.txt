@@ -1,0 +1,14 @@
+Process Management
+These commands allow you monitor and terminate processes
+•$ ps aux – Lists active processes.
+•a – Show all users' processes
+•u – Show detailed user info
+•x – Show processes without a terminal
+•$ top – Shows real-time system stats.
+•Navigation:
+•q – Quit.
+•k – Kill a process .
+•M – Sort by memory.
+•$ kill 1234 – Stops a process by PID.
+•-9 – Force kill.
+•-15 – Graceful kill.

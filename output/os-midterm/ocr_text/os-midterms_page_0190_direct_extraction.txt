@@ -1,0 +1,12 @@
+Scheduling Algorithms
+•First-Come, First-Served Scheduling
+•Shortest-Job-First/Shortest-Job-Next
+•Nonpreemptive SJF
+•Preemptive SJF/Shortest-Remaining-Time-First
+•Priority Scheduling
+•Nonpreemptive Priority
+•Preemptive Priority
+•Highest Response-Ratio Next Scheduling
+•Round-Robin Scheduling
+•Multilevel Queue Scheduling
+•Multilevel Feedback Queue Scheduling

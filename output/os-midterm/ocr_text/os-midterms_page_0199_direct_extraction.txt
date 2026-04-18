@@ -1,0 +1,15 @@
+#2: Nonpreemptive SJF
+Process Burst Time Arrival 
+Time
+P1
+3
+ 0
+P213 2
+P3
+5
+ 3
+P48 5Given the Arrival Time and Burst Time of P1, P2, P3, and P4, 
+draw the Gantt Chart , complete the Table, and provide the a.) 
+Average Turn-Around Time and b.). Average Waiting Time
+a)Average Turn-Around Time
+b)Average Waiting Time

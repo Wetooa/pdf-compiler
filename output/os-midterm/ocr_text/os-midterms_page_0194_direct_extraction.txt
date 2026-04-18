@@ -1,0 +1,15 @@
+First-Come, First-Served (Example)
+•Given the Arrival Times  and Burst Times of P1, P2, P3, and P4, let's find 
+the average waiting time using the FCFS scheduling algorithm. 
+•Draw the FCFS scheduling chart and compute the average waiting 
+time of the above table.Process Burst 
+TimeArrival 
+Time
+P1
+21
+ 0
+P23 1
+P3
+6
+ 3
+P42 5

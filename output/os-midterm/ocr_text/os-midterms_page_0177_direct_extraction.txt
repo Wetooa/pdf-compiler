@@ -1,0 +1,11 @@
+Dining Philosophers Problem
+0
+1
+2 3401
+2
+34Is Deadlock  possible? How?
+When each philosopher 
+picks up 1 fork and they end 
+up waiting for one another . 
+Forming a circular wait.
+Strategy to avoid?

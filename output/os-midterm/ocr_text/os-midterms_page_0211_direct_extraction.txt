@@ -1,0 +1,7 @@
+Round-robin
+How it works?
+•New process are inserted at Tail
+•Process at Head of queue is run for at most q milliseconds
+•If process finishes before q runs out , it is removed from queue
+•If process is not finished and q runs out, it is transferred at the Tail
+•Next process in line is now the Head

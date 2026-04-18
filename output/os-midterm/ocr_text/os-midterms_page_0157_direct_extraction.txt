@@ -1,0 +1,9 @@
+Buffering
+•Queue of messages attached to the link; 
+implemented in one of three ways.
+1.Zero capacity – 0 messages
+Sender must wait for receiver (rendezvous).
+2.Bounded capacity – finite length of n messages
+Sender must wait if link full.
+3.Unbounded capacity – infinite length 
+Sender never waits.

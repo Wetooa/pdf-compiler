@@ -1,0 +1,16 @@
+thread2thread1
+thread3Concurrency 
+Problems
+s.add(o)
+;s.edit(o
+)s.delete(o
+)Common problems faced while 
+maintaining any shared 
+resource.
+Most commonly on Database 
+Management Systems.
+Temporary Update Problem
+Incorrect Summary Problem
+Lost Update Problem
+Unrepeatable Read Problem
+Phantom Read Problem

@@ -1,0 +1,12 @@
+Round-robin
+Process Burst Time
+P1
+53
+P217
+P3
+68
+P424What is the Average Waiting Time if q is 20?
+P1P2P3P4P1P3P4P1P3P3Gantt Chart:
+02037577797117121134154162
+Typically higher average Turnaround Time than SJF, but better 
+Response Time

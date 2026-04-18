@@ -1,0 +1,16 @@
+Job Queue Ready Queue CPU
+I/O request I/O queue I/O
+time slice 
+expired
+fork a child
+wait for 
+interruptchild executes
+Interrupt 
+occursProcess States and Flow
+New Ready Running
+Terminated
+WaitingWaitingLong-term scheduler (Job Scheduler)
+Short-term scheduler (CPU scheduler) 
+Medium-term scheduler
+Queues
+Resource that serves the queuesWaiting**

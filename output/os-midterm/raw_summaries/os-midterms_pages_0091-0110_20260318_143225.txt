@@ -1,0 +1,507 @@
+LEARNING GUIDE: Pages 91-110
+Generated: 2026-03-18 14:32:25
+PDF: os-midterms
+
+================================================================================
+LEARNING GUIDE
+================================================================================
+
+Here is a simplified, easy-to-read learning guide derived from the provided text.
+
+---
+
+## Shell Scripting Fundamentals
+
+### What is a Shell Script?
+A **Shell Script** is a text file containing a series of commands executed sequentially by a **shell interpreter**. It automates tasks.
+
+### Core Shell Script Components
+
+1.  **Shebang (`#!/bin/bash`)**
+    *   The first line of a script.
+    *   Specifies the interpreter (e.g., `bash`) to execute the script.
+
+2.  **Comments (`#`)**
+    *   Lines starting with `#` are comments.
+    *   Used for explanations and ignored by the interpreter.
+
+3.  **Basic Output (`echo`)**
+    *   `echo "Hello, World!"` prints text to the terminal.
+
+4.  **Variables**
+    *   Store data (e.g., strings, numbers).
+    *   Can be **system-defined** (e.g., `$PATH`) or **user-defined**.
+    *   **Assignment:** `name="Jefferson"` (NO spaces around `=`).
+    *   **Access:** `echo "Hello, $name!"` (use `$` to get the value).
+
+5.  **Input and Output**
+    *   **Output:** `echo "Enter your name:"`
+    *   **Input:** `read user_name` (reads user input into `user_name` variable).
+
+6.  **Control Statements**
+    Allow scripts to make decisions and repeat actions.
+
+    *   **Conditional (`if-else`)**
+        ```bash
+        if [ "$name" == "Jefferson" ]; then
+            echo "Welcome, $name!"
+        else
+            echo "Access Denied!"
+        fi
+        ```
+        *   `if`, `then`, `else`, `fi` should typically be on new lines.
+        *   **Checking Conditions:** Use `test` command or square brackets `[]`.
+            *   `test "$name" == "Jefferson"`
+            *   `[ "$name" == "Jefferson" ]` (spaces inside brackets are crucial).
+
+    *   **Comparison Operations:**
+        *   **Numbers:**
+            *   `-eq`: equal
+            *   `-ne`: not equal
+            *   `-gt`: greater than
+            *   `-lt`: less than
+            *   `-ge`: greater or equal
+            *   `-le`: less or equal
+        *   **Strings:**
+            *   `=`: equal
+            *   `!=`: not equal
+            *   `==`: (often synonymous with `=` for strings, but `=` is POSIX standard)
+
+    *   **Loops (`for`, `while`)**
+        *   `for i in {1..5}; do echo "Iteration $i"; done`
+        *   `while [ "$count" -le 5 ]; do echo "Count: $count"; count=$((count + 1)); done`
+        *   `for`, `do`, `done`, `while` should typically be on new lines. A semicolon `;` can separate commands on a single line if needed.
+
+7.  **Functions**
+    *   Organize reusable blocks of code.
+    *   **Definition:**
+        ```bash
+        greet() {
+            echo "Hello, $1!"
+        }
+        ```
+        *   Opening bracket `{`, body, and closing bracket `}` typically on different lines.
+    *   **Calling:** `greet "Jefferson"`
+    *   **Arguments:** `$1` represents the first argument passed to the function, `$2` the second, and so on.
+
+8.  **Exit Status (`$?`)**
+    *   Every command executed returns an **exit status** (an integer).
+    *   `0` typically indicates success.
+    *   Any non-zero value indicates an error.
+    *   `echo $?` prints the exit status of the *last* executed command.
+
+### Expansion Operator (`$`)
+The `$` operator is used to retrieve values or perform specific operations:
+
+*   **`$()`**: **Command Expansion** – Executes a command and substitutes its output. (e.g., `variable=$(ls)`)
+*   **`$(())`**: **Arithmetic Expansion** – Performs arithmetic calculations. (e.g., `result=$((5 + 5))`)
+*   **`$name`**: **Variable Expansion** – Returns the actual value of a variable.
+*   **`$$`**: Returns the **Process ID (PID)** of the current shell.
+*   **`$?`**: Returns the **exit status** of the last command.
+*   **`$1`, `$2`, ...**: **Positional Arguments** – Accesses arguments passed to a script or function.
+
+---
+
+## Processes and Threads
+
+### Process vs. Thread
+
+*   **Process:**
+    *   A self-contained execution environment.
+    *   Has its own complete, private set of basic run-time resources, including its **own memory space**.
+    *   Independent of other processes.
+
+*   **Thread:**
+    *   Also known as a **lightweight process**.
+    *   Exists *within* a process (every process has at least one thread).
+    *   Threads within the same process **share** basic run-time resources (e.g., memory space, open files).
+
+### Thread Basics (POSIX Threads in C)
+
+*   **POSIX Threads (`pthread.h`)**: A standard C library for creating and managing threads.
+*   **Main/Parent Thread**: Every C program starts with at least one thread, called the main or parent thread.
+*   **Child Threads**: All other threads created by the program are child threads.
+
+#### Important Note on Thread Termination:
+In C/C++ programs, if the main thread terminates, all other child threads typically terminate as well. Therefore, it's crucial to wait for child threads to complete their execution before the main thread returns, to ensure all tasks are finished.
+
+### Why Use Threads? (Concurrent Execution)
+
+Threads enable **concurrent execution**, allowing a program to run multiple tasks seemingly at the same time without interrupting the main program flow.
+
+**Example Scenario:**
+Imagine a program that needs to:
+1.  Read a very long file.
+2.  Do lots of other long, independent processes.
+3.  Finally, process the data from the read file (which depends on step 1).
+
+**Without Threads (Sequential):**
+The program would execute step 1, then step 2, then step 3. If step 1 and 2 are very long, the total execution time is the sum of all three.
+
+**With Threads (Concurrent):**
+*   You can start **reading the long file (Step 1)** in one thread.
+*   **Simultaneously**, you can start **other long processes (Step 2)** in another thread (or the main thread).
+*   Since Step 3 depends on Step 1, the main thread can **wait (`join`)** for the "read file" thread to finish before proceeding with Step 3.
+*   This significantly reduces the overall execution time by overlapping independent tasks.
+
+### How to Create Threads (Using `pthread.h` in C)
+
+1.  **Include the Header:**
+    `#include <pthread.h>`
+
+2.  **Define the Thread Function:**
+    *   This is the function that the new thread will execute.
+    *   It **must** return `void*`.
+    *   It **must** accept a `void*` argument.
+    ```c
+    void* child_function(void* arg) {
+        printf("Thread is running.\n");
+        // ... do thread's work ...
+        return NULL; // Return a value, or NULL if not needed
+    }
+    ```
+
+3.  **Declare a `pthread_t` Variable:**
+    *   This variable will store the thread ID.
+    ```c
+    pthread_t thread_id;
+    ```
+
+4.  **Create the Thread using `pthread_create()`:**
+    *   This function starts a new thread.
+    ```c
+    pthread_create(&thread_id, NULL, child_function, NULL);
+    ```
+    *   **Parameters:**
+        *   `&thread_id`: Pointer to the `pthread_t` variable where the new thread's ID will be stored.
+        *   `NULL`: Thread attributes (e.g., stack size, scheduling). `NULL` uses default attributes.
+        *   `child_function`: A pointer to the function the new thread will execute.
+        *   `NULL`: An argument to be passed to the `child_function`. `NULL` if no argument is needed.
+
+5.  **Wait for Thread Completion using `pthread_join()`:**
+    *   The `pthread_join()` function makes the calling thread (e.g., the main thread) wait for the specified thread to terminate.
+    ```c
+    pthread_join(thread_id, NULL);
+    ```
+    *   **Parameters:**
+        *   `thread_id`: The ID of the thread to wait for.
+        *   `NULL`: A pointer to a `void*` variable where the target thread's return value will be stored. `NULL` if you don't care about the return value.
+
+**Example C Code Structure:**
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+
+// 2. Define the thread function
+void* child_function(void* arg) {
+    printf("Child thread is running.\n");
+    // Simulate some work
+    for (int i = 0; i < 3; i++) {
+        printf("Child: %d\n", i);
+    }
+    return NULL;
+}
+
+int main() {
+    // 3. Declare a pthread_t variable
+    pthread_t thread1;
+
+    // 4. Create the thread
+    printf("Main thread: Creating child thread.\n");
+    pthread_create(&thread1, NULL, child_function, NULL);
+
+    // 5. Wait for the child thread to finish
+    printf("Main thread: Waiting for child thread to complete.\n");
+    pthread_join(thread1, NULL); // Main thread waits here until child_function returns
+
+    printf("Main thread: Child thread finished. Exiting.\n");
+    return 0;
+}
+```
+
+================================================================================
+ORIGINAL TEXT (First 5000 chars)
+================================================================================
+
+--- Page 91 ---
+#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successfulShell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+4.Variables  –   store 
+data and can be system-
+defined or user-defined.
+SPACING MATTERS
+•name = "Jefferson"  ❌
+•name="Jefferson"   ✅
+thescript.sh
+
+--- Page 92 ---
+#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successfulShell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+5.Input and Output  –    
+take user input and 
+produce output.
+thescript.sh
+
+--- Page 93 ---
+#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successfulShell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+6.Control Statements  
+–    Well duuhh ~~
+thescript.sh
+
+
+--- Page 94 ---
+Shell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+6.Control Statements  
+–    Well duuhh ~~
+SPACING AND LINE 
+MATTERS
+•Should be in new 
+lines:
+•IF, THEN, ELSE, FI  
+•FOR, DO, DONE
+•Else, just write 
+semicolon to indicate 
+new line
+thescript.sh#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successful
+
+--- Page 95 ---
+Shell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+6.Control Statements  
+–    Well duuhh ~~
+Checking Conditions
+•Can be done VIA test 
+command:
+•test "$name" == 
+"Jefferson"
+•[ "$name" == 
+"Jefferson" ]
+thescript.sh#!/bin/bash
+# COMMENTS
+# This script prints "Hello, World!"
+echo "Hello, World!"
+# COMMENDS
+echo "Listing files:"
+ls -l
+# VARIABLES
+name="Jefferson"
+echo "Hello, $name!"
+# INPUT AND OUTPUTS
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+# CONTROL STATEMENTS
+if [ "$name" == "Jefferson"  ]; then
+  echo "Welcome, $name!"
+else
+  echo "Access Denied!"
+fi
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+while [ "$count"  -le 5 ]
+do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+# FUNCTIONS
+greet() {
+  echo "Hello, $1!"
+}
+greet "Jefferson"
+# EXIT STATUS
+mkdir test_dir
+echo "Exit status: $?"  # Prints 0 if 
+successful
+
+--- Page 96 ---
+Shell Script 
+Components
+Shell Script - a text file 
+containing a series of 
+commands that are 
+executed sequentially by a 
+shell interpreter .
+6.Control Statements  
+–    Well duuhh ~~
+Comparison Operations
+•Numbers:
+•-eq  equal
+•-ne  not equal
+•-gt  greater than
+•-lt  less than
+•-ge  greater or equal
+•-le  less or equal
+thescript....
